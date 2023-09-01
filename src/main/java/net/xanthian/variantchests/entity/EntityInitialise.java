@@ -19,7 +19,7 @@ public class EntityInitialise {
     public static BlockEntityType<VariantChestBlockEntity> CRIMSON_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> DARK_OAK_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> JUNGLE_CHEST;
-    public static BlockEntityType<VariantChestBlockEntity> MANGROVE_CHEST;
+    //public static BlockEntityType<VariantChestBlockEntity> MANGROVE_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> OAK_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> WARPED_CHEST;
 
@@ -31,7 +31,7 @@ public class EntityInitialise {
             CRIMSON_CHEST = register(VariantChests.CRIMSON, Vanilla.CRIMSON_CHEST);
             DARK_OAK_CHEST = register(VariantChests.DARK_OAK, Vanilla.DARK_OAK_CHEST);
             JUNGLE_CHEST = register(VariantChests.JUNGLE, Vanilla.JUNGLE_CHEST);
-            MANGROVE_CHEST = register(VariantChests.MANGROVE, Vanilla.MANGROVE_CHEST);
+            //MANGROVE_CHEST = register(VariantChests.MANGROVE, Vanilla.MANGROVE_CHEST);
             OAK_CHEST = register(VariantChests.OAK, Vanilla.OAK_CHEST);
             SPRUCE_CHEST = register(VariantChests.SPRUCE, Vanilla.SPRUCE_CHEST);
             WARPED_CHEST = register(VariantChests.WARPED, Vanilla.WARPED_CHEST);

@@ -4,13 +4,9 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 
 import net.minecraft.advancement.criterion.InventoryChangedCriterion;
-import net.minecraft.data.server.RecipeProvider;
 import net.minecraft.data.server.recipe.*;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
-import net.minecraft.tag.ItemTags;
-import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
 
 import net.xanthian.variantchests.block.Vanilla;
@@ -34,20 +30,10 @@ public class RecipeGenerator extends FabricRecipeProvider {
         offerChestRecipe(exporter, Vanilla.CRIMSON_CHEST, Items.CRIMSON_PLANKS);
         offerChestRecipe(exporter, Vanilla.DARK_OAK_CHEST, Items.DARK_OAK_PLANKS);
         offerChestRecipe(exporter, Vanilla.JUNGLE_CHEST, Items.JUNGLE_PLANKS);
-        offerChestRecipe(exporter, Vanilla.MANGROVE_CHEST, Items.MANGROVE_PLANKS);
+        //offerChestRecipe(exporter, Vanilla.MANGROVE_CHEST, Items.MANGROVE_PLANKS);
         offerChestRecipe(exporter, Vanilla.OAK_CHEST, Items.OAK_PLANKS);
         offerChestRecipe(exporter, Vanilla.SPRUCE_CHEST, Items.SPRUCE_PLANKS);
         offerChestRecipe(exporter, Vanilla.WARPED_CHEST, Items.WARPED_PLANKS);
-
-        offerCustomChestBoatRecipe(exporter, Items.ACACIA_CHEST_BOAT, Items.ACACIA_BOAT, ModItemTags.CHESTS);
-        //offerCustomChestBoatRecipe(exporter,Items.BAMBOO_CHEST_RAFT, Items.BAMBOO_RAFT, ModItemTags.CHESTS);
-        offerCustomChestBoatRecipe(exporter, Items.BIRCH_CHEST_BOAT, Items.BIRCH_BOAT, ModItemTags.CHESTS);
-        //offerCustomChestBoatRecipe(exporter,Items.CHERRY_CHEST_BOAT, Items.CHERRY_BOAT, ModItemTags.CHESTS);
-        offerCustomChestBoatRecipe(exporter, Items.DARK_OAK_CHEST_BOAT, Items.DARK_OAK_BOAT, ModItemTags.CHESTS);
-        offerCustomChestBoatRecipe(exporter, Items.JUNGLE_CHEST_BOAT, Items.JUNGLE_BOAT, ModItemTags.CHESTS);
-        offerCustomChestBoatRecipe(exporter, Items.MANGROVE_CHEST_BOAT, Items.MANGROVE_BOAT, ModItemTags.CHESTS);
-        offerCustomChestBoatRecipe(exporter, Items.OAK_CHEST_BOAT, Items.OAK_BOAT, ModItemTags.CHESTS);
-        offerCustomChestBoatRecipe(exporter, Items.SPRUCE_CHEST_BOAT, Items.SPRUCE_BOAT, ModItemTags.CHESTS);
 
 
         // Chest Minecart
@@ -82,12 +68,5 @@ public class RecipeGenerator extends FabricRecipeProvider {
                 .pattern("###").pattern("# #").pattern("###")
                 .criterion("has_planks", conditionsFromItem(plank))
                 .offerTo(exporter);
-    }
-
-    public static void offerCustomChestBoatRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible chestboat, ItemConvertible boat, TagKey<Item> chest) {
-        ShapelessRecipeJsonBuilder.create(chestboat)
-                .input(chest).input(boat).group("chest_boat")
-                .criterion("has_boat", RecipeProvider.conditionsFromTag(ItemTags.BOATS))
-                .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(chestboat)));
     }
 }

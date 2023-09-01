@@ -1,18 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "#": {
-      "tag": "variantchests:chests"
-    },
-    "-": {
-      "item": "minecraft:shulker_shell"
-    }
-  },
   "pattern": [
     " - ",
     " # ",
     " - "
   ],
+  "key": {
+    "-": {
+      "item": "minecraft:shulker_shell"
+    },
+    "#": {
+      "tag": "variantchests:chests"
+    }
+  },
   "result": {
     "item": "minecraft:shulker_box"
   }

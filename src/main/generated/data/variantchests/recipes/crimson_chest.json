@@ -1,15 +1,15 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "#": {
-      "item": "minecraft:crimson_planks"
-    }
-  },
   "pattern": [
     "###",
     "# #",
     "###"
   ],
+  "key": {
+    "#": {
+      "item": "minecraft:crimson_planks"
+    }
+  },
   "result": {
     "item": "variantchests:crimson_chest"
   }

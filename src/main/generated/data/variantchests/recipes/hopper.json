@@ -1,18 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "C": {
-      "tag": "variantchests:chests"
-    },
-    "I": {
-      "item": "minecraft:iron_ingot"
-    }
-  },
   "pattern": [
     "I I",
     "ICI",
     " I "
   ],
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "C": {
+      "tag": "variantchests:chests"
+    }
+  },
   "result": {
     "item": "minecraft:hopper"
   }

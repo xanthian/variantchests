@@ -3,6 +3,7 @@ package net.xanthian.variantchests.entity;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.ChestBlockEntity;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.math.BlockPos;
 
 import net.xanthian.variantchests.block.VariantChests;
@@ -16,12 +17,8 @@ public class VariantChestBlockEntity extends ChestBlockEntity {
         this.chestType = chestType;
     }
 
-    public VariantChests getChestType() {
-        return chestType;
-    }
-
     @Override
     protected Text getContainerName() {
-        return Text.translatable("container.variantchests." + chestType.name().toLowerCase() + "_chest");
+        return new TranslatableText("container.variantchests." + chestType.name().toLowerCase() + "_chest");
     }
 }

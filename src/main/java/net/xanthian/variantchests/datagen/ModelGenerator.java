@@ -24,10 +24,11 @@ public class ModelGenerator extends FabricModelProvider {
         blockStateModelGenerator.registerBuiltin(Vanilla.CRIMSON_CHEST,Blocks.CRIMSON_PLANKS).includeWithoutItem(Vanilla.CRIMSON_CHEST);
         blockStateModelGenerator.registerBuiltin(Vanilla.DARK_OAK_CHEST,Blocks.DARK_OAK_PLANKS).includeWithoutItem(Vanilla.DARK_OAK_CHEST);
         blockStateModelGenerator.registerBuiltin(Vanilla.JUNGLE_CHEST,Blocks.JUNGLE_PLANKS).includeWithoutItem(Vanilla.JUNGLE_CHEST);
-        blockStateModelGenerator.registerBuiltin(Vanilla.MANGROVE_CHEST,Blocks.MANGROVE_PLANKS).includeWithoutItem(Vanilla.MANGROVE_CHEST);
+        //blockStateModelGenerator.registerBuiltin(Vanilla.MANGROVE_CHEST,Blocks.MANGROVE_PLANKS).includeWithoutItem(Vanilla.MANGROVE_CHEST);
         blockStateModelGenerator.registerBuiltin(Vanilla.OAK_CHEST,Blocks.OAK_PLANKS).includeWithoutItem(Vanilla.OAK_CHEST);
         blockStateModelGenerator.registerBuiltin(Vanilla.SPRUCE_CHEST,Blocks.SPRUCE_PLANKS).includeWithoutItem(Vanilla.SPRUCE_CHEST);
         blockStateModelGenerator.registerBuiltin(Vanilla.WARPED_CHEST,Blocks.WARPED_PLANKS).includeWithoutItem(Vanilla.WARPED_CHEST);
+
     }
 
     @Override

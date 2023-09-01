@@ -21,7 +21,7 @@ public class LangFileGenerator extends FabricLanguageProvider {
         translationBuilder.add(Vanilla.CRIMSON_CHEST, "Crimson Chest");
         translationBuilder.add(Vanilla.DARK_OAK_CHEST, "Dark Oak Chest");
         translationBuilder.add(Vanilla.JUNGLE_CHEST, "Jungle Chest");
-        translationBuilder.add(Vanilla.MANGROVE_CHEST, "Mangrove Chest");
+        //translationBuilder.add(Vanilla.MANGROVE_CHEST, "Mangrove Chest");
         translationBuilder.add(Vanilla.OAK_CHEST, "Oak Chest");
         translationBuilder.add(Vanilla.SPRUCE_CHEST, "Spruce Chest");
         translationBuilder.add(Vanilla.WARPED_CHEST, "Warped Chest");
@@ -33,7 +33,7 @@ public class LangFileGenerator extends FabricLanguageProvider {
         translationBuilder.add("container.variantchests.crimson_chest", "Crimson Chest");
         translationBuilder.add("container.variantchests.dark_oak_chest", "Dark Oak Chest");
         translationBuilder.add("container.variantchests.jungle_chest", "Jungle Chest");
-        translationBuilder.add("container.variantchests.mangrove_chest", "Mangrove Chest");
+        //translationBuilder.add("container.variantchests.mangrove_chest", "Mangrove Chest");
         translationBuilder.add("container.variantchests.oak_chest", "Oak Chest");
         translationBuilder.add("container.variantchests.spruce_chest", "Spruce Chest");
         translationBuilder.add("container.variantchests.warped_chest", "Warped Chest");

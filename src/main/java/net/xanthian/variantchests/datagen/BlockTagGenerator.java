@@ -35,7 +35,7 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
                 .add(Vanilla.CRIMSON_CHEST)
                 .add(Vanilla.DARK_OAK_CHEST)
                 .add(Vanilla.JUNGLE_CHEST)
-                .add(Vanilla.MANGROVE_CHEST)
+                //.add(Vanilla.MANGROVE_CHEST)
                 .add(Vanilla.OAK_CHEST)
                 .add(Vanilla.SPRUCE_CHEST)
                 .add(Vanilla.WARPED_CHEST);
