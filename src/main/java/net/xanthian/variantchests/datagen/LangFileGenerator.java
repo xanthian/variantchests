@@ -17,7 +17,7 @@ public class LangFileGenerator extends FabricLanguageProvider {
         translationBuilder.add(Vanilla.ACACIA_CHEST, "Acacia Chest");
         translationBuilder.add(Vanilla.BAMBOO_CHEST, "Bamboo Chest");
         translationBuilder.add(Vanilla.BIRCH_CHEST, "Birch Chest");
-        translationBuilder.add(Vanilla.CHERRY_CHEST, "Cherry Chest");
+        //translationBuilder.add(Vanilla.CHERRY_CHEST, "Cherry Chest");
         translationBuilder.add(Vanilla.CRIMSON_CHEST, "Crimson Chest");
         translationBuilder.add(Vanilla.DARK_OAK_CHEST, "Dark Oak Chest");
         translationBuilder.add(Vanilla.JUNGLE_CHEST, "Jungle Chest");
@@ -29,7 +29,7 @@ public class LangFileGenerator extends FabricLanguageProvider {
         translationBuilder.add("container.variantchests.acacia_chest", "Acacia Chest");
         translationBuilder.add("container.variantchests.bamboo_chest", "Bamboo Chest");
         translationBuilder.add("container.variantchests.birch_chest", "Birch Chest");
-        translationBuilder.add("container.variantchests.cherry_chest", "Cherry Chest");
+        //translationBuilder.add("container.variantchests.cherry_chest", "Cherry Chest");
         translationBuilder.add("container.variantchests.crimson_chest", "Crimson Chest");
         translationBuilder.add("container.variantchests.dark_oak_chest", "Dark Oak Chest");
         translationBuilder.add("container.variantchests.jungle_chest", "Jungle Chest");

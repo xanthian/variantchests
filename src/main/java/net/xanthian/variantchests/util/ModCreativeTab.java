@@ -16,12 +16,12 @@ public class ModCreativeTab {
     public static final ItemGroup ITEM_GROUP = FabricItemGroup.builder(new Identifier(Initialise.MOD_ID, "variantchests"))
                     .displayName(Text.translatable("variantchests.itemgroup"))
                     .icon(() -> new ItemStack(Vanilla.WARPED_CHEST))
-                    .entries((context, entries) -> {
+                    .entries((enabledFeatures, entries, operatorEnabled) -> {
 
                         entries.add(Vanilla.ACACIA_CHEST);
                         entries.add(Vanilla.BAMBOO_CHEST);
                         entries.add(Vanilla.BIRCH_CHEST);
-                        entries.add(Vanilla.CHERRY_CHEST);
+                        //entries.add(Vanilla.CHERRY_CHEST);
                         entries.add(Vanilla.CRIMSON_CHEST);
                         entries.add(Vanilla.DARK_OAK_CHEST);
                         entries.add(Vanilla.JUNGLE_CHEST);

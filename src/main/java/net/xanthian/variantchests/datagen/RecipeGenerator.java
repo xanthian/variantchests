@@ -29,7 +29,7 @@ public class RecipeGenerator extends FabricRecipeProvider {
         offerChestRecipe(exporter, Vanilla.ACACIA_CHEST, Items.ACACIA_PLANKS);
         offerChestRecipe(exporter, Vanilla.BAMBOO_CHEST, Items.BAMBOO_PLANKS);
         offerChestRecipe(exporter, Vanilla.BIRCH_CHEST, Items.BIRCH_PLANKS);
-        offerChestRecipe(exporter, Vanilla.CHERRY_CHEST, Items.CHERRY_PLANKS);
+        //offerChestRecipe(exporter, Vanilla.CHERRY_CHEST, Items.CHERRY_PLANKS);
         offerChestRecipe(exporter, Vanilla.CRIMSON_CHEST, Items.CRIMSON_PLANKS);
         offerChestRecipe(exporter, Vanilla.DARK_OAK_CHEST, Items.DARK_OAK_PLANKS);
         offerChestRecipe(exporter, Vanilla.JUNGLE_CHEST, Items.JUNGLE_PLANKS);
@@ -41,7 +41,7 @@ public class RecipeGenerator extends FabricRecipeProvider {
         offerCustomChestBoatRecipe(exporter,Items.ACACIA_CHEST_BOAT, Items.ACACIA_BOAT, ModItemTags.CHESTS);
         offerCustomChestBoatRecipe(exporter,Items.BAMBOO_CHEST_RAFT, Items.BAMBOO_RAFT, ModItemTags.CHESTS);
         offerCustomChestBoatRecipe(exporter,Items.BIRCH_CHEST_BOAT, Items.BIRCH_BOAT, ModItemTags.CHESTS);
-        offerCustomChestBoatRecipe(exporter,Items.CHERRY_CHEST_BOAT, Items.CHERRY_BOAT, ModItemTags.CHESTS);
+        //offerCustomChestBoatRecipe(exporter,Items.CHERRY_CHEST_BOAT, Items.CHERRY_BOAT, ModItemTags.CHESTS);
         offerCustomChestBoatRecipe(exporter,Items.DARK_OAK_CHEST_BOAT, Items.DARK_OAK_BOAT, ModItemTags.CHESTS);
         offerCustomChestBoatRecipe(exporter,Items.JUNGLE_CHEST_BOAT, Items.JUNGLE_BOAT, ModItemTags.CHESTS);
         offerCustomChestBoatRecipe(exporter,Items.MANGROVE_CHEST_BOAT, Items.MANGROVE_BOAT, ModItemTags.CHESTS);

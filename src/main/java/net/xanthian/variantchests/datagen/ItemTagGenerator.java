@@ -32,7 +32,7 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
                     .add(Vanilla.ACACIA_CHEST.asItem())
                     .add(Vanilla.BAMBOO_CHEST.asItem())
                     .add(Vanilla.BIRCH_CHEST.asItem())
-                    .add(Vanilla.CHERRY_CHEST.asItem())
+                    //.add(Vanilla.CHERRY_CHEST.asItem())
                     .add(Vanilla.CRIMSON_CHEST.asItem())
                     .add(Vanilla.DARK_OAK_CHEST.asItem())
                     .add(Vanilla.JUNGLE_CHEST.asItem())

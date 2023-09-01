@@ -22,7 +22,7 @@ public class LootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(Vanilla.ACACIA_CHEST, this::nameableContainerDrops);
         addDrop(Vanilla.BAMBOO_CHEST, this::nameableContainerDrops);
         addDrop(Vanilla.BIRCH_CHEST, this::nameableContainerDrops);
-        addDrop(Vanilla.CHERRY_CHEST, this::nameableContainerDrops);
+        //addDrop(Vanilla.CHERRY_CHEST, this::nameableContainerDrops);
         addDrop(Vanilla.CRIMSON_CHEST, this::nameableContainerDrops);
         addDrop(Vanilla.DARK_OAK_CHEST, this::nameableContainerDrops);
         addDrop(Vanilla.JUNGLE_CHEST, this::nameableContainerDrops);

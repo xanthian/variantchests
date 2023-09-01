@@ -14,7 +14,7 @@ public class EntityRenderInitialise {
         BlockEntityRendererFactories.register(EntityInitialise.ACACIA_CHEST, VariantChestRenderer::new);
         BlockEntityRendererFactories.register(EntityInitialise.BAMBOO_CHEST, VariantChestRenderer::new);
         BlockEntityRendererFactories.register(EntityInitialise.BIRCH_CHEST, VariantChestRenderer::new);
-        BlockEntityRendererFactories.register(EntityInitialise.CHERRY_CHEST, VariantChestRenderer::new);
+        //BlockEntityRendererFactories.register(EntityInitialise.CHERRY_CHEST, VariantChestRenderer::new);
         BlockEntityRendererFactories.register(EntityInitialise.CRIMSON_CHEST, VariantChestRenderer::new);
         BlockEntityRendererFactories.register(EntityInitialise.DARK_OAK_CHEST, VariantChestRenderer::new);
         BlockEntityRendererFactories.register(EntityInitialise.JUNGLE_CHEST, VariantChestRenderer::new);

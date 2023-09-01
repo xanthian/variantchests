@@ -34,7 +34,7 @@ public class VariantChestBlock extends ChestBlock {
 
     @Override
     public BlockState getPlacementState(ItemPlacementContext context) {
-        Direction direction = context.getHorizontalPlayerFacing().getOpposite();
+        Direction direction = context.getPlayerFacing().getOpposite();
         FluidState fluidState = context.getWorld().getFluidState(context.getBlockPos());
         return this.getDefaultState().with(FACING, direction).with(WATERLOGGED, fluidState.getFluid() == Fluids.WATER);
     }

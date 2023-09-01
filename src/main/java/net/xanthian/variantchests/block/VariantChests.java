@@ -14,7 +14,7 @@ public enum VariantChests {
     ACACIA,
     BAMBOO,
     BIRCH,
-    CHERRY,
+    //CHERRY,
     CRIMSON,
     DARK_OAK,
     JUNGLE,
@@ -29,7 +29,7 @@ public enum VariantChests {
             case ACACIA -> EntityInitialise.ACACIA_CHEST;
             case BAMBOO -> EntityInitialise.BAMBOO_CHEST;
             case BIRCH -> EntityInitialise.BIRCH_CHEST;
-            case CHERRY -> EntityInitialise.CHERRY_CHEST;
+            //case CHERRY -> EntityInitialise.CHERRY_CHEST;
             case CRIMSON -> EntityInitialise.CRIMSON_CHEST;
             case DARK_OAK -> EntityInitialise.DARK_OAK_CHEST;
             case JUNGLE -> EntityInitialise.JUNGLE_CHEST;
