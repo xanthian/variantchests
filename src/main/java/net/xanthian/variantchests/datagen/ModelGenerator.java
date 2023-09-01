@@ -3,14 +3,11 @@ package net.xanthian.variantchests.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
 
 import net.xanthian.variantchests.block.Vanilla;
 import net.xanthian.variantchests.block.VariantChests;
-
-import java.util.function.BiFunction;
 
 public class ModelGenerator extends FabricModelProvider {
     public ModelGenerator(FabricDataOutput output) {
@@ -35,11 +32,5 @@ public class ModelGenerator extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-    }
-
-    // Used for those mods that cant follow a standard _planks naming convention or those that don't load via gradle.
-    public final void registerNonStandardCube(BlockStateModelGenerator blockStateModelGenerator, Block block, String string, BiFunction<Block, String, TextureMap> texturesFactory) {
-        TextureMap textureMap = texturesFactory.apply(block, string);
-        blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(block, Models.CUBE.upload(block, textureMap, blockStateModelGenerator.modelCollector)));
     }
 }

@@ -2,14 +2,8 @@ package net.xanthian.variantchests.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
-import net.fabricmc.fabric.api.resource.conditions.v1.ConditionJsonProvider;
-import net.fabricmc.fabric.impl.datagen.FabricDataGenHelper;
-
-import net.minecraft.loot.LootTable;
 
 import net.xanthian.variantchests.block.Vanilla;
-
-import java.util.List;
 
 public class LootTableGenerator extends FabricBlockLootTableProvider {
     public LootTableGenerator(FabricDataOutput dataOutput) {
@@ -31,10 +25,5 @@ public class LootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(Vanilla.SPRUCE_CHEST, this::nameableContainerDrops);
         addDrop(Vanilla.WARPED_CHEST, this::nameableContainerDrops);
 
-    }
-    private LootTable.Builder addConditions(LootTable.Builder builder, List<ConditionJsonProvider> conditions) {
-        if (!conditions.isEmpty())
-            FabricDataGenHelper.addConditions(builder, conditions.toArray(ConditionJsonProvider[]::new));
-        return builder;
     }
 }
