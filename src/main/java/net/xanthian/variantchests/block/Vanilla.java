@@ -6,7 +6,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.MapColor;
-import net.minecraft.block.enums.Instrument;
+import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -19,13 +19,13 @@ public class Vanilla {
     public static final Block BAMBOO_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.BAMBOO);
     public static final Block BIRCH_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.BIRCH);
     public static final Block CHERRY_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.CHERRY);
-    public static final Block CRIMSON_CHEST = new VariantChestBlock(FabricBlockSettings.create().mapColor(MapColor.DARK_CRIMSON).instrument(Instrument.BASS).strength(2.5f).sounds(BlockSoundGroup.WOOD), VariantChests.CRIMSON);
+    public static final Block CRIMSON_CHEST = new VariantChestBlock(FabricBlockSettings.of(Material.WOOD).mapColor(MapColor.DARK_CRIMSON).sounds(BlockSoundGroup.WOOD).strength(2.5f).sounds(BlockSoundGroup.WOOD), VariantChests.CRIMSON);
     public static final Block DARK_OAK_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.DARK_OAK);
     public static final Block JUNGLE_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.JUNGLE);
     public static final Block MANGROVE_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.MANGROVE);
     public static final Block OAK_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.OAK);
     public static final Block SPRUCE_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.SPRUCE);
-    public static final Block WARPED_CHEST = new VariantChestBlock(FabricBlockSettings.create().mapColor(MapColor.CYAN).instrument(Instrument.BASS).strength(2.5f).sounds(BlockSoundGroup.WOOD), VariantChests.WARPED);
+    public static final Block WARPED_CHEST = new VariantChestBlock(FabricBlockSettings.of(Material.WOOD).mapColor(MapColor.CYAN).sounds(BlockSoundGroup.WOOD).strength(2.5f).sounds(BlockSoundGroup.WOOD), VariantChests.WARPED);
 
     public static void registerVanillaChests() {
         registerChestBlock(VariantChests.ACACIA.getId(), ACACIA_CHEST);

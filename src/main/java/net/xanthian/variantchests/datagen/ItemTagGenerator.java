@@ -23,6 +23,7 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
     }
 
     public static final TagKey<Item> C_CHESTS = TagKey.of(Registries.ITEM.getKey(), new Identifier("c:chests"));
+    public static final TagKey<Item> C_WOODEN_CHESTS = TagKey.of(Registries.ITEM.getKey(), new Identifier("c:wooden_chests"));
 
         @Override
         protected void configure (RegistryWrapper.WrapperLookup arg){
@@ -45,6 +46,9 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
                     .add(Vanilla.WARPED_CHEST.asItem());
 
             getOrCreateTagBuilder(C_CHESTS)
+                    .forceAddTag(CHESTS);
+
+            getOrCreateTagBuilder(C_WOODEN_CHESTS)
                     .forceAddTag(CHESTS);
         }
     }

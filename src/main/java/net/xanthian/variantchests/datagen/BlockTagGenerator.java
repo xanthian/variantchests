@@ -24,6 +24,7 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
 
     public static final TagKey<Block> CHESTS = TagKey.of(Registries.BLOCK.getKey(), new Identifier(Initialise.MOD_ID,"chests"));
     public static final TagKey<Block> C_CHESTS = TagKey.of(Registries.BLOCK.getKey(), new Identifier("c:chests"));
+    public static final TagKey<Block> C_WOODEN_CHESTS = TagKey.of(Registries.BLOCK.getKey(), new Identifier("c:wooden_chests"));
 
 
     @Override
@@ -49,6 +50,9 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
                 .forceAddTag(CHESTS);
 
         getOrCreateTagBuilder(C_CHESTS)
+                .forceAddTag(CHESTS);
+
+        getOrCreateTagBuilder(C_WOODEN_CHESTS)
                 .forceAddTag(CHESTS);
     }
 }

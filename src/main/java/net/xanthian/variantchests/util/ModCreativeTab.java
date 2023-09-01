@@ -5,8 +5,6 @@ import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
@@ -15,10 +13,7 @@ import net.xanthian.variantchests.block.Vanilla;
 
 public class ModCreativeTab {
 
-    public static final ItemGroup ITEM_GROUP = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(Initialise.MOD_ID, "variantchests"),
-
-            FabricItemGroup.builder()
+    public static final ItemGroup ITEM_GROUP = FabricItemGroup.builder(new Identifier(Initialise.MOD_ID, "variantchests"))
                     .displayName(Text.translatable("variantchests.itemgroup"))
                     .icon(() -> new ItemStack(Vanilla.WARPED_CHEST))
                     .entries((context, entries) -> {
@@ -36,7 +31,7 @@ public class ModCreativeTab {
                         entries.add(Vanilla.WARPED_CHEST);
                         entries.add(Blocks.CHEST);
                     })
-                    .build());
+                    .build();
 
     public static void registerItemGroup() {
     }

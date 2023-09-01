@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:warped_chest"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }
