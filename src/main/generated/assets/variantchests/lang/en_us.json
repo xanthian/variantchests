@@ -1,6 +1,5 @@
 {
   "block.variantchests.acacia_chest": "Acacia Chest",
-  "block.variantchests.bamboo_chest": "Bamboo Chest",
   "block.variantchests.birch_chest": "Birch Chest",
   "block.variantchests.crimson_chest": "Crimson Chest",
   "block.variantchests.dark_oak_chest": "Dark Oak Chest",
@@ -10,7 +9,6 @@
   "block.variantchests.spruce_chest": "Spruce Chest",
   "block.variantchests.warped_chest": "Warped Chest",
   "container.variantchests.acacia_chest": "Acacia Chest",
-  "container.variantchests.bamboo_chest": "Bamboo Chest",
   "container.variantchests.birch_chest": "Birch Chest",
   "container.variantchests.crimson_chest": "Crimson Chest",
   "container.variantchests.dark_oak_chest": "Dark Oak Chest",
@@ -19,5 +17,5 @@
   "container.variantchests.oak_chest": "Oak Chest",
   "container.variantchests.spruce_chest": "Spruce Chest",
   "container.variantchests.warped_chest": "Warped Chest",
-  "variantchests.itemgroup": "Variant Chests"
+  "itemGroup.minecraft.variantchests": "Variant Chests"
 }

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_chest": {
+    "has_planks": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:chest"
+              "minecraft:birch_planks"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "variantchests:chest"
+        "recipe": "variantchests:birch_chest"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_chest",
+      "has_planks",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "variantchests:chest"
+      "variantchests:birch_chest"
     ]
   }
 }

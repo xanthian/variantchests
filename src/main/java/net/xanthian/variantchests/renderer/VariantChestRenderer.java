@@ -9,19 +9,19 @@ import net.minecraft.block.*;
 import net.minecraft.block.entity.ChestBlockEntity;
 import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.render.RenderLayer;
-import net.minecraft.client.render.TexturedRenderLayers;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
 import net.minecraft.client.render.block.entity.ChestBlockEntityRenderer;
 import net.minecraft.client.render.block.entity.LightmapCoordinatesRetriever;
 import net.minecraft.client.render.entity.model.EntityModelLayers;
-import net.minecraft.client.util.SpriteIdentifier;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
-import net.minecraft.util.math.RotationAxis;
+import net.minecraft.util.math.Vec3f;
 import net.minecraft.world.World;
 
+import net.xanthian.variantchests.Initialise;
 import net.xanthian.variantchests.block.VariantChestBlock;
 import net.xanthian.variantchests.entity.VariantChestBlockEntity;
 
@@ -46,30 +46,28 @@ public class VariantChestRenderer extends ChestBlockEntityRenderer<VariantChestB
         BlockState blockState = world != null ? entity.getCachedState() : Blocks.CHEST.getDefaultState().with(ChestBlock.FACING, Direction.SOUTH);
         Block block = blockState.getBlock();
 
-        if (block instanceof VariantChestBlock) {
+        if (block instanceof VariantChestBlock chestBlock) {
             matrices.push();
 
             float f = blockState.get(ChestBlock.FACING).asRotation();
             matrices.translate(0.5F, 0.5F, 0.5F);
-            matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(-f));
+            matrices.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(-f));
             matrices.translate(-0.5F, -0.5F, -0.5F);
 
             DoubleBlockProperties.PropertySource<? extends ChestBlockEntity> propertySource;
-
             if (world == null) {
                 propertySource = DoubleBlockProperties.PropertyRetriever::getFallback;
             } else {
-                propertySource = ((VariantChestBlock)block).getBlockEntitySource(blockState, world, entity.getPos(), true);
+                propertySource = chestBlock.getBlockEntitySource(blockState, world, entity.getPos(), true);
             }
 
             float g = propertySource.apply(ChestBlock.getAnimationProgressRetriever(entity)).get(tickDelta);
             g = 1.0F - g;
             g = 1.0F - g * g * g;
             int i = ((Int2IntFunction)propertySource.apply(new LightmapCoordinatesRetriever())).applyAsInt(light);
-            SpriteIdentifier spriteIdentifier = new SpriteIdentifier(TexturedRenderLayers.CHEST_ATLAS_TEXTURE, ((VariantChestBlock) block).chestType.getTextureId());
-            VertexConsumer vertexConsumer = spriteIdentifier.getVertexConsumer(vertexConsumers, RenderLayer::getEntityCutout);
+            VertexConsumer vertexConsumer = vertexConsumers.getBuffer(RenderLayer.getEntityCutout(new Identifier(Initialise.MOD_ID, "textures/entity/chest/"+ chestBlock.chestType.toString().toLowerCase() + "_chest.png")));
 
-            this.render(matrices, vertexConsumer, this.chestLid, this.chestLock, this.chestBase, g, i, overlay);
+            render(matrices, vertexConsumer, this.chestLid, this.chestLock, this.chestBase, g, i, overlay);
             matrices.pop();
         }
     }

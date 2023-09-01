@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "variantchests:hopper"
+        "recipe": "minecraft:hopper"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "variantchests:hopper"
+      "minecraft:hopper"
     ]
   }
 }

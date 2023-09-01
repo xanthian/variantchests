@@ -1,6 +1,6 @@
 {
   "parent": "variantchests:block/variantchest",
   "textures": {
-    "chest": "variantchests:chest/cherry_chest"
+    "chest": "variantchests:entity/chest/cherry_chest"
   }
 }

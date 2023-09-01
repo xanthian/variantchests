@@ -1,11 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_boat": {
+    "has_planks": {
       "conditions": {
         "items": [
           {
-            "tag": "minecraft:boats"
+            "items": [
+              "minecraft:mangrove_planks"
+            ]
           }
         ]
       },
@@ -13,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:bamboo_chest_raft"
+        "recipe": "variantchests:mangrove_chest"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_boat",
+      "has_planks",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:bamboo_chest_raft"
+      "variantchests:mangrove_chest"
     ]
   }
 }

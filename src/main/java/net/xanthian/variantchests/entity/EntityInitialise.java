@@ -4,16 +4,15 @@ import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityT
 
 import net.minecraft.block.Block;
 import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 
+import net.minecraft.util.registry.Registry;
 import net.xanthian.variantchests.block.Vanilla;
 import net.xanthian.variantchests.block.VariantChests;
 
 public class EntityInitialise {
 
     public static BlockEntityType<VariantChestBlockEntity> ACACIA_CHEST;
-    public static BlockEntityType<VariantChestBlockEntity> BAMBOO_CHEST;
+    //public static BlockEntityType<VariantChestBlockEntity> BAMBOO_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> BIRCH_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> SPRUCE_CHEST;
     //public static BlockEntityType<VariantChestBlockEntity> CHERRY_CHEST;
@@ -26,7 +25,7 @@ public class EntityInitialise {
 
         public static void registerBlockEntities() {
             ACACIA_CHEST = register(VariantChests.ACACIA, Vanilla.ACACIA_CHEST);
-            BAMBOO_CHEST = register(VariantChests.BAMBOO, Vanilla.BAMBOO_CHEST);
+            //BAMBOO_CHEST = register(VariantChests.BAMBOO, Vanilla.BAMBOO_CHEST);
             BIRCH_CHEST = register(VariantChests.BIRCH, Vanilla.BIRCH_CHEST);
             //CHERRY_CHEST = register(VariantChests.CHERRY, Vanilla.CHERRY_CHEST);
             CRIMSON_CHEST = register(VariantChests.CRIMSON, Vanilla.CRIMSON_CHEST);
@@ -39,7 +38,7 @@ public class EntityInitialise {
         }
 
         private static BlockEntityType<VariantChestBlockEntity> register(VariantChests type, Block... block){
-            return Registry.register(Registries.BLOCK_ENTITY_TYPE, type.getId(),
+            return Registry.register(Registry.BLOCK_ENTITY_TYPE, type.getId(),
                     FabricBlockEntityTypeBuilder.create((pos, state)-> new VariantChestBlockEntity(type, pos, state),
                             block).build(null));
         }

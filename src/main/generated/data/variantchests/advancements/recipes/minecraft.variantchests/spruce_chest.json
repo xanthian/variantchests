@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "minecraft:birch_planks"
+              "minecraft:spruce_planks"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:birch_chest"
+        "recipe": "variantchests:spruce_chest"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:birch_chest"
+      "variantchests:spruce_chest"
     ]
   }
 }

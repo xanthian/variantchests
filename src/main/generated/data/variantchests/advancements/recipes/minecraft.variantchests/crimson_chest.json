@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "minecraft:warped_planks"
+              "minecraft:crimson_planks"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:warped_chest"
+        "recipe": "variantchests:crimson_chest"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:warped_chest"
+      "variantchests:crimson_chest"
     ]
   }
 }

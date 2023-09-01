@@ -5,16 +5,15 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
 import net.xanthian.variantchests.datagen.*;
 
-public class DatagenInitialise  implements DataGeneratorEntrypoint {
+public class DatagenInitialise implements DataGeneratorEntrypoint {
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
-        FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
-        pack.addProvider(BlockTagGenerator::new);
-        pack.addProvider(ItemTagGenerator::new);
-        pack.addProvider(LangFileGenerator::new);
-        pack.addProvider(LootTableGenerator::new);
-        pack.addProvider(RecipeGenerator::new);
-        pack.addProvider(ModelGenerator::new);
+        fabricDataGenerator.addProvider(BlockTagGenerator::new);
+        fabricDataGenerator.addProvider(ItemTagGenerator::new);
+        fabricDataGenerator.addProvider(LangFileGenerator::new);
+        fabricDataGenerator.addProvider(LootTableGenerator::new);
+        fabricDataGenerator.addProvider(RecipeGenerator::new);
+        fabricDataGenerator.addProvider(ModelGenerator::new);
     }
 }

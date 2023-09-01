@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_planks": {
+    "has_shulker_shell": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:mangrove_planks"
+              "minecraft:shulker_shell"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:mangrove_chest"
+        "recipe": "minecraft:shulker_box"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_planks",
+      "has_shulker_shell",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:mangrove_chest"
+      "minecraft:shulker_box"
     ]
   }
 }

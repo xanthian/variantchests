@@ -1,13 +1,13 @@
 package net.xanthian.variantchests.datagen;
 
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 
 import net.xanthian.variantchests.block.*;
 
 public class LangFileGenerator extends FabricLanguageProvider {
-    public LangFileGenerator(FabricDataOutput dataOutput) {
-        super(dataOutput);
+    public LangFileGenerator(FabricDataGenerator dataGenerator) {
+        super(dataGenerator);
     }
 
     @Override
@@ -15,7 +15,7 @@ public class LangFileGenerator extends FabricLanguageProvider {
 
         //Vanilla
         translationBuilder.add(Vanilla.ACACIA_CHEST, "Acacia Chest");
-        translationBuilder.add(Vanilla.BAMBOO_CHEST, "Bamboo Chest");
+        //translationBuilder.add(Vanilla.BAMBOO_CHEST, "Bamboo Chest");
         translationBuilder.add(Vanilla.BIRCH_CHEST, "Birch Chest");
         //translationBuilder.add(Vanilla.CHERRY_CHEST, "Cherry Chest");
         translationBuilder.add(Vanilla.CRIMSON_CHEST, "Crimson Chest");
@@ -27,7 +27,7 @@ public class LangFileGenerator extends FabricLanguageProvider {
         translationBuilder.add(Vanilla.WARPED_CHEST, "Warped Chest");
 
         translationBuilder.add("container.variantchests.acacia_chest", "Acacia Chest");
-        translationBuilder.add("container.variantchests.bamboo_chest", "Bamboo Chest");
+        //translationBuilder.add("container.variantchests.bamboo_chest", "Bamboo Chest");
         translationBuilder.add("container.variantchests.birch_chest", "Birch Chest");
         //translationBuilder.add("container.variantchests.cherry_chest", "Cherry Chest");
         translationBuilder.add("container.variantchests.crimson_chest", "Crimson Chest");
@@ -38,6 +38,6 @@ public class LangFileGenerator extends FabricLanguageProvider {
         translationBuilder.add("container.variantchests.spruce_chest", "Spruce Chest");
         translationBuilder.add("container.variantchests.warped_chest", "Warped Chest");
 
-        translationBuilder.add("variantchests.itemgroup", "Variant Chests");
+        translationBuilder.add("itemGroup.minecraft.variantchests", "Variant Chests");
     }
 }

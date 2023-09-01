@@ -15,7 +15,7 @@ public class ModFuelRegistry {
         FuelRegistry registry = FuelRegistry.INSTANCE;
 
         registry.add(Vanilla.ACACIA_CHEST, 300);
-        registry.add(Vanilla.BAMBOO_CHEST, 300);
+        //registry.add(Vanilla.BAMBOO_CHEST, 300);
         registry.add(Vanilla.BIRCH_CHEST, 300);
         //registry.add(Vanilla.CHERRY_CHEST, 300);
         registry.add(Vanilla.DARK_OAK_CHEST, 300);

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_shulker_shell": {
+    "has_planks": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:shulker_shell"
+              "minecraft:jungle_planks"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "variantchests:shulker_box"
+        "recipe": "variantchests:jungle_chest"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_shulker_shell",
+      "has_planks",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "variantchests:shulker_box"
+      "variantchests:jungle_chest"
     ]
   }
 }

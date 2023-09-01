@@ -8,15 +8,15 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.MapColor;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
+import net.xanthian.variantchests.Initialise;
 
 public class Vanilla {
 
     public static final Block ACACIA_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.ACACIA);
-    public static final Block BAMBOO_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.BAMBOO);
+    //public static final Block BAMBOO_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.BAMBOO);
     public static final Block BIRCH_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.BIRCH);
     //public static final Block CHERRY_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.CHERRY);
     public static final Block CRIMSON_CHEST = new VariantChestBlock(FabricBlockSettings.of(Material.WOOD).mapColor(MapColor.DARK_CRIMSON).sounds(BlockSoundGroup.WOOD).strength(2.5f).sounds(BlockSoundGroup.WOOD), VariantChests.CRIMSON);
@@ -29,7 +29,7 @@ public class Vanilla {
 
     public static void registerVanillaChests() {
         registerChestBlock(VariantChests.ACACIA.getId(), ACACIA_CHEST);
-        registerChestBlock(VariantChests.BAMBOO.getId(), BAMBOO_CHEST);
+        //registerChestBlock(VariantChests.BAMBOO.getId(), BAMBOO_CHEST);
         registerChestBlock(VariantChests.BIRCH.getId(), BIRCH_CHEST);
         //registerChestBlock(VariantChests.CHERRY.getId(), CHERRY_CHEST);
         registerChestBlock(VariantChests.CRIMSON.getId(), CRIMSON_CHEST);
@@ -43,7 +43,7 @@ public class Vanilla {
 
     private static void registerChestBlock(Identifier Id, Block block) {
         Identifier identifier = new Identifier(Id.toString());
-        Registry.register(Registries.BLOCK, identifier, block);
-        Registry.register(Registries.ITEM, identifier, new BlockItem(block, new FabricItemSettings()));
+        Registry.register(Registry.BLOCK, identifier, block);
+        Registry.register(Registry.ITEM, identifier, new BlockItem(block, new FabricItemSettings().group(Initialise.VARIANTCHESTS)));
     }
 }

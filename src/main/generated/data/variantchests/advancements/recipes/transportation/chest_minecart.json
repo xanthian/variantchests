@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_planks": {
+    "has_minecart": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:dark_oak_planks"
+              "minecraft:minecart"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:dark_oak_chest"
+        "recipe": "minecraft:chest_minecart"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_planks",
+      "has_minecart",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:dark_oak_chest"
+      "minecraft:chest_minecart"
     ]
   }
 }

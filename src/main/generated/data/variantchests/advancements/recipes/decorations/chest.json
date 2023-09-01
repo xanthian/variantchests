@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_planks": {
+    "has_chest": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:spruce_planks"
+              "minecraft:chest"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:spruce_chest"
+        "recipe": "minecraft:chest"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_planks",
+      "has_chest",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:spruce_chest"
+      "minecraft:chest"
     ]
   }
 }

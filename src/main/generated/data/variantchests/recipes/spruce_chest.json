@@ -1,15 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
-    "P": {
+    "#": {
       "item": "minecraft:spruce_planks"
     }
   },
   "pattern": [
-    "PPP",
-    "P P",
-    "PPP"
+    "###",
+    "# #",
+    "###"
   ],
   "result": {
     "item": "variantchests:spruce_chest"

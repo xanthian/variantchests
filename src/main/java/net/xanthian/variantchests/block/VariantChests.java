@@ -12,7 +12,7 @@ import net.xanthian.variantchests.entity.VariantChestBlockEntity;
 public enum VariantChests {
 
     ACACIA,
-    BAMBOO,
+    //BAMBOO,
     BIRCH,
     //CHERRY,
     CRIMSON,
@@ -27,7 +27,7 @@ public enum VariantChests {
     public BlockEntityType<? extends VariantChestBlockEntity> getBlockEntityType() {
         return switch (this) {
             case ACACIA -> EntityInitialise.ACACIA_CHEST;
-            case BAMBOO -> EntityInitialise.BAMBOO_CHEST;
+            //case BAMBOO -> EntityInitialise.BAMBOO_CHEST;
             case BIRCH -> EntityInitialise.BIRCH_CHEST;
             //case CHERRY -> EntityInitialise.CHERRY_CHEST;
             case CRIMSON -> EntityInitialise.CRIMSON_CHEST;
@@ -38,15 +38,10 @@ public enum VariantChests {
             case SPRUCE -> EntityInitialise.SPRUCE_CHEST;
             case WARPED -> EntityInitialise.WARPED_CHEST;
         };
-
     }
 
     public VariantChestBlockEntity getBlockEntity(BlockPos pos, BlockState state) {
         return new VariantChestBlockEntity(this, pos, state);
-    }
-
-    public Identifier getTextureId(){
-        return new Identifier(Initialise.MOD_ID, "entity/chest/" + this.name().toLowerCase() + "_chest");
     }
 
     public Identifier getId(){

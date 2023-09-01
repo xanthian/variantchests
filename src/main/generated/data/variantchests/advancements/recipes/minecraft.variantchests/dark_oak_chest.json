@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "minecraft:oak_planks"
+              "minecraft:dark_oak_planks"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:oak_chest"
+        "recipe": "variantchests:dark_oak_chest"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:oak_chest"
+      "variantchests:dark_oak_chest"
     ]
   }
 }
