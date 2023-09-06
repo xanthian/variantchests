@@ -3,6 +3,7 @@ package net.xanthian.variantchests.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 
+import net.minecraft.block.Blocks;
 import net.xanthian.variantchests.block.*;
 
 public class LangFileGenerator extends FabricLanguageProvider {
@@ -23,6 +24,7 @@ public class LangFileGenerator extends FabricLanguageProvider {
         translationBuilder.add(Vanilla.JUNGLE_CHEST, "Jungle Chest");
         translationBuilder.add(Vanilla.MANGROVE_CHEST, "Mangrove Chest");
         translationBuilder.add(Vanilla.OAK_CHEST, "Oak Chest");
+        translationBuilder.add(Blocks.CHEST, "Oak Chest");
         translationBuilder.add(Vanilla.SPRUCE_CHEST, "Spruce Chest");
         translationBuilder.add(Vanilla.WARPED_CHEST, "Warped Chest");
 
@@ -35,6 +37,7 @@ public class LangFileGenerator extends FabricLanguageProvider {
         translationBuilder.add("container.variantchests.jungle_chest", "Jungle Chest");
         translationBuilder.add("container.variantchests.mangrove_chest", "Mangrove Chest");
         translationBuilder.add("container.variantchests.oak_chest", "Oak Chest");
+        translationBuilder.add("container.chest", "Oak Chest");
         translationBuilder.add("container.variantchests.spruce_chest", "Spruce Chest");
         translationBuilder.add("container.variantchests.warped_chest", "Warped Chest");
 

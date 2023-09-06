@@ -31,10 +31,10 @@ public class ModCreativeTab {
                         entries.add(Vanilla.DARK_OAK_CHEST);
                         entries.add(Vanilla.JUNGLE_CHEST);
                         entries.add(Vanilla.MANGROVE_CHEST);
-                        entries.add(Vanilla.OAK_CHEST);
+                        entries.add(Blocks.CHEST);
+                        //entries.add(Vanilla.OAK_CHEST);
                         entries.add(Vanilla.SPRUCE_CHEST);
                         entries.add(Vanilla.WARPED_CHEST);
-                        entries.add(Blocks.CHEST);
                     })
                     .build());
 

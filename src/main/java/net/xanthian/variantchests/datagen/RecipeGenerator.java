@@ -34,7 +34,7 @@ public class RecipeGenerator extends FabricRecipeProvider {
         offerChestRecipe(exporter, Vanilla.DARK_OAK_CHEST, Items.DARK_OAK_PLANKS);
         offerChestRecipe(exporter, Vanilla.JUNGLE_CHEST, Items.JUNGLE_PLANKS);
         offerChestRecipe(exporter, Vanilla.MANGROVE_CHEST, Items.MANGROVE_PLANKS);
-        offerChestRecipe(exporter, Vanilla.OAK_CHEST, Items.OAK_PLANKS);
+        //offerChestRecipe(exporter, Vanilla.OAK_CHEST, Items.OAK_PLANKS);
         offerChestRecipe(exporter, Vanilla.SPRUCE_CHEST, Items.SPRUCE_PLANKS);
         offerChestRecipe(exporter, Vanilla.WARPED_CHEST, Items.WARPED_PLANKS);
 

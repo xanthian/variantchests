@@ -1,12 +1,18 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "ingredients": [
-    {
-      "tag": "variantchests:chests"
+  "key": {
+    "P": {
+      "item": "minecraft:oak_planks"
     }
+  },
+  "pattern": [
+    "PPP",
+    "P P",
+    "PPP"
   ],
   "result": {
     "item": "minecraft:chest"
-  }
+  },
+  "show_notification": true
 }
