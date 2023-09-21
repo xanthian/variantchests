@@ -16,15 +16,13 @@ import net.minecraft.util.Identifier;
 import net.xanthian.variantchests.block.Vanilla;
 import net.xanthian.variantchests.util.ModItemTags;
 
-import java.util.function.Consumer;
-
 public class RecipeGenerator extends FabricRecipeProvider {
     public RecipeGenerator(FabricDataOutput output) {
         super(output);
     }
 
     @Override
-    public void generate(Consumer<RecipeJsonProvider> exporter) {
+    public void generate(RecipeExporter exporter) {
 
         offerChestRecipe(exporter, Vanilla.ACACIA_CHEST, Items.ACACIA_PLANKS);
         offerChestRecipe(exporter, Vanilla.BAMBOO_CHEST, Items.BAMBOO_PLANKS);
@@ -75,7 +73,7 @@ public class RecipeGenerator extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier("variantchests", "chest"));
     }
 
-    public static void offerChestRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible chest, ItemConvertible plank) {
+    public static void offerChestRecipe(RecipeExporter exporter, ItemConvertible chest, ItemConvertible plank) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, chest, 1)
                 .input('P', plank)
                 .pattern("PPP").pattern("P P").pattern("PPP")
@@ -83,7 +81,7 @@ public class RecipeGenerator extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(chest)));
     }
 
-    public static void offerCustomChestBoatRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible chestboat, ItemConvertible boat, TagKey<Item> chest) {
+    public static void offerCustomChestBoatRecipe(RecipeExporter exporter, ItemConvertible chestboat, ItemConvertible boat, TagKey<Item> chest) {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, chestboat)
                 .input(chest).input(boat).group("chest_boat")
                 .criterion("has_boat", RecipeProvider.conditionsFromTag(ItemTags.BOATS))

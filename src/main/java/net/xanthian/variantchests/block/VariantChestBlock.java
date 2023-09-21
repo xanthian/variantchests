@@ -50,7 +50,7 @@ public class VariantChestBlock extends ChestBlock {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return world.isClient ? checkType(type, this.getExpectedEntityType(), VariantChestBlockEntity::clientTick) : null;
+        return world.isClient ? validateTicker(type, this.getExpectedEntityType(), VariantChestBlockEntity::clientTick) : null;
     }
 
     public VariantChests getType(){return chestType;}
