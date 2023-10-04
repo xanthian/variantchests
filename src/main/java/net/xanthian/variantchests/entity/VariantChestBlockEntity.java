@@ -22,6 +22,7 @@ public class VariantChestBlockEntity extends ChestBlockEntity {
 
     @Override
     protected Text getContainerName() {
-        return Text.translatable("container.variantchests." + chestType.name().toLowerCase() + "_chest");
+            return Text.translatable("container.variantchests." + chestType.name().toLowerCase() + "_chest");
+
     }
 }

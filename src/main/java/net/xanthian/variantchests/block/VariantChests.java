@@ -45,10 +45,6 @@ public enum VariantChests {
         return new VariantChestBlockEntity(this, pos, state);
     }
 
-    public Identifier getTextureId(){
-        return new Identifier(Initialise.MOD_ID, "entity/chest/" + this.name().toLowerCase() + "_chest");
-    }
-
     public Identifier getId(){
         return new Identifier(Initialise.MOD_ID, this.name().toLowerCase() + "_chest");
     }
