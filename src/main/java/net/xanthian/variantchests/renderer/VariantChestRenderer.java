@@ -1,49 +1,55 @@
 package net.xanthian.variantchests.renderer;
 
-import it.unimi.dsi.fastutil.ints.Int2IntFunction;
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.mojang.math.Axis;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+import net.minecraft.client.model.geom.ModelLayers;
+import net.minecraft.client.model.geom.ModelPart;
+import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.Sheets;
+import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
+import net.minecraft.client.renderer.blockentity.BrightnessCombiner;
+import net.minecraft.client.renderer.blockentity.ChestRenderer;
+import net.minecraft.client.resources.model.Material;
+import net.minecraft.core.Direction;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ChestBlock;
+import net.minecraft.world.level.block.DoubleBlockCombiner;
+import net.minecraft.world.level.block.entity.ChestBlockEntity;
+import net.minecraft.world.level.block.entity.LidBlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.ChestType;
 
-import net.minecraft.block.*;
-import net.minecraft.block.entity.ChestBlockEntity;
-import net.minecraft.block.enums.ChestType;
-import net.minecraft.client.model.ModelPart;
-import net.minecraft.client.render.RenderLayer;
-import net.minecraft.client.render.TexturedRenderLayers;
-import net.minecraft.client.render.VertexConsumer;
-import net.minecraft.client.render.VertexConsumerProvider;
-import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
-import net.minecraft.client.render.block.entity.ChestBlockEntityRenderer;
-import net.minecraft.client.render.block.entity.LightmapCoordinatesRetriever;
-import net.minecraft.client.render.entity.model.EntityModelLayers;
-import net.minecraft.client.util.SpriteIdentifier;
-import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.math.Direction;
-import net.minecraft.util.math.RotationAxis;
-import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 import net.xanthian.variantchests.Initialise;
-import net.xanthian.variantchests.block.VariantChestBlock;
-import net.xanthian.variantchests.block.VariantChests;
+import net.xanthian.variantchests.block.custom.VariantChestBlock;
+import net.xanthian.variantchests.block.custom.VariantChests;
 import net.xanthian.variantchests.entity.VariantChestBlockEntity;
 
-@Environment(EnvType.CLIENT)
-public class VariantChestRenderer extends ChestBlockEntityRenderer<VariantChestBlockEntity> {
+import org.jetbrains.annotations.NotNull;
 
-    private final ModelPart singleChestLid;
-    private final ModelPart singleChestBase;
-    private final ModelPart singleChestLock;
-    private final ModelPart doubleChestLeftBase;
-    private final ModelPart doubleChestLeftLid;
-    private final ModelPart doubleChestLeftLock;
-    private final ModelPart doubleChestRightBase;
-    private final ModelPart doubleChestRightLid;
-    private final ModelPart doubleChestRightLock;
-    public static SpriteIdentifier[] single = new SpriteIdentifier[VariantChests.values().length];
-    public static SpriteIdentifier[] left = new SpriteIdentifier[VariantChests.values().length];
-    public static SpriteIdentifier[] right = new SpriteIdentifier[VariantChests.values().length];
+@OnlyIn(Dist.CLIENT)
+public class VariantChestRenderer<T extends VariantChestBlockEntity & LidBlockEntity> extends ChestRenderer<T> {
+
+    private final ModelPart lid;
+    private final ModelPart bottom;
+    private final ModelPart lock;
+    private final ModelPart doubleLeftLid;
+    private final ModelPart doubleLeftBottom;
+    private final ModelPart doubleLeftLock;
+    private final ModelPart doubleRightLid;
+    private final ModelPart doubleRightBottom;
+    private final ModelPart doubleRightLock;
+    public static Material[] single = new Material[VariantChests.values().length];
+    public static Material[] left = new Material[VariantChests.values().length];
+    public static Material[] right = new Material[VariantChests.values().length];
 
     static {
         for (VariantChests type : VariantChests.values()) {
@@ -55,84 +61,82 @@ public class VariantChestRenderer extends ChestBlockEntityRenderer<VariantChestB
         }
     }
 
-    public static SpriteIdentifier getChestID(String path) {
-        return new SpriteIdentifier(TexturedRenderLayers.CHEST_ATLAS_TEXTURE, new Identifier(Initialise.MOD_ID, "entity/chest/" + path)) {};
+    public static Material getChestID(String path) {
+        return new Material(Sheets.CHEST_SHEET, new ResourceLocation(Initialise.MOD_ID, "entity/chest/" + path)) {};
     }
 
-    private SpriteIdentifier getChestTexture(VariantChestBlockEntity tile, ChestType type) {
-            return chooseMaterial(type, left[tile.getChestType().ordinal()], right[tile.getChestType().ordinal()], single[tile.getChestType().ordinal()]);
+    private Material getChestTexture(VariantChestBlockEntity tile, ChestType type) {
+        return chooseMaterial(type, left[tile.getChestType().ordinal()], right[tile.getChestType().ordinal()], single[tile.getChestType().ordinal()]);
     }
 
-    public VariantChestRenderer(BlockEntityRendererFactory.Context context) {
+    public VariantChestRenderer(BlockEntityRendererProvider.Context context) {
         super(context);
-        ModelPart modelPart = context.getLayerModelPart(EntityModelLayers.CHEST);
-        this.singleChestBase = modelPart.getChild("bottom");
-        this.singleChestLid = modelPart.getChild("lid");
-        this.singleChestLock = modelPart.getChild("lock");
-        ModelPart modelPart2 = context.getLayerModelPart(EntityModelLayers.DOUBLE_CHEST_LEFT);
-        this.doubleChestLeftBase = modelPart2.getChild("bottom");
-        this.doubleChestLeftLid = modelPart2.getChild("lid");
-        this.doubleChestLeftLock = modelPart2.getChild("lock");
-        ModelPart modelPart3 = context.getLayerModelPart(EntityModelLayers.DOUBLE_CHEST_RIGHT);
-        this.doubleChestRightBase = modelPart3.getChild("bottom");
-        this.doubleChestRightLid = modelPart3.getChild("lid");
-        this.doubleChestRightLock = modelPart3.getChild("lock");
+        ModelPart modelPart = context.bakeLayer(ModelLayers.CHEST);
+        this.lid = modelPart.getChild("lid");
+        this.bottom = modelPart.getChild("bottom");
+        this.lock = modelPart.getChild("lock");
+        ModelPart modelPart2 = context.bakeLayer(ModelLayers.DOUBLE_CHEST_LEFT);
+        this.doubleLeftLid = modelPart2.getChild("lid");
+        this.doubleLeftBottom = modelPart2.getChild("bottom");
+        this.doubleLeftLock = modelPart2.getChild("lock");
+        ModelPart modelPart3 = context.bakeLayer(ModelLayers.DOUBLE_CHEST_RIGHT);
+        this.doubleRightLid = modelPart3.getChild("lid");
+        this.doubleRightBottom = modelPart3.getChild("bottom");
+        this.doubleRightLock = modelPart3.getChild("lock");
     }
 
-    public void render(VariantChestBlockEntity entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
-        World world = entity.getWorld();
+    public void render(T pBlockEntity, float pPartialTick, @NotNull PoseStack pPoseStack, @NotNull MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay) {
+        Level level = pBlockEntity.getLevel();
 
-        BlockState blockState = world != null ? entity.getCachedState() : Blocks.CHEST.getDefaultState().with(ChestBlock.FACING, Direction.SOUTH);
-        ChestType chestType = blockState.contains(ChestBlock.CHEST_TYPE) ? (ChestType)blockState.get(ChestBlock.CHEST_TYPE) : ChestType.SINGLE;
+        BlockState blockState = level != null ? pBlockEntity.getBlockState() : Blocks.CHEST.defaultBlockState().setValue(ChestBlock.FACING, Direction.SOUTH);
+        ChestType chestType = blockState.hasProperty(ChestBlock.TYPE) ? blockState.getValue(ChestBlock.TYPE) : ChestType.SINGLE;
         Block block = blockState.getBlock();
 
         if (block instanceof VariantChestBlock) {
             boolean bl2 = chestType != ChestType.SINGLE;
-            matrices.push();
+            pPoseStack.pushPose();
 
-            float f = blockState.get(ChestBlock.FACING).asRotation();
-            matrices.translate(0.5F, 0.5F, 0.5F);
-            matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(-f));
-            matrices.translate(-0.5F, -0.5F, -0.5F);
+            float f = blockState.getValue(ChestBlock.FACING).toYRot();
+            pPoseStack.translate(0.5F, 0.5F, 0.5F);
+            pPoseStack.mulPose(Axis.YP.rotationDegrees(-f));
+            pPoseStack.translate(-0.5F, -0.5F, -0.5F);
 
-            DoubleBlockProperties.PropertySource<? extends ChestBlockEntity> propertySource;
+            DoubleBlockCombiner.NeighborCombineResult<? extends ChestBlockEntity> neighborcombineresult;
 
-            if (world == null) {
-                propertySource = DoubleBlockProperties.PropertyRetriever::getFallback;
+            if (level == null) {
+                neighborcombineresult = DoubleBlockCombiner.Combiner::acceptNone;
             } else {
-                propertySource = ((VariantChestBlock)block).getBlockEntitySource(blockState, world, entity.getPos(), true);
+                neighborcombineresult = ((VariantChestBlock)block).combine(blockState, level, pBlockEntity.getBlockPos(), true);
             }
 
-            float g = propertySource.apply(ChestBlock.getAnimationProgressRetriever(entity)).get(tickDelta);
+            float g = neighborcombineresult.apply(ChestBlock.opennessCombiner(pBlockEntity)).get(pPartialTick);
             g = 1.0F - g;
             g = 1.0F - g * g * g;
-            int i = ((Int2IntFunction)propertySource.apply(new LightmapCoordinatesRetriever())).applyAsInt(light);
-            SpriteIdentifier spriteIdentifier = getChestTexture(entity, chestType);
-            VertexConsumer vertexConsumer = spriteIdentifier.getVertexConsumer(vertexConsumers, RenderLayer::getEntityCutout);
+            int i = neighborcombineresult.apply(new BrightnessCombiner<>()).applyAsInt(pPackedLight);
+            Material material = getChestTexture(pBlockEntity, chestType);
+            VertexConsumer vertexconsumer = material.buffer(pBuffer, RenderType::entityCutout);
             if (bl2) {
                 if (chestType == ChestType.LEFT) {
-                    this.render(matrices, vertexConsumer, this.doubleChestLeftLid, this.doubleChestLeftLock, this.doubleChestLeftBase, g, i, overlay);
+                    this.render(pPoseStack, vertexconsumer, this.doubleLeftLid, this.doubleLeftLock, this.doubleLeftBottom, g, i, pPackedOverlay);
                 } else {
-                    this.render(matrices, vertexConsumer, this.doubleChestRightLid, this.doubleChestRightLock, this.doubleChestRightBase, g, i, overlay);
+                    this.render(pPoseStack, vertexconsumer, this.doubleRightLid, this.doubleRightLock, this.doubleRightBottom, g, i, pPackedOverlay);
                 }
             } else {
-                this.render(matrices, vertexConsumer, this.singleChestLid, this.singleChestLock, this.singleChestBase, g, i, overlay);
+                this.render(pPoseStack, vertexconsumer, this.lid, this.lock, this.bottom, g, i, pPackedOverlay);
             }
-
-            matrices.pop();
+            pPoseStack.popPose();
         }
     }
 
-    private void render(MatrixStack matrices, VertexConsumer vertices, ModelPart lid, ModelPart latch, ModelPart base, float openFactor, int light, int overlay) {
-        lid.pitch = -(openFactor * 1.5707964F);
-        latch.pitch = lid.pitch;
-        lid.render(matrices, vertices, light, overlay);
-        latch.render(matrices, vertices, light, overlay);
-        base.render(matrices, vertices, light, overlay);
+    private void render(PoseStack pPoseStack, VertexConsumer pConsumer, ModelPart pLidPart, ModelPart pLockPart, ModelPart pBottomPart, float pLidAngle, int pPackedLight, int pPackedOverlay) {
+        pLidPart.xRot = -(pLidAngle * ((float)Math.PI / 2F));
+        pLockPart.xRot = pLidPart.xRot;
+        pLidPart.render(pPoseStack, pConsumer, pPackedLight, pPackedOverlay);
+        pLockPart.render(pPoseStack, pConsumer, pPackedLight, pPackedOverlay);
+        pBottomPart.render(pPoseStack, pConsumer, pPackedLight, pPackedOverlay);
     }
 
-
-    public static SpriteIdentifier chooseMaterial(ChestType type, SpriteIdentifier left, SpriteIdentifier right, SpriteIdentifier single) {
+    public static Material chooseMaterial(ChestType type, Material left, Material right, Material single) {
         return switch (type) {
             case LEFT -> left;
             case RIGHT -> right;
