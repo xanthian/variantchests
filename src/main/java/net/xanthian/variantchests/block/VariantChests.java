@@ -22,7 +22,17 @@ public enum VariantChests {
     OAK,
     SPRUCE,
     WARPED,
+
+    AA_GLACIAN,
+    LDBP_PALM,
+    BA_ROTTEN,
+    DAD_ECHO,
+    MC_PUTRID,
+    SP_STONE_PINE,
+    TR_RUBBER,
+    LDV_CHERRY
     ;
+
 
     public BlockEntityType<? extends VariantChestBlockEntity> getBlockEntityType() {
         return switch (this) {
@@ -37,8 +47,17 @@ public enum VariantChests {
             case OAK -> EntityInitialise.OAK_CHEST;
             case SPRUCE -> EntityInitialise.SPRUCE_CHEST;
             case WARPED -> EntityInitialise.WARPED_CHEST;
-        };
 
+            case AA_GLACIAN -> EntityInitialise.AA_GLACIAN_CHEST;
+            case LDBP_PALM -> EntityInitialise.LDBP_PALM_CHEST;
+            case BA_ROTTEN -> EntityInitialise.BA_ROTTEN_CHEST;
+            case DAD_ECHO -> EntityInitialise.DAD_ECHO_CHEST;
+            case MC_PUTRID -> EntityInitialise.MC_PUTRID_CHEST;
+            case SP_STONE_PINE -> EntityInitialise.SP_STONE_PINE_CHEST;
+            case TR_RUBBER -> EntityInitialise.TR_RUBBER_CHEST;
+            case LDV_CHERRY -> EntityInitialise.LDV_CHERRY_CHEST;
+
+        };
     }
 
     public VariantChestBlockEntity getBlockEntity(BlockPos pos, BlockState state) {

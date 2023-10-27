@@ -41,7 +41,16 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
                 .add(Vanilla.MANGROVE_CHEST)
                 .add(Vanilla.OAK_CHEST)
                 .add(Vanilla.SPRUCE_CHEST)
-                .add(Vanilla.WARPED_CHEST);
+                .add(Vanilla.WARPED_CHEST)
+
+                .addOptional(new Identifier("variantchests:aa_glacian_chest"))
+                .addOptional(new Identifier("variantchests:ldbp_palm_chest"))
+                .addOptional(new Identifier("variantchests:ba_rotten_chest"))
+                .addOptional(new Identifier("variantchests:dad_echo_chest"))
+                .addOptional(new Identifier("variantchests:mc_putrid_chest"))
+                .addOptional(new Identifier("variantchests:sp_stone_pine_chest"))
+                .addOptional(new Identifier("variantchests:tr_rubber_chest"))
+                .addOptional(new Identifier("variantchests:ldv_cherry_chest"));
 
         getOrCreateTagBuilder(AXE_MINEABLE)
                 .forceAddTag(CHESTS);

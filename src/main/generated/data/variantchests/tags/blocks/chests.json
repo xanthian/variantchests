@@ -11,6 +11,38 @@
     "variantchests:mangrove_chest",
     "variantchests:oak_chest",
     "variantchests:spruce_chest",
-    "variantchests:warped_chest"
+    "variantchests:warped_chest",
+    {
+      "id": "variantchests:aa_glacian_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:ldbp_palm_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:ba_rotten_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:dad_echo_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:mc_putrid_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:sp_stone_pine_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:tr_rubber_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:ldv_cherry_chest",
+      "required": false
+    }
   ]
 }

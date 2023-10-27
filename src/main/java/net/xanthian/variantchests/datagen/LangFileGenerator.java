@@ -4,7 +4,9 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 
 import net.minecraft.block.Blocks;
+
 import net.xanthian.variantchests.block.*;
+import net.xanthian.variantchests.block.compatability.*;
 
 public class LangFileGenerator extends FabricLanguageProvider {
     public LangFileGenerator(FabricDataOutput dataOutput) {
@@ -27,6 +29,15 @@ public class LangFileGenerator extends FabricLanguageProvider {
         translationBuilder.add(Blocks.CHEST, "Oak Chest");
         translationBuilder.add(Vanilla.SPRUCE_CHEST, "Spruce Chest");
         translationBuilder.add(Vanilla.WARPED_CHEST, "Warped Chest");
+        // Compatability
+        translationBuilder.add(AdAstra.AA_GLACIAN_CHEST, "Glacian Chest");
+        translationBuilder.add(BeachParty.LDBP_PALM_CHEST, "Palm Chest");
+        translationBuilder.add(BetterArcheology.BA_ROTTEN_CHEST, "Rotten Chest");
+        translationBuilder.add(DeeperAndDarker.DAD_ECHO_CHEST, "Echo Chest");
+        translationBuilder.add(MineCells.MC_PUTRID_CHEST, "Putrid Chest");
+        translationBuilder.add(SnifferPlus.SP_STONE_PINE_CHEST, "Stone Pine Chest");
+        translationBuilder.add(TechReborn.TR_RUBBER_CHEST, "Rubber Chest");
+        translationBuilder.add(Vinery.LDV_CHERRY_CHEST, "Cherry Chest");
 
         translationBuilder.add("container.variantchests.acacia_chest", "Acacia Chest");
         translationBuilder.add("container.variantchests.bamboo_chest", "Bamboo Chest");
@@ -40,7 +51,16 @@ public class LangFileGenerator extends FabricLanguageProvider {
         translationBuilder.add("container.chest", "Oak Chest");
         translationBuilder.add("container.variantchests.spruce_chest", "Spruce Chest");
         translationBuilder.add("container.variantchests.warped_chest", "Warped Chest");
-
+        // Compatability
+        translationBuilder.add("container.variantchests.aa_glacian_chest", "Glacian Chest");
+        translationBuilder.add("container.variantchests.ldbp_palm_chest", "Palm Chest");
+        translationBuilder.add("container.variantchests.ba_rotten_chest", "Rotten Chest");
+        translationBuilder.add("container.variantchests.dad_echo_chest", "Echo Chest");
+        translationBuilder.add("container.variantchests.mc_putrid_chest", "Putrid Chest");
+        translationBuilder.add("container.variantchests.sp_stone_pine_chest", "Stone Pine Chest");
+        translationBuilder.add("container.variantchests.tr_rubber_chest", "Rubber Chest");
+        translationBuilder.add("container.variantchests.ldv_cherry_chest", "Cherry Chest");
+        
         translationBuilder.add("variantchests.itemgroup", "Variant Chests");
     }
 }

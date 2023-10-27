@@ -1,0 +1,6 @@
+{
+  "parent": "variantchests:block/variantchest",
+  "textures": {
+    "chest": "variantchests:chest/ldbp_palm_chest"
+  }
+}

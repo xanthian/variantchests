@@ -11,6 +11,7 @@ import net.minecraft.util.Identifier;
 
 import net.xanthian.variantchests.block.Vanilla;
 import net.xanthian.variantchests.block.VariantChests;
+import net.xanthian.variantchests.block.compatability.*;
 import net.xanthian.variantchests.util.ModModel;
 import net.xanthian.variantchests.util.ModTextureKey;
 
@@ -33,6 +34,16 @@ public class ModelGenerator extends FabricModelProvider {
         blockStateModelGenerator.registerBuiltin(VariantChests.OAK.getId().withPrefixedPath("block/"), Blocks.OAK_PLANKS).includeWithoutItem(Vanilla.OAK_CHEST);
         blockStateModelGenerator.registerBuiltin(VariantChests.SPRUCE.getId().withPrefixedPath("block/"), Blocks.SPRUCE_PLANKS).includeWithoutItem(Vanilla.SPRUCE_CHEST);
         blockStateModelGenerator.registerBuiltin(VariantChests.WARPED.getId().withPrefixedPath("block/"), Blocks.WARPED_PLANKS).includeWithoutItem(Vanilla.WARPED_CHEST);
+
+        // Compatability
+        blockStateModelGenerator.registerBuiltinWithParticle(AdAstra.AA_GLACIAN_CHEST, new Identifier("ad_astra:block/glacian_planks"));
+        blockStateModelGenerator.registerBuiltinWithParticle(BeachParty.LDBP_PALM_CHEST, new Identifier("beachparty:block/palm_planks0"));
+        blockStateModelGenerator.registerBuiltinWithParticle(BetterArcheology.BA_ROTTEN_CHEST, new Identifier("betterarcheology:block/rotten_planks"));
+        blockStateModelGenerator.registerBuiltinWithParticle(DeeperAndDarker.DAD_ECHO_CHEST, new Identifier("deeperdarker:block/echo_planks"));
+        blockStateModelGenerator.registerBuiltinWithParticle(MineCells.MC_PUTRID_CHEST, new Identifier("minecells:block/putrid_planks"));
+        blockStateModelGenerator.registerBuiltinWithParticle(SnifferPlus.SP_STONE_PINE_CHEST, new Identifier("snifferplus:block/stone_pine_planks"));
+        blockStateModelGenerator.registerBuiltinWithParticle(TechReborn.TR_RUBBER_CHEST, new Identifier("techreborn:block/rubber_planks"));
+        blockStateModelGenerator.registerBuiltinWithParticle(Vinery.LDV_CHERRY_CHEST, new Identifier("vinery:block/cherry_planks"));
     }
 
     @Override
@@ -49,12 +60,22 @@ public class ModelGenerator extends FabricModelProvider {
         chestItem(itemModelGenerator, Vanilla.SPRUCE_CHEST);
         chestItem(itemModelGenerator, Vanilla.WARPED_CHEST);
 
+        chestItem(itemModelGenerator, AdAstra.AA_GLACIAN_CHEST);
+        chestItem(itemModelGenerator, BeachParty.LDBP_PALM_CHEST);
+        chestItem(itemModelGenerator, BetterArcheology.BA_ROTTEN_CHEST);
+        chestItem(itemModelGenerator, DeeperAndDarker.DAD_ECHO_CHEST);
+        chestItem(itemModelGenerator, MineCells.MC_PUTRID_CHEST);
+        chestItem(itemModelGenerator, SnifferPlus.SP_STONE_PINE_CHEST);
+        chestItem(itemModelGenerator, TechReborn.TR_RUBBER_CHEST);
+        chestItem(itemModelGenerator, Vinery.LDV_CHERRY_CHEST);
+
     }
 
     public final void chestItem(ItemModelGenerator itemModelGenerator, Block block) {
         TextureMap textureMap = new TextureMap().put(ModTextureKey.CHEST, getId(block));
         ModModel.CHEST.upload(ModelIds.getItemModelId(block.asItem()), textureMap, itemModelGenerator.writer);
     }
+
     public static Identifier getId(Block block) {
         Identifier identifier = Registries.BLOCK.getId(block);
         return identifier.withPrefixedPath("chest/");

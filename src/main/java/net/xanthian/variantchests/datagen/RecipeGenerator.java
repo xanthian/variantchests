@@ -34,9 +34,18 @@ public class RecipeGenerator extends FabricRecipeProvider {
         offerChestRecipe(exporter, Vanilla.DARK_OAK_CHEST, Items.DARK_OAK_PLANKS);
         offerChestRecipe(exporter, Vanilla.JUNGLE_CHEST, Items.JUNGLE_PLANKS);
         offerChestRecipe(exporter, Vanilla.MANGROVE_CHEST, Items.MANGROVE_PLANKS);
-        //offerChestRecipe(exporter, Vanilla.OAK_CHEST, Items.OAK_PLANKS);
         offerChestRecipe(exporter, Vanilla.SPRUCE_CHEST, Items.SPRUCE_PLANKS);
         offerChestRecipe(exporter, Vanilla.WARPED_CHEST, Items.WARPED_PLANKS);
+
+        //too lazy to write so generate and amend :)
+        //offerChestRecipe(withConditions(exporter, DefaultResourceConditions.allModsLoaded("ad_astra")), AdAstra.AA_GLACIAN_CHEST, Registries.ITEM.get(new Identifier("ad_astra:glacian_planks")));
+        //offerChestRecipe(withConditions(exporter, DefaultResourceConditions.allModsLoaded("beachparty")), BeachParty.LDBP_PALM_CHEST, Items.ACACIA_PLANKS);
+        //offerChestRecipe(withConditions(exporter, DefaultResourceConditions.allModsLoaded("betterarcheology")), BetterArcheology.BA_ROTTEN_CHEST, Items.ACACIA_PLANKS);
+        //offerChestRecipe(withConditions(exporter, DefaultResourceConditions.allModsLoaded("deeperdarker")), DeeperAndDarker.DAD_ECHO_CHEST, Items.ACACIA_PLANKS);
+        //offerChestRecipe(withConditions(exporter, DefaultResourceConditions.allModsLoaded("minecells")), MineCells.MC_PUTRID_CHEST, Items.ACACIA_PLANKS);
+        //offerChestRecipe(withConditions(exporter, DefaultResourceConditions.allModsLoaded("snifferplus")), SnifferPlus.SP_STONE_PINE_CHEST, Items.ACACIA_PLANKS);
+        //offerChestRecipe(withConditions(exporter, DefaultResourceConditions.allModsLoaded("techreborn")), TechReborn.TR_RUBBER_CHEST, Items.ACACIA_PLANKS);
+        //offerChestRecipe(withConditions(exporter, DefaultResourceConditions.allModsLoaded("vinery")), Vinery.LDV_CHERRY_CHEST, Items.ACACIA_PLANKS);
 
         offerCustomChestBoatRecipe(exporter,Items.ACACIA_CHEST_BOAT, Items.ACACIA_BOAT, ModItemTags.CHESTS);
         offerCustomChestBoatRecipe(exporter,Items.BAMBOO_CHEST_RAFT, Items.BAMBOO_RAFT, ModItemTags.CHESTS);
@@ -47,7 +56,6 @@ public class RecipeGenerator extends FabricRecipeProvider {
         offerCustomChestBoatRecipe(exporter,Items.MANGROVE_CHEST_BOAT, Items.MANGROVE_BOAT, ModItemTags.CHESTS);
         offerCustomChestBoatRecipe(exporter,Items.OAK_CHEST_BOAT, Items.OAK_BOAT, ModItemTags.CHESTS);
         offerCustomChestBoatRecipe(exporter,Items.SPRUCE_CHEST_BOAT, Items.SPRUCE_BOAT, ModItemTags.CHESTS);
-
 
         // Chest Minecart
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.CHEST_MINECART, 1)

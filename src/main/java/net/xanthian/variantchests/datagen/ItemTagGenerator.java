@@ -39,7 +39,16 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
                     .add(Vanilla.MANGROVE_CHEST.asItem())
                     .add(Vanilla.OAK_CHEST.asItem())
                     .add(Vanilla.SPRUCE_CHEST.asItem())
-                    .add(Vanilla.WARPED_CHEST.asItem());
+                    .add(Vanilla.WARPED_CHEST.asItem())
+
+                    .addOptional(new Identifier("variantchests:aa_glacian_chest"))
+                    .addOptional(new Identifier("variantchests:ldbp_palm_chest"))
+                    .addOptional(new Identifier("variantchests:ba_rotten_chest"))
+                    .addOptional(new Identifier("variantchests:dad_echo_chest"))
+                    .addOptional(new Identifier("variantchests:mc_putrid_chest"))
+                    .addOptional(new Identifier("variantchests:sp_stone_pine_chest"))
+                    .addOptional(new Identifier("variantchests:tr_rubber_chest"))
+                    .addOptional(new Identifier("variantchests:ldv_cherry_chest"));
 
             getOrCreateTagBuilder(NON_FLAMMABLE_WOOD)
                     .add(Vanilla.CRIMSON_CHEST.asItem())
