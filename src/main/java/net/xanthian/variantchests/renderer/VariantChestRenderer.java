@@ -29,6 +29,8 @@ import net.xanthian.variantchests.block.VariantChestBlock;
 import net.xanthian.variantchests.block.VariantChests;
 import net.xanthian.variantchests.entity.VariantChestBlockEntity;
 
+import java.util.Locale;
+
 @Environment(EnvType.CLIENT)
 public class VariantChestRenderer extends ChestBlockEntityRenderer<VariantChestBlockEntity> {
 
@@ -48,7 +50,7 @@ public class VariantChestRenderer extends ChestBlockEntityRenderer<VariantChestB
     static {
         for (VariantChests type : VariantChests.values()) {
             int ordinal = type.ordinal();
-            String name = type.name().toLowerCase();
+            String name = type.name().toLowerCase(Locale.ROOT);
             single[ordinal] = getChestID(name + "_chest");
             left[ordinal] = getChestID(name + "_chest_left");
             right[ordinal] = getChestID(name + "_chest_right");

@@ -9,6 +9,8 @@ import net.xanthian.variantchests.Initialise;
 import net.xanthian.variantchests.entity.EntityInitialise;
 import net.xanthian.variantchests.entity.VariantChestBlockEntity;
 
+import java.util.Locale;
+
 public enum VariantChests {
 
     ACACIA,
@@ -65,6 +67,6 @@ public enum VariantChests {
     }
 
     public Identifier getId(){
-        return new Identifier(Initialise.MOD_ID, this.name().toLowerCase() + "_chest");
+        return new Identifier(Initialise.MOD_ID, this.name().toLowerCase(Locale.ROOT) + "_chest");
     }
 }
