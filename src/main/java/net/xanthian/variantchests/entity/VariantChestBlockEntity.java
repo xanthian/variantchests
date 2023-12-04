@@ -4,7 +4,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.ChestBlockEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
-
 import net.xanthian.variantchests.block.VariantChests;
 
 import java.util.Locale;
@@ -24,7 +23,7 @@ public class VariantChestBlockEntity extends ChestBlockEntity {
 
     @Override
     protected Text getContainerName() {
-            return Text.translatable("container.variantchests." + chestType.name().toLowerCase(Locale.ROOT) + "_chest");
+        return Text.translatable("container.variantchests." + chestType.name().toLowerCase(Locale.ROOT) + "_chest");
 
     }
 }

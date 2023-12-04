@@ -62,7 +62,7 @@ public class VariantChestRenderer extends ChestBlockEntityRenderer<VariantChestB
     }
 
     private SpriteIdentifier getChestTexture(VariantChestBlockEntity tile, ChestType type) {
-            return chooseMaterial(type, left[tile.getChestType().ordinal()], right[tile.getChestType().ordinal()], single[tile.getChestType().ordinal()]);
+        return chooseMaterial(type, left[tile.getChestType().ordinal()], right[tile.getChestType().ordinal()], single[tile.getChestType().ordinal()]);
     }
 
     public VariantChestRenderer(BlockEntityRendererFactory.Context context) {

@@ -2,22 +2,30 @@ package net.xanthian.variantchests.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
-
 import net.xanthian.variantchests.block.Vanilla;
 import net.xanthian.variantchests.block.VariantChests;
 import net.xanthian.variantchests.block.compatability.*;
 import net.xanthian.variantchests.util.ModModel;
 import net.xanthian.variantchests.util.ModTextureKey;
 
+import javax.swing.plaf.synth.Region;
+import java.util.Map;
+import java.util.function.BiFunction;
+import java.util.function.Function;
+
 public class ModelGenerator extends FabricModelProvider {
     public ModelGenerator(FabricDataOutput output) {
         super(output);
+    }
+
+    public static Identifier getId(Block block) {
+        Identifier identifier = Registries.BLOCK.getId(block);
+        return identifier.withPrefixedPath("chest/");
     }
 
     @Override
@@ -31,19 +39,27 @@ public class ModelGenerator extends FabricModelProvider {
         blockStateModelGenerator.registerBuiltin(VariantChests.DARK_OAK.getId().withPrefixedPath("block/"), Blocks.DARK_OAK_PLANKS).includeWithoutItem(Vanilla.DARK_OAK_CHEST);
         blockStateModelGenerator.registerBuiltin(VariantChests.JUNGLE.getId().withPrefixedPath("block/"), Blocks.JUNGLE_PLANKS).includeWithoutItem(Vanilla.JUNGLE_CHEST);
         blockStateModelGenerator.registerBuiltin(VariantChests.MANGROVE.getId().withPrefixedPath("block/"), Blocks.MANGROVE_PLANKS).includeWithoutItem(Vanilla.MANGROVE_CHEST);
-        blockStateModelGenerator.registerBuiltin(VariantChests.OAK.getId().withPrefixedPath("block/"), Blocks.OAK_PLANKS).includeWithoutItem(Vanilla.OAK_CHEST);
         blockStateModelGenerator.registerBuiltin(VariantChests.SPRUCE.getId().withPrefixedPath("block/"), Blocks.SPRUCE_PLANKS).includeWithoutItem(Vanilla.SPRUCE_CHEST);
         blockStateModelGenerator.registerBuiltin(VariantChests.WARPED.getId().withPrefixedPath("block/"), Blocks.WARPED_PLANKS).includeWithoutItem(Vanilla.WARPED_CHEST);
 
-        // Compatability
-        blockStateModelGenerator.registerBuiltinWithParticle(AdAstra.AA_GLACIAN_CHEST, new Identifier("ad_astra:block/glacian_planks"));
-        blockStateModelGenerator.registerBuiltinWithParticle(BeachParty.LDBP_PALM_CHEST, new Identifier("beachparty:block/palm_planks0"));
-        blockStateModelGenerator.registerBuiltinWithParticle(BetterArcheology.BA_ROTTEN_CHEST, new Identifier("betterarcheology:block/rotten_planks"));
-        blockStateModelGenerator.registerBuiltinWithParticle(DeeperAndDarker.DAD_ECHO_CHEST, new Identifier("deeperdarker:block/echo_planks"));
-        blockStateModelGenerator.registerBuiltinWithParticle(MineCells.MC_PUTRID_CHEST, new Identifier("minecells:block/putrid_planks"));
-        blockStateModelGenerator.registerBuiltinWithParticle(SnifferPlus.SP_STONE_PINE_CHEST, new Identifier("snifferplus:block/stone_pine_planks"));
-        blockStateModelGenerator.registerBuiltinWithParticle(TechReborn.TR_RUBBER_CHEST, new Identifier("techreborn:block/rubber_planks"));
-        blockStateModelGenerator.registerBuiltinWithParticle(Vinery.LDV_CHERRY_CHEST, new Identifier("vinery:block/cherry_planks"));
+        registerModel(blockStateModelGenerator, AdAstra.AA_CHESTS, "ad_astra", plankName -> plankName + "_planks");
+        registerModel(blockStateModelGenerator, BeachParty.LDBP_CHESTS, "beachparty", plankName -> plankName + "_planks0");
+        registerModel(blockStateModelGenerator, BetterArcheology.BA_CHESTS, "betterarcheology", plankName -> plankName + "_planks");
+        //registerModel(blockStateModelGenerator, Bewitchment.BW_CHESTS, "bewitchment", plankName -> plankName + "_planks");
+        //registerModel(blockStateModelGenerator, BiomeMakeover.BM_CHESTS, "biomemakeover", plankName -> plankName + "_planks");
+        //registerModel(blockStateModelGenerator, Blockus.BLS_CHESTS, "blockus", plankName -> plankName + "_planks");
+        //registerModel(blockStateModelGenerator, Botania.BOT_CHESTS, "botania", plankName -> plankName + "_planks");
+        //registerModel(blockStateModelGenerator, Cinderscapes.CS_CHESTS, "cinderscapes", plankName -> plankName + "_planks");
+        registerModel(blockStateModelGenerator, DeeperAndDarker.DAD_CHESTS, "deeperdarker", plankName -> plankName + "_planks");
+        //registerModel(blockStateModelGenerator, Desolation.DS_CHESTS, "desolation", plankName -> plankName + "_planks");
+        //registerModel(blockStateModelGenerator, EldritchEnd.EE_CHESTS, "eldritch_end", plankName -> plankName + "_planks");
+        registerModel(blockStateModelGenerator, MineCells.MC_CHESTS, "minecells", plankName -> plankName + "_planks");
+        //registerModel(blockStateModelGenerator, NaturesSpirit.NS_CHESTS, "natures_spirit", plankName -> plankName + "_planks");
+        //registerModel(blockStateModelGenerator, Promenade.PROM_CHESTS, "promenade", plankName -> plankName + "/planks");
+        registerModel(blockStateModelGenerator, RegionsUnexplored.RU_CHESTS, "regions_unexplored", plankName -> plankName + "_planks");
+        registerModel(blockStateModelGenerator, SnifferPlus.SP_CHESTS, "snifferplus", plankName -> plankName + "_planks");
+        registerModel(blockStateModelGenerator, TechReborn.TR_CHESTS, "techreborn", plankName -> plankName + "_planks");
+        registerModel(blockStateModelGenerator, Vinery.LDV_CHESTS, "vinery", plankName -> plankName + "_planks");
     }
 
     @Override
@@ -56,7 +72,6 @@ public class ModelGenerator extends FabricModelProvider {
         chestItem(itemModelGenerator, Vanilla.DARK_OAK_CHEST);
         chestItem(itemModelGenerator, Vanilla.JUNGLE_CHEST);
         chestItem(itemModelGenerator, Vanilla.MANGROVE_CHEST);
-        chestItem(itemModelGenerator, Vanilla.OAK_CHEST);
         chestItem(itemModelGenerator, Vanilla.SPRUCE_CHEST);
         chestItem(itemModelGenerator, Vanilla.WARPED_CHEST);
 
@@ -65,6 +80,11 @@ public class ModelGenerator extends FabricModelProvider {
         chestItem(itemModelGenerator, BetterArcheology.BA_ROTTEN_CHEST);
         chestItem(itemModelGenerator, DeeperAndDarker.DAD_ECHO_CHEST);
         chestItem(itemModelGenerator, MineCells.MC_PUTRID_CHEST);
+
+        for (Block block : RegionsUnexplored.RU_CHESTS.values()){
+            chestItem(itemModelGenerator, block);
+        }
+
         chestItem(itemModelGenerator, SnifferPlus.SP_STONE_PINE_CHEST);
         chestItem(itemModelGenerator, TechReborn.TR_RUBBER_CHEST);
         chestItem(itemModelGenerator, Vinery.LDV_CHERRY_CHEST);
@@ -76,8 +96,17 @@ public class ModelGenerator extends FabricModelProvider {
         ModModel.CHEST.upload(ModelIds.getItemModelId(block.asItem()), textureMap, itemModelGenerator.writer);
     }
 
-    public static Identifier getId(Block block) {
-        Identifier identifier = Registries.BLOCK.getId(block);
-        return identifier.withPrefixedPath("chest/");
+    public static void registerModel(BlockStateModelGenerator blockStateModelGenerator, Map<Identifier, Block> blockMap, String modId, Function<String, String> modelPathGenerator) {
+        for (Block chest : blockMap.values()) {
+            String blockName = chest.getTranslationKey();
+            int firstUnderscoreIndex = blockName.indexOf('_');
+            if (firstUnderscoreIndex != -1) {
+                String plankName = blockName.substring(firstUnderscoreIndex + 1, blockName.lastIndexOf("_chest"));
+                String modelPath = modId + ":block/" + modelPathGenerator.apply(plankName);
+                blockStateModelGenerator.registerBuiltinWithParticle(chest, new Identifier(modelPath));
+            } else {
+                System.out.println("Invalid block name format: " + blockName);
+            }
+        }
     }
 }

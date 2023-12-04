@@ -1,9 +1,7 @@
 package net.xanthian.variantchests.util;
 
 import net.fabricmc.fabric.api.registry.FuelRegistry;
-
 import net.fabricmc.loader.api.FabricLoader;
-
 import net.xanthian.variantchests.block.Vanilla;
 import net.xanthian.variantchests.block.compatability.*;
 
@@ -24,7 +22,7 @@ public class ModFuelRegistry {
         registry.add(Vanilla.DARK_OAK_CHEST, 300);
         registry.add(Vanilla.JUNGLE_CHEST, 300);
         registry.add(Vanilla.MANGROVE_CHEST, 300);
-        registry.add(Vanilla.OAK_CHEST, 300);
+        //registry.add(Vanilla.OAK_CHEST, 300);
         registry.add(Vanilla.SPRUCE_CHEST, 300);
 
         if (FabricLoader.getInstance().isModLoaded("ad_astra")) {
@@ -41,6 +39,48 @@ public class ModFuelRegistry {
         }
         if (FabricLoader.getInstance().isModLoaded("minecells")) {
             registry.add(MineCells.MC_PUTRID_CHEST, 300);
+        }
+        if (FabricLoader.getInstance().isModLoaded("regions_unexplored")) {
+            registry.add(RegionsUnexplored.RU_ALPHA_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_BAOBAB_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_BLACK_PAINTED_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_BLACKWOOD_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_BLUE_PAINTED_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_BROWN_PAINTED_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_CYAN_PAINTED_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_CYPRESS_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_EUCALYPTUS_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_GRAY_PAINTED_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_GREEN_PAINTED_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_JOSHUA_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_LARCH_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_LIGHT_BLUE_PAINTED_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_LIGHT_GRAY_PAINTED_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_LIME_PAINTED_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_MAGENTA_PAINTED_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_MAPLE_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_MAUVE_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_ORANGE_PAINTED_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_PALM_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_PINE_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_PINK_PAINTED_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_PURPLE_PAINTED_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_REDWOOD_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_RED_PAINTED_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_WHITE_PAINTED_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_WILLOW_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_YELLOW_PAINTED_CHEST, 300);
+
+            registry.add(RegionsUnexplored.RU_CHERRY_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_SCULKWOOD_CHEST, 300);
+
+            registry.add(RegionsUnexplored.RU_BLUE_BIOSHROOM_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_GREEN_BIOSHROOM_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_KAPOK_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_MAGNOLIA_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_PINK_BIOSHROOM_CHEST, 300);
+            registry.add(RegionsUnexplored.RU_SOCOTRA_CHEST, 300);
+
         }
         if (FabricLoader.getInstance().isModLoaded("snifferplus")) {
             registry.add(SnifferPlus.SP_STONE_PINE_CHEST, 300);

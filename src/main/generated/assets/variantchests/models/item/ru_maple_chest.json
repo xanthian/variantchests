@@ -1,0 +1,6 @@
+{
+  "parent": "variantchests:block/variantchest",
+  "textures": {
+    "chest": "variantchests:chest/ru_maple_chest"
+  }
+}

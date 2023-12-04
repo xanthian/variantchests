@@ -1,9 +1,8 @@
 package net.xanthian.variantchests.util;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-
 import net.fabricmc.loader.api.FabricLoader;
-
+import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -11,7 +10,6 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-
 import net.xanthian.variantchests.Initialise;
 import net.xanthian.variantchests.block.Vanilla;
 import net.xanthian.variantchests.block.compatability.*;
@@ -23,7 +21,7 @@ public class ModCreativeTab {
 
             FabricItemGroup.builder()
                     .displayName(Text.translatable("variantchests.itemgroup"))
-                    .icon(() -> new ItemStack(Vanilla.WARPED_CHEST))
+                    .icon(() -> new ItemStack(Vanilla.MANGROVE_CHEST))
                     .entries((context, entries) -> {
 
                         entries.add(Vanilla.ACACIA_CHEST);
@@ -53,6 +51,11 @@ public class ModCreativeTab {
                         if (FabricLoader.getInstance().isModLoaded("minecells")) {
                             entries.add(MineCells.MC_PUTRID_CHEST);
                         }
+                        if (FabricLoader.getInstance().isModLoaded("regions_unexplored")) {
+                            for (Block block : RegionsUnexplored.RU_CHESTS.values()) {
+                                entries.add(block);
+                            }
+                        }
                         if (FabricLoader.getInstance().isModLoaded("snifferplus")) {
                             entries.add(SnifferPlus.SP_STONE_PINE_CHEST);
                         }
@@ -63,7 +66,7 @@ public class ModCreativeTab {
                             entries.add(Vinery.LDV_CHERRY_CHEST);
                         }
                     })
-                    .build());
+                    .texture("variantchests.png").noRenderedName().build());
 
     public static void registerItemGroup() {
     }

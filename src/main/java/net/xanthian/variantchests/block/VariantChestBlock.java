@@ -7,9 +7,7 @@ import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-
 import net.xanthian.variantchests.entity.VariantChestBlockEntity;
-
 import org.jetbrains.annotations.Nullable;
 
 public class VariantChestBlock extends ChestBlock {
@@ -27,12 +25,13 @@ public class VariantChestBlock extends ChestBlock {
         return this.chestType.getBlockEntity(pos, state);
     }
 
-
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
         return world.isClient ? checkType(type, this.getExpectedEntityType(), VariantChestBlockEntity::clientTick) : null;
     }
 
-    public VariantChests getType(){return chestType;}
+    public VariantChests getType() {
+        return chestType;
+    }
 }
