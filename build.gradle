@@ -35,10 +35,10 @@ repositories {
 	maven { url "https://maven.blamejared.com"}
 	//maven {
 	//url = uri("https://maven.pkg.github.com/Lemonszz/taniwha")
-	// credentials {
-	//  username = apikeyProperties['gpr.user'] ?: System.getenv("USERNAME")
-	//    password = apikeyProperties['gpr.key'] ?: System.getenv("TOKEN")
-	// }
+	 //credentials {
+	  //username = apikeyProperties['gpr.user'] ?: System.getenv("USERNAME")
+	    //password = apikeyProperties['gpr.key'] ?: System.getenv("TOKEN")
+	 //}
 	//}
 }
 
@@ -111,7 +111,7 @@ dependencies {
 	modRuntimeOnly("curse.maven:blockus-312289:4745041") { transitive false }
 
 	// Botania
-	modImplementation "vazkii.botania:Botania-xplat:1.20.1-441"
+	modRuntimeOnly "vazkii.botania:Botania-xplat:1.20.1-441"
 	//modRuntimeOnly("maven.modrinth:pfjLUfGv:XiOSfzIW")
 
 	// Cinderscapes

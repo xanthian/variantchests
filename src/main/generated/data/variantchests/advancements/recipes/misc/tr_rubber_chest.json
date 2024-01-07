@@ -35,7 +35,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:tr_rubber_chest"
+        "recipe": "variantchests:tr_rubber_chest"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -48,7 +48,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:tr_rubber_chest"
+      "variantchests:tr_rubber_chest"
     ]
   },
   "sends_telemetry_event": false

@@ -35,7 +35,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:ldbp_palm_chest"
+        "recipe": "variantchests:ldbp_palm_chest"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -48,7 +48,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:ldbp_palm_chest"
+      "variantchests:ldbp_palm_chest"
     ]
   },
   "sends_telemetry_event": false

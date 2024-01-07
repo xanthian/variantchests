@@ -35,7 +35,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:ru_magnolia_chest"
+        "recipe": "variantchests:ru_magnolia_chest"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -48,7 +48,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:ru_magnolia_chest"
+      "variantchests:ru_magnolia_chest"
     ]
   },
   "sends_telemetry_event": false

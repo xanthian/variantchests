@@ -76,13 +76,12 @@ public class LangFileGenerator extends FabricLanguageProvider {
         translationBuilder.add("container.variantchests.spruce_chest", "Spruce Chest");
         translationBuilder.add("container.variantchests.warped_chest", "Warped Chest");
 
-
-
-
         translationBuilder.add(AdAstra.AA_GLACIAN_CHEST, "Glacian Chest");
         translationBuilder.add(BeachParty.LDBP_PALM_CHEST, "Palm Chest");
         translationBuilder.add(BetterArcheology.BA_ROTTEN_CHEST, "Rotten Chest");
+        registerTranslations(translationBuilder, Cinderscapes.CS_CHESTS);
         translationBuilder.add(DeeperAndDarker.DAD_ECHO_CHEST, "Echo Chest");
+        translationBuilder.add(Desolation.DS_CHARRED_CHEST, "Charred Chest");
         translationBuilder.add(MineCells.MC_PUTRID_CHEST, "Putrid Chest");
         translationBuilder.add(SnifferPlus.SP_STONE_PINE_CHEST, "Stone Pine Chest");
         translationBuilder.add(TechReborn.TR_RUBBER_CHEST, "Rubber Chest");
@@ -92,7 +91,9 @@ public class LangFileGenerator extends FabricLanguageProvider {
         translationBuilder.add("container.variantchests.aa_glacian_chest", "Glacian Chest");
         translationBuilder.add("container.variantchests.ldbp_palm_chest", "Palm Chest");
         translationBuilder.add("container.variantchests.ba_rotten_chest", "Rotten Chest");
+        registerContainerTranslations(translationBuilder, Cinderscapes.CS_CHESTS);
         translationBuilder.add("container.variantchests.dad_echo_chest", "Echo Chest");
+        translationBuilder.add("container.variantchests.ds_charred_chest", "Charred Chest");
         translationBuilder.add("container.variantchests.mc_putrid_chest", "Putrid Chest");
         translationBuilder.add("container.variantchests.sp_stone_pine_chest", "Stone Pine Chest");
         translationBuilder.add("container.variantchests.tr_rubber_chest", "Rubber Chest");

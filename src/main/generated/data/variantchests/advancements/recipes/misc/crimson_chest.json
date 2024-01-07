@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:crimson_chest"
+        "recipe": "variantchests:crimson_chest"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:crimson_chest"
+      "variantchests:crimson_chest"
     ]
   },
   "sends_telemetry_event": false

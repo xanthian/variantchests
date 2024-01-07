@@ -25,7 +25,10 @@ public class EntityInitialise {
     public static BlockEntityType<VariantChestBlockEntity> AA_GLACIAN_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> LDBP_PALM_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> BA_ROTTEN_CHEST;
+    public static BlockEntityType<VariantChestBlockEntity> CS_SCORCHED_CHEST;
+    public static BlockEntityType<VariantChestBlockEntity> CS_UMBRAL_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> DAD_ECHO_CHEST;
+    public static BlockEntityType<VariantChestBlockEntity> DS_CHARRED_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> MC_PUTRID_CHEST;
 
     public static BlockEntityType<VariantChestBlockEntity> RU_ALPHA_CHEST;
@@ -101,8 +104,17 @@ public class EntityInitialise {
         BA_ROTTEN_CHEST = register(VariantChests.BA_ROTTEN, BetterArcheology.BA_ROTTEN_CHEST);
     }
 
+    public static void registerCSBlockEntities() {
+        CS_SCORCHED_CHEST = register(VariantChests.CS_SCORCHED, Cinderscapes.CS_SCORCHED_CHEST);
+        CS_UMBRAL_CHEST = register(VariantChests.CS_UMBRAL, Cinderscapes.CS_UMBRAL_CHEST);
+    }
+
     public static void registerDADBlockEntities() {
         DAD_ECHO_CHEST = register(VariantChests.DAD_ECHO, DeeperAndDarker.DAD_ECHO_CHEST);
+    }
+
+    public static void registerDSBlockEntities() {
+        DS_CHARRED_CHEST = register(VariantChests.DS_CHARRED, Desolation.DS_CHARRED_CHEST);
     }
 
     public static void registerMCBlockEntities() {

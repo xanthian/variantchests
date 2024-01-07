@@ -206,6 +206,14 @@
       "required": false
     },
     {
+      "id": "variantchests:cs_umbral_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:cs_scorched_chest",
+      "required": false
+    },
+    {
       "id": "variantchests:aa_glacian_chest",
       "required": false
     },
@@ -219,6 +227,10 @@
     },
     {
       "id": "variantchests:dad_echo_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:ds_charred_chest",
       "required": false
     },
     {

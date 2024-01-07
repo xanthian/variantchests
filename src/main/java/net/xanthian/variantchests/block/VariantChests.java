@@ -26,6 +26,9 @@ public enum VariantChests {
     AA_GLACIAN,
     LDBP_PALM,
     BA_ROTTEN,
+    CS_SCORCHED,
+    CS_UMBRAL,
+    DS_CHARRED,
     DAD_ECHO,
     MC_PUTRID,
 
@@ -94,7 +97,10 @@ public enum VariantChests {
             case AA_GLACIAN -> EntityInitialise.AA_GLACIAN_CHEST;
             case LDBP_PALM -> EntityInitialise.LDBP_PALM_CHEST;
             case BA_ROTTEN -> EntityInitialise.BA_ROTTEN_CHEST;
+            case CS_SCORCHED -> EntityInitialise.CS_SCORCHED_CHEST;
+            case CS_UMBRAL -> EntityInitialise.CS_UMBRAL_CHEST;
             case DAD_ECHO -> EntityInitialise.DAD_ECHO_CHEST;
+            case DS_CHARRED -> EntityInitialise.DS_CHARRED_CHEST;
             case MC_PUTRID -> EntityInitialise.MC_PUTRID_CHEST;
 
             case RU_ALPHA -> EntityInitialise.RU_ALPHA_CHEST;

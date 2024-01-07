@@ -1,0 +1,42 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "packedup"
+      ]
+    }
+  ],
+  "type": "supermartijn642corelib:conditional",
+  "conditions": [
+    {
+      "type": "packedup:is_backpack_enabled",
+      "backpack": "basic"
+    }
+  ],
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "ABA",
+      "CDC",
+      "CCC"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:stick"
+      },
+      "B": {
+        "item": "minecraft:string"
+      },
+      "C": {
+        "item": "minecraft:leather"
+      },
+      "D": {
+        "tag": "c:wooden_chests"
+      }
+    },
+    "result": {
+      "item": "packedup:basicbackpack"
+    }
+  }
+}

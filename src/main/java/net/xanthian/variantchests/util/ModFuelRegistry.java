@@ -22,7 +22,6 @@ public class ModFuelRegistry {
         registry.add(Vanilla.DARK_OAK_CHEST, 300);
         registry.add(Vanilla.JUNGLE_CHEST, 300);
         registry.add(Vanilla.MANGROVE_CHEST, 300);
-        //registry.add(Vanilla.OAK_CHEST, 300);
         registry.add(Vanilla.SPRUCE_CHEST, 300);
 
         if (FabricLoader.getInstance().isModLoaded("ad_astra")) {
@@ -34,8 +33,15 @@ public class ModFuelRegistry {
         if (FabricLoader.getInstance().isModLoaded("betterarcheology")) {
             registry.add(BetterArcheology.BA_ROTTEN_CHEST, 300);
         }
+        if (FabricLoader.getInstance().isModLoaded("cinderscapes")) {
+            registry.add(Cinderscapes.CS_SCORCHED_CHEST, 300);
+            registry.add(Cinderscapes.CS_UMBRAL_CHEST, 300);
+        }
         if (FabricLoader.getInstance().isModLoaded("deeperdarker")) {
             registry.add(DeeperAndDarker.DAD_ECHO_CHEST, 300);
+        }
+        if (FabricLoader.getInstance().isModLoaded("desolation")) {
+            registry.add(Desolation.DS_CHARRED_CHEST, 300);
         }
         if (FabricLoader.getInstance().isModLoaded("minecells")) {
             registry.add(MineCells.MC_PUTRID_CHEST, 300);

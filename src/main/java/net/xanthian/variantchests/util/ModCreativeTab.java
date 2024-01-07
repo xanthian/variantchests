@@ -20,7 +20,7 @@ public class ModCreativeTab {
             new Identifier(Initialise.MOD_ID, "variantchests"),
 
             FabricItemGroup.builder()
-                    .displayName(Text.translatable("variantchests.itemgroup"))
+                    .displayName(Text.literal("Variant Chests"))
                     .icon(() -> new ItemStack(Vanilla.MANGROVE_CHEST))
                     .entries((context, entries) -> {
 
@@ -45,8 +45,16 @@ public class ModCreativeTab {
                         if (FabricLoader.getInstance().isModLoaded("betterarcheology")) {
                             entries.add(BetterArcheology.BA_ROTTEN_CHEST);
                         }
+                        if (FabricLoader.getInstance().isModLoaded("cinderscapes")) {
+                            for (Block block : Cinderscapes.CS_CHESTS.values()) {
+                                entries.add(block);
+                            }
+                        }
                         if (FabricLoader.getInstance().isModLoaded("deeperdarker")) {
                             entries.add(DeeperAndDarker.DAD_ECHO_CHEST);
+                        }
+                        if (FabricLoader.getInstance().isModLoaded("desolation")) {
+                            entries.add(Desolation.DS_CHARRED_CHEST);
                         }
                         if (FabricLoader.getInstance().isModLoaded("minecells")) {
                             entries.add(MineCells.MC_PUTRID_CHEST);

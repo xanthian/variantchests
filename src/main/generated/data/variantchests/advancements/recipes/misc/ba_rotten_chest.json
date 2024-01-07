@@ -35,7 +35,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:ba_rotten_chest"
+        "recipe": "variantchests:ba_rotten_chest"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -48,7 +48,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:ba_rotten_chest"
+      "variantchests:ba_rotten_chest"
     ]
   },
   "sends_telemetry_event": false

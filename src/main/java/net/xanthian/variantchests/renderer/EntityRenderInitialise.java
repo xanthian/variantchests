@@ -33,8 +33,17 @@ public class EntityRenderInitialise {
         BlockEntityRendererFactories.register(EntityInitialise.BA_ROTTEN_CHEST, VariantChestRenderer::new);
     }
 
+    public static void registerCSChests() {
+        BlockEntityRendererFactories.register(EntityInitialise.CS_SCORCHED_CHEST, VariantChestRenderer::new);
+        BlockEntityRendererFactories.register(EntityInitialise.CS_UMBRAL_CHEST, VariantChestRenderer::new);
+    }
+
     public static void registerDADChests() {
         BlockEntityRendererFactories.register(EntityInitialise.DAD_ECHO_CHEST, VariantChestRenderer::new);
+    }
+
+    public static void registerDSChests() {
+        BlockEntityRendererFactories.register(EntityInitialise.DS_CHARRED_CHEST, VariantChestRenderer::new);
     }
 
     public static void registerMCChests() {

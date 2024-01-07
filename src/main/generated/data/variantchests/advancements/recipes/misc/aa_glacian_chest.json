@@ -35,7 +35,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:aa_glacian_chest"
+        "recipe": "variantchests:aa_glacian_chest"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -48,7 +48,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:aa_glacian_chest"
+      "variantchests:aa_glacian_chest"
     ]
   },
   "sends_telemetry_event": false

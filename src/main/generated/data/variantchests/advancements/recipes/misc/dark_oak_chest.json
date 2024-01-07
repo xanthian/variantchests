@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:dark_oak_chest"
+        "recipe": "variantchests:dark_oak_chest"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:dark_oak_chest"
+      "variantchests:dark_oak_chest"
     ]
   },
   "sends_telemetry_event": false

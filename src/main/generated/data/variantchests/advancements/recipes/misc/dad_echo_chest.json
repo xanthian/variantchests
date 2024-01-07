@@ -35,7 +35,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:dad_echo_chest"
+        "recipe": "variantchests:dad_echo_chest"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -48,7 +48,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:dad_echo_chest"
+      "variantchests:dad_echo_chest"
     ]
   },
   "sends_telemetry_event": false

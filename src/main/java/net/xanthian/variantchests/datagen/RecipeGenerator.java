@@ -32,8 +32,8 @@ public class RecipeGenerator extends FabricRecipeProvider {
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, chest, 1)
                 .input('P', plank)
                 .pattern("PPP").pattern("P P").pattern("PPP")
-                .criterion("has_planks", VanillaRecipeProvider.conditionsFromItem(plank))
-                .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(chest)));
+                .criterion("has_planks", FabricRecipeProvider.conditionsFromItem(plank))
+                .offerTo(exporter);
     }
 
     public static void offerCustomChestBoatRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible chestboat, ItemConvertible boat, TagKey<Item> chest) {
@@ -64,9 +64,9 @@ public class RecipeGenerator extends FabricRecipeProvider {
         //registerChestRecipe(exporter, BiomeMakeover.BM_CHESTS, "biomemakeover");
         //registerChestRecipe(exporter, Blockus.BLS_CHESTS, "blockus");
         //registerChestRecipe(exporter, Botania.BOT_CHESTS, "botania");
-        //registerChestRecipe(exporter, Cinderscapes.CS_CHESTS, "cinderscapes");
+        registerChestRecipe(exporter, Cinderscapes.CS_CHESTS, "cinderscapes");
         registerChestRecipe(exporter, DeeperAndDarker.DAD_CHESTS, "deeperdarker");
-        //registerChestRecipe(exporter, Desolation.DS_CHESTS, "desolation");
+        registerChestRecipe(exporter, Desolation.DS_CHESTS, "desolation");
         //registerChestRecipe(exporter, EldritchEnd.EE_CHESTS, "eldritch_end");
         registerChestRecipe(exporter, MineCells.MC_CHESTS, "minecells");
         //registerChestRecipe(exporter, NaturesSpirit.NS_CHESTS, "natures_spirit");

@@ -35,7 +35,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:ru_joshua_chest"
+        "recipe": "variantchests:ru_joshua_chest"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -48,7 +48,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:ru_joshua_chest"
+      "variantchests:ru_joshua_chest"
     ]
   },
   "sends_telemetry_event": false

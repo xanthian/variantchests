@@ -1,0 +1,24 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "blockus"
+      ]
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "chest_boat",
+  "ingredients": [
+    {
+      "tag": "c:wooden_chests"
+    },
+    {
+      "item": "blockus:raw_bamboo_raft"
+    }
+  ],
+  "result": {
+    "item": "blockus:raw_bamboo_chest_raft"
+  }
+}

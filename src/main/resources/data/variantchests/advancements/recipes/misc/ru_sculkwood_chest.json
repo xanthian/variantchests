@@ -26,7 +26,7 @@
         "items": [
           {
             "items": [
-              "regions_unexplored:sculkwood_planks"
+              "minecraft:air"
             ]
           }
         ]
@@ -35,7 +35,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:ru_sculkwood_chest"
+        "recipe": "variantchests:ru_sculkwood_chest"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -48,7 +48,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:ru_sculkwood_chest"
+      "variantchests:ru_sculkwood_chest"
     ]
   },
   "sends_telemetry_event": false

@@ -23,7 +23,9 @@ public class ClientInitialise implements ClientModInitializer {
         ifModLoaded("ad_astra", EntityRenderInitialise::registerAAChests);
         ifModLoaded("beachparty", EntityRenderInitialise::registerLDBPChests);
         ifModLoaded("betterarcheology", EntityRenderInitialise::registerBAChests);
+        ifModLoaded("cinderscapes", EntityRenderInitialise::registerCSChests);
         ifModLoaded("deeperdarker", EntityRenderInitialise::registerDADChests);
+        ifModLoaded("desolation", EntityRenderInitialise::registerDSChests);
         ifModLoaded("minecells", EntityRenderInitialise::registerMCChests);
         ifModLoaded("regions_unexplored", EntityRenderInitialise::registerRUChests);
         ifModLoaded("snifferplus", EntityRenderInitialise::registerSPChests);

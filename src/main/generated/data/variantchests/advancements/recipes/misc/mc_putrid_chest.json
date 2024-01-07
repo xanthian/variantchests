@@ -35,7 +35,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:mc_putrid_chest"
+        "recipe": "variantchests:mc_putrid_chest"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -48,7 +48,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:mc_putrid_chest"
+      "variantchests:mc_putrid_chest"
     ]
   },
   "sends_telemetry_event": false

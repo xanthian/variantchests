@@ -1,10 +1,8 @@
 package net.xanthian.variantchests.renderer;
 
 import it.unimi.dsi.fastutil.ints.Int2IntFunction;
-
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-
 import net.minecraft.block.*;
 import net.minecraft.block.entity.ChestBlockEntity;
 import net.minecraft.block.enums.ChestType;
@@ -23,7 +21,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.RotationAxis;
 import net.minecraft.world.World;
-
 import net.xanthian.variantchests.Initialise;
 import net.xanthian.variantchests.block.VariantChestBlock;
 import net.xanthian.variantchests.block.VariantChests;
@@ -34,15 +31,6 @@ import java.util.Locale;
 @Environment(EnvType.CLIENT)
 public class VariantChestRenderer extends ChestBlockEntityRenderer<VariantChestBlockEntity> {
 
-    private final ModelPart singleChestLid;
-    private final ModelPart singleChestBase;
-    private final ModelPart singleChestLock;
-    private final ModelPart doubleChestLeftBase;
-    private final ModelPart doubleChestLeftLid;
-    private final ModelPart doubleChestLeftLock;
-    private final ModelPart doubleChestRightBase;
-    private final ModelPart doubleChestRightLid;
-    private final ModelPart doubleChestRightLock;
     public static SpriteIdentifier[] single = new SpriteIdentifier[VariantChests.values().length];
     public static SpriteIdentifier[] left = new SpriteIdentifier[VariantChests.values().length];
     public static SpriteIdentifier[] right = new SpriteIdentifier[VariantChests.values().length];
@@ -57,13 +45,15 @@ public class VariantChestRenderer extends ChestBlockEntityRenderer<VariantChestB
         }
     }
 
-    public static SpriteIdentifier getChestID(String path) {
-        return new SpriteIdentifier(TexturedRenderLayers.CHEST_ATLAS_TEXTURE, new Identifier(Initialise.MOD_ID, "entity/chest/" + path)) {};
-    }
-
-    private SpriteIdentifier getChestTexture(VariantChestBlockEntity tile, ChestType type) {
-        return chooseMaterial(type, left[tile.getChestType().ordinal()], right[tile.getChestType().ordinal()], single[tile.getChestType().ordinal()]);
-    }
+    private final ModelPart singleChestLid;
+    private final ModelPart singleChestBase;
+    private final ModelPart singleChestLock;
+    private final ModelPart doubleChestLeftBase;
+    private final ModelPart doubleChestLeftLid;
+    private final ModelPart doubleChestLeftLock;
+    private final ModelPart doubleChestRightBase;
+    private final ModelPart doubleChestRightLid;
+    private final ModelPart doubleChestRightLock;
 
     public VariantChestRenderer(BlockEntityRendererFactory.Context context) {
         super(context);
@@ -81,11 +71,27 @@ public class VariantChestRenderer extends ChestBlockEntityRenderer<VariantChestB
         this.doubleChestRightLock = modelPart3.getChild("lock");
     }
 
+    public static SpriteIdentifier getChestID(String path) {
+        return new SpriteIdentifier(TexturedRenderLayers.CHEST_ATLAS_TEXTURE, new Identifier(Initialise.MOD_ID, "entity/chest/" + path));
+    }
+
+    public static SpriteIdentifier chooseMaterial(ChestType type, SpriteIdentifier left, SpriteIdentifier right, SpriteIdentifier single) {
+        return switch (type) {
+            case LEFT -> left;
+            case RIGHT -> right;
+            default -> single;
+        };
+    }
+
+    private SpriteIdentifier getChestTexture(VariantChestBlockEntity tile, ChestType type) {
+        return chooseMaterial(type, left[tile.getChestType().ordinal()], right[tile.getChestType().ordinal()], single[tile.getChestType().ordinal()]);
+    }
+
     public void render(VariantChestBlockEntity entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
         World world = entity.getWorld();
 
         BlockState blockState = world != null ? entity.getCachedState() : Blocks.CHEST.getDefaultState().with(ChestBlock.FACING, Direction.SOUTH);
-        ChestType chestType = blockState.contains(ChestBlock.CHEST_TYPE) ? (ChestType)blockState.get(ChestBlock.CHEST_TYPE) : ChestType.SINGLE;
+        ChestType chestType = blockState.contains(ChestBlock.CHEST_TYPE) ? (ChestType) blockState.get(ChestBlock.CHEST_TYPE) : ChestType.SINGLE;
         Block block = blockState.getBlock();
 
         if (block instanceof VariantChestBlock) {
@@ -102,13 +108,13 @@ public class VariantChestRenderer extends ChestBlockEntityRenderer<VariantChestB
             if (world == null) {
                 propertySource = DoubleBlockProperties.PropertyRetriever::getFallback;
             } else {
-                propertySource = ((VariantChestBlock)block).getBlockEntitySource(blockState, world, entity.getPos(), true);
+                propertySource = ((VariantChestBlock) block).getBlockEntitySource(blockState, world, entity.getPos(), true);
             }
 
             float g = propertySource.apply(ChestBlock.getAnimationProgressRetriever(entity)).get(tickDelta);
             g = 1.0F - g;
             g = 1.0F - g * g * g;
-            int i = ((Int2IntFunction)propertySource.apply(new LightmapCoordinatesRetriever())).applyAsInt(light);
+            int i = ((Int2IntFunction) propertySource.apply(new LightmapCoordinatesRetriever())).applyAsInt(light);
             SpriteIdentifier spriteIdentifier = getChestTexture(entity, chestType);
             VertexConsumer vertexConsumer = spriteIdentifier.getVertexConsumer(vertexConsumers, RenderLayer::getEntityCutout);
             if (bl2) {
@@ -131,14 +137,5 @@ public class VariantChestRenderer extends ChestBlockEntityRenderer<VariantChestB
         lid.render(matrices, vertices, light, overlay);
         latch.render(matrices, vertices, light, overlay);
         base.render(matrices, vertices, light, overlay);
-    }
-
-
-    public static SpriteIdentifier chooseMaterial(ChestType type, SpriteIdentifier left, SpriteIdentifier right, SpriteIdentifier single) {
-        return switch (type) {
-            case LEFT -> left;
-            case RIGHT -> right;
-            default -> single;
-        };
     }
 }

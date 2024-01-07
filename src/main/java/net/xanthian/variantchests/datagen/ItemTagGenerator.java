@@ -10,6 +10,7 @@ import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.xanthian.variantchests.block.Vanilla;
+import net.xanthian.variantchests.block.compatability.Cinderscapes;
 import net.xanthian.variantchests.block.compatability.RegionsUnexplored;
 import net.xanthian.variantchests.util.ModItemTags;
 
@@ -29,12 +30,14 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
 
         registerTags(Vanilla.VANILLA_CHESTS);
         registerTags(RegionsUnexplored.RU_CHESTS);
+        registerTags(Cinderscapes.CS_CHESTS);
 
         getOrCreateTagBuilder(ModItemTags.CHESTS)
                 .addOptional(new Identifier("variantchests:aa_glacian_chest"))
                 .addOptional(new Identifier("variantchests:ldbp_palm_chest"))
                 .addOptional(new Identifier("variantchests:ba_rotten_chest"))
                 .addOptional(new Identifier("variantchests:dad_echo_chest"))
+                .addOptional(new Identifier("variantchests:ds_charred_chest"))
                 .addOptional(new Identifier("variantchests:mc_putrid_chest"))
                 .addOptional(new Identifier("variantchests:sp_stone_pine_chest"))
                 .addOptional(new Identifier("variantchests:tr_rubber_chest"))

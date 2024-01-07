@@ -1,0 +1,42 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "travelersbackpack"
+      ]
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+
+  "pattern":
+  [
+    "CCC",
+    "ADA",
+    "CCC"
+  ],
+
+  "key":
+  {
+    "D":
+    {
+      "tag": "c:wooden_chests"
+    },
+
+    "C":
+    {
+      "item": "minecraft:leather"
+    },
+
+    "A":
+    {
+      "item": "travelersbackpack:backpack_tank"
+    }
+  },
+
+  "result":
+  {
+    "item": "travelersbackpack:blank_upgrade",
+    "count": 4
+  }
+}

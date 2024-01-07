@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:spruce_chest"
+        "recipe": "variantchests:spruce_chest"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:spruce_chest"
+      "variantchests:spruce_chest"
     ]
   },
   "sends_telemetry_event": false
