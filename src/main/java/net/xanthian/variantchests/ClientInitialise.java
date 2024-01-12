@@ -27,6 +27,7 @@ public class ClientInitialise implements ClientModInitializer {
         ifModLoaded("deeperdarker", EntityRenderInitialise::registerDADChests);
         ifModLoaded("desolation", EntityRenderInitialise::registerDSChests);
         ifModLoaded("minecells", EntityRenderInitialise::registerMCChests);
+        ifModLoaded("natures_spirit", EntityRenderInitialise::registerNSChests);
         ifModLoaded("regions_unexplored", EntityRenderInitialise::registerRUChests);
         ifModLoaded("snifferplus", EntityRenderInitialise::registerSPChests);
         ifModLoaded("techreborn", EntityRenderInitialise::registerTRChests);

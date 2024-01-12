@@ -31,6 +31,22 @@ public class EntityInitialise {
     public static BlockEntityType<VariantChestBlockEntity> DS_CHARRED_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> MC_PUTRID_CHEST;
 
+    public static BlockEntityType<VariantChestBlockEntity> NS_ASPEN_CHEST;
+    public static BlockEntityType<VariantChestBlockEntity> NS_CEDAR_CHEST;
+    public static BlockEntityType<VariantChestBlockEntity> NS_COCONUT_CHEST;
+    public static BlockEntityType<VariantChestBlockEntity> NS_CYPRESS_CHEST;
+    public static BlockEntityType<VariantChestBlockEntity> NS_FIR_CHEST;
+    public static BlockEntityType<VariantChestBlockEntity> NS_GHAF_CHEST;
+    public static BlockEntityType<VariantChestBlockEntity> NS_JOSHUA_CHEST;
+    public static BlockEntityType<VariantChestBlockEntity> NS_LARCH_CHEST;
+    public static BlockEntityType<VariantChestBlockEntity> NS_MAPLE_CHEST;
+    public static BlockEntityType<VariantChestBlockEntity> NS_OLIVE_CHEST;
+    public static BlockEntityType<VariantChestBlockEntity> NS_PALO_VERDE_CHEST;
+    public static BlockEntityType<VariantChestBlockEntity> NS_REDWOOD_CHEST;
+    public static BlockEntityType<VariantChestBlockEntity> NS_SUGI_CHEST;
+    public static BlockEntityType<VariantChestBlockEntity> NS_WILLOW_CHEST;
+    public static BlockEntityType<VariantChestBlockEntity> NS_WISTERIA_CHEST;
+
     public static BlockEntityType<VariantChestBlockEntity> RU_ALPHA_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> RU_BAOBAB_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> RU_BLACK_PAINTED_CHEST;
@@ -119,6 +135,24 @@ public class EntityInitialise {
 
     public static void registerMCBlockEntities() {
         MC_PUTRID_CHEST = register(VariantChests.MC_PUTRID, MineCells.MC_PUTRID_CHEST);
+    }
+
+    public static void registerNSBlockEntities() {
+        NS_ASPEN_CHEST = register(VariantChests.NS_ASPEN, NaturesSpirit.NS_ASPEN_CHEST);
+        NS_CEDAR_CHEST = register(VariantChests.NS_CEDAR, NaturesSpirit.NS_CEDAR_CHEST);
+        NS_COCONUT_CHEST = register(VariantChests.NS_COCONUT, NaturesSpirit.NS_COCONUT_CHEST);
+        NS_CYPRESS_CHEST = register(VariantChests.NS_CYPRESS, NaturesSpirit.NS_CYPRESS_CHEST);
+        NS_FIR_CHEST = register(VariantChests.NS_FIR, NaturesSpirit.NS_FIR_CHEST);
+        NS_GHAF_CHEST = register(VariantChests.NS_GHAF, NaturesSpirit.NS_GHAF_CHEST);
+        NS_JOSHUA_CHEST = register(VariantChests.NS_JOSHUA, NaturesSpirit.NS_JOSHUA_CHEST);
+        NS_LARCH_CHEST = register(VariantChests.NS_LARCH, NaturesSpirit.NS_LARCH_CHEST);
+        NS_MAPLE_CHEST = register(VariantChests.NS_MAPLE, NaturesSpirit.NS_MAPLE_CHEST);
+        NS_OLIVE_CHEST = register(VariantChests.NS_OLIVE, NaturesSpirit.NS_OLIVE_CHEST);
+        NS_PALO_VERDE_CHEST = register(VariantChests.NS_PALO_VERDE, NaturesSpirit.NS_PALO_VERDE_CHEST);
+        NS_REDWOOD_CHEST = register(VariantChests.NS_REDWOOD, NaturesSpirit.NS_REDWOOD_CHEST);
+        NS_SUGI_CHEST = register(VariantChests.NS_SUGI, NaturesSpirit.NS_SUGI_CHEST);
+        NS_WILLOW_CHEST = register(VariantChests.NS_WILLOW, NaturesSpirit.NS_WILLOW_CHEST);
+        NS_WISTERIA_CHEST = register(VariantChests.NS_WISTERIA, NaturesSpirit.NS_WISTERIA_CHEST);
     }
 
     public static void registerRUBlockEntities() {

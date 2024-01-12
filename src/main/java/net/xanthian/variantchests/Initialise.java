@@ -35,6 +35,7 @@ public class Initialise implements ModInitializer {
         ifModLoaded("deeperdarker", DeeperAndDarker::registerChests, EntityInitialise::registerDADBlockEntities);
         ifModLoaded("desolation", Desolation::registerChests, EntityInitialise::registerDSBlockEntities);
         ifModLoaded("minecells", MineCells::registerChests, EntityInitialise::registerMCBlockEntities);
+        ifModLoaded("natures_spirit", NaturesSpirit::registerChests, EntityInitialise::registerNSBlockEntities);
         ifModLoaded("regions_unexplored", RegionsUnexplored::registerChests, EntityInitialise::registerRUBlockEntities);
         ifModLoaded("snifferplus", SnifferPlus::registerChests, EntityInitialise::registerSPBlockEntities);
         ifModLoaded("techreborn", TechReborn::registerChests, EntityInitialise::registerTRBlockEntities);

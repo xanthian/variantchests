@@ -50,6 +50,24 @@ public class EntityRenderInitialise {
         BlockEntityRendererFactories.register(EntityInitialise.MC_PUTRID_CHEST, VariantChestRenderer::new);
     }
 
+    public static void registerNSChests() {
+        BlockEntityRendererFactories.register(EntityInitialise.NS_ASPEN_CHEST, VariantChestRenderer::new);
+        BlockEntityRendererFactories.register(EntityInitialise.NS_CEDAR_CHEST, VariantChestRenderer::new);
+        BlockEntityRendererFactories.register(EntityInitialise.NS_COCONUT_CHEST, VariantChestRenderer::new);
+        BlockEntityRendererFactories.register(EntityInitialise.NS_CYPRESS_CHEST, VariantChestRenderer::new);
+        BlockEntityRendererFactories.register(EntityInitialise.NS_FIR_CHEST, VariantChestRenderer::new);
+        BlockEntityRendererFactories.register(EntityInitialise.NS_GHAF_CHEST, VariantChestRenderer::new);
+        BlockEntityRendererFactories.register(EntityInitialise.NS_JOSHUA_CHEST, VariantChestRenderer::new);
+        BlockEntityRendererFactories.register(EntityInitialise.NS_LARCH_CHEST, VariantChestRenderer::new);
+        BlockEntityRendererFactories.register(EntityInitialise.NS_MAPLE_CHEST, VariantChestRenderer::new);
+        BlockEntityRendererFactories.register(EntityInitialise.NS_OLIVE_CHEST, VariantChestRenderer::new);
+        BlockEntityRendererFactories.register(EntityInitialise.NS_PALO_VERDE_CHEST, VariantChestRenderer::new);
+        BlockEntityRendererFactories.register(EntityInitialise.NS_REDWOOD_CHEST, VariantChestRenderer::new);
+        BlockEntityRendererFactories.register(EntityInitialise.NS_SUGI_CHEST, VariantChestRenderer::new);
+        BlockEntityRendererFactories.register(EntityInitialise.NS_WILLOW_CHEST, VariantChestRenderer::new);
+        BlockEntityRendererFactories.register(EntityInitialise.NS_WISTERIA_CHEST, VariantChestRenderer::new);
+    }
+
     public static void registerRUChests() {
         BlockEntityRendererFactories.register(EntityInitialise.RU_ALPHA_CHEST, VariantChestRenderer::new);
         BlockEntityRendererFactories.register(EntityInitialise.RU_BAOBAB_CHEST, VariantChestRenderer::new);

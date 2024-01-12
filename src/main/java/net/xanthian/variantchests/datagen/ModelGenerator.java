@@ -60,7 +60,6 @@ public class ModelGenerator extends FabricModelProvider {
         registerModel(blockStateModelGenerator, AdAstra.AA_CHESTS, "ad_astra", plankName -> plankName + "_planks");
         registerModel(blockStateModelGenerator, BeachParty.LDBP_CHESTS, "beachparty", plankName -> plankName + "_planks0");
         registerModel(blockStateModelGenerator, BetterArcheology.BA_CHESTS, "betterarcheology", plankName -> plankName + "_planks");
-        //registerModel(blockStateModelGenerator, Bewitchment.BW_CHESTS, "bewitchment", plankName -> plankName + "_planks");
         //registerModel(blockStateModelGenerator, BiomeMakeover.BM_CHESTS, "biomemakeover", plankName -> plankName + "_planks");
         //registerModel(blockStateModelGenerator, Blockus.BLS_CHESTS, "blockus", plankName -> plankName + "_planks");
         //registerModel(blockStateModelGenerator, Botania.BOT_CHESTS, "botania", plankName -> plankName + "_planks");
@@ -69,7 +68,7 @@ public class ModelGenerator extends FabricModelProvider {
         registerModel(blockStateModelGenerator, Desolation.DS_CHESTS, "desolation", plankName -> plankName + "_planks");
         //registerModel(blockStateModelGenerator, EldritchEnd.EE_CHESTS, "eldritch_end", plankName -> plankName + "_planks");
         registerModel(blockStateModelGenerator, MineCells.MC_CHESTS, "minecells", plankName -> plankName + "_planks");
-        //registerModel(blockStateModelGenerator, NaturesSpirit.NS_CHESTS, "natures_spirit", plankName -> plankName + "_planks");
+        registerModel(blockStateModelGenerator, NaturesSpirit.NS_CHESTS, "natures_spirit", plankName -> plankName + "_planks");
         //registerModel(blockStateModelGenerator, Promenade.PROM_CHESTS, "promenade", plankName -> plankName + "/planks");
         registerModel(blockStateModelGenerator, RegionsUnexplored.RU_CHESTS, "regions_unexplored", plankName -> plankName + "_planks");
         registerModel(blockStateModelGenerator, SnifferPlus.SP_CHESTS, "snifferplus", plankName -> plankName + "_planks");
@@ -99,6 +98,9 @@ public class ModelGenerator extends FabricModelProvider {
         chestItem(itemModelGenerator, DeeperAndDarker.DAD_ECHO_CHEST);
         chestItem(itemModelGenerator, Desolation.DS_CHARRED_CHEST);
         chestItem(itemModelGenerator, MineCells.MC_PUTRID_CHEST);
+        for (Block block : NaturesSpirit.NS_CHESTS.values()) {
+            chestItem(itemModelGenerator, block);
+        }
         for (Block block : RegionsUnexplored.RU_CHESTS.values()) {
             chestItem(itemModelGenerator, block);
         }

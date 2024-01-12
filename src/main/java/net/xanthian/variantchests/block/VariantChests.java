@@ -32,6 +32,22 @@ public enum VariantChests {
     DAD_ECHO,
     MC_PUTRID,
 
+    NS_ASPEN,
+    NS_CEDAR,
+    NS_COCONUT,
+    NS_CYPRESS,
+    NS_FIR,
+    NS_GHAF,
+    NS_JOSHUA,
+    NS_LARCH,
+    NS_MAPLE,
+    NS_OLIVE,
+    NS_PALO_VERDE,
+    NS_REDWOOD,
+    NS_SUGI,
+    NS_WILLOW,
+    NS_WISTERIA,
+
     RU_ALPHA,
     RU_BAOBAB,
     RU_BLACK_PAINTED,
@@ -102,6 +118,22 @@ public enum VariantChests {
             case DAD_ECHO -> EntityInitialise.DAD_ECHO_CHEST;
             case DS_CHARRED -> EntityInitialise.DS_CHARRED_CHEST;
             case MC_PUTRID -> EntityInitialise.MC_PUTRID_CHEST;
+
+            case NS_ASPEN -> EntityInitialise.NS_ASPEN_CHEST;
+            case NS_CEDAR -> EntityInitialise.NS_CEDAR_CHEST;
+            case NS_COCONUT -> EntityInitialise.NS_COCONUT_CHEST;
+            case NS_CYPRESS -> EntityInitialise.NS_CYPRESS_CHEST;
+            case NS_FIR -> EntityInitialise.NS_FIR_CHEST;
+            case NS_GHAF -> EntityInitialise.NS_GHAF_CHEST;
+            case NS_JOSHUA -> EntityInitialise.NS_JOSHUA_CHEST;
+            case NS_LARCH -> EntityInitialise.NS_LARCH_CHEST;
+            case NS_MAPLE -> EntityInitialise.NS_MAPLE_CHEST;
+            case NS_OLIVE -> EntityInitialise.NS_OLIVE_CHEST;
+            case NS_PALO_VERDE -> EntityInitialise.NS_PALO_VERDE_CHEST;
+            case NS_REDWOOD -> EntityInitialise.NS_REDWOOD_CHEST;
+            case NS_SUGI -> EntityInitialise.NS_SUGI_CHEST;
+            case NS_WILLOW -> EntityInitialise.NS_WILLOW_CHEST;
+            case NS_WISTERIA -> EntityInitialise.NS_WISTERIA_CHEST;
 
             case RU_ALPHA -> EntityInitialise.RU_ALPHA_CHEST;
             case RU_BAOBAB -> EntityInitialise.RU_BAOBAB_CHEST;

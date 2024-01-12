@@ -59,6 +59,11 @@ public class ModCreativeTab {
                         if (FabricLoader.getInstance().isModLoaded("minecells")) {
                             entries.add(MineCells.MC_PUTRID_CHEST);
                         }
+                        if (FabricLoader.getInstance().isModLoaded("natures_spirit")) {
+                            for (Block block : NaturesSpirit.NS_CHESTS.values()) {
+                                entries.add(block);
+                            }
+                        }
                         if (FabricLoader.getInstance().isModLoaded("regions_unexplored")) {
                             for (Block block : RegionsUnexplored.RU_CHESTS.values()) {
                                 entries.add(block);

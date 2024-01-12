@@ -2,6 +2,7 @@ package net.xanthian.variantchests.util;
 
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.block.Block;
 import net.xanthian.variantchests.block.Vanilla;
 import net.xanthian.variantchests.block.compatability.*;
 
@@ -45,6 +46,11 @@ public class ModFuelRegistry {
         }
         if (FabricLoader.getInstance().isModLoaded("minecells")) {
             registry.add(MineCells.MC_PUTRID_CHEST, 300);
+        }
+        if (FabricLoader.getInstance().isModLoaded("natures_spirit")) {
+            for (Block block : NaturesSpirit.NS_CHESTS.values()) {
+                registry.add(block, 300);
+            }
         }
         if (FabricLoader.getInstance().isModLoaded("regions_unexplored")) {
             registry.add(RegionsUnexplored.RU_ALPHA_CHEST, 300);

@@ -11,6 +11,7 @@ import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.xanthian.variantchests.block.Vanilla;
 import net.xanthian.variantchests.block.compatability.Cinderscapes;
+import net.xanthian.variantchests.block.compatability.NaturesSpirit;
 import net.xanthian.variantchests.block.compatability.RegionsUnexplored;
 import net.xanthian.variantchests.util.ModItemTags;
 
@@ -29,8 +30,10 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
     protected void configure(RegistryWrapper.WrapperLookup arg) {
 
         registerTags(Vanilla.VANILLA_CHESTS);
-        registerTags(RegionsUnexplored.RU_CHESTS);
+
         registerTags(Cinderscapes.CS_CHESTS);
+        registerTags(NaturesSpirit.NS_CHESTS);
+        registerTags(RegionsUnexplored.RU_CHESTS);
 
         getOrCreateTagBuilder(ModItemTags.CHESTS)
                 .addOptional(new Identifier("variantchests:aa_glacian_chest"))

@@ -42,6 +42,74 @@
       "required": false
     },
     {
+      "id": "variantchests:cs_umbral_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:cs_scorched_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:ns_cedar_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:ns_cypress_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:ns_maple_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:ns_redwood_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:ns_fir_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:ns_joshua_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:ns_wisteria_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:ns_sugi_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:ns_olive_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:ns_ghaf_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:ns_coconut_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:ns_aspen_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:ns_palo_verde_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:ns_larch_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:ns_willow_chest",
+      "required": false
+    },
+    {
       "id": "variantchests:ru_lime_painted_chest",
       "required": false
     },
@@ -203,14 +271,6 @@
     },
     {
       "id": "variantchests:ru_yellow_bioshroom_chest",
-      "required": false
-    },
-    {
-      "id": "variantchests:cs_umbral_chest",
-      "required": false
-    },
-    {
-      "id": "variantchests:cs_scorched_chest",
       "required": false
     },
     {

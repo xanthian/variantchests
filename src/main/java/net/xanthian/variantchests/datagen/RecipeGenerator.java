@@ -60,7 +60,6 @@ public class RecipeGenerator extends FabricRecipeProvider {
         registerChestRecipe(exporter, AdAstra.AA_CHESTS, "ad_astra");
         registerChestRecipe(exporter, BeachParty.LDBP_CHESTS, "beachparty");
         registerChestRecipe(exporter, BetterArcheology.BA_CHESTS, "betterarcheology");
-        //registerChestRecipe(exporter, Bewitchment.BW_CHESTS, "bewitchment");
         //registerChestRecipe(exporter, BiomeMakeover.BM_CHESTS, "biomemakeover");
         //registerChestRecipe(exporter, Blockus.BLS_CHESTS, "blockus");
         //registerChestRecipe(exporter, Botania.BOT_CHESTS, "botania");
@@ -69,7 +68,7 @@ public class RecipeGenerator extends FabricRecipeProvider {
         registerChestRecipe(exporter, Desolation.DS_CHESTS, "desolation");
         //registerChestRecipe(exporter, EldritchEnd.EE_CHESTS, "eldritch_end");
         registerChestRecipe(exporter, MineCells.MC_CHESTS, "minecells");
-        //registerChestRecipe(exporter, NaturesSpirit.NS_CHESTS, "natures_spirit");
+        registerChestRecipe(exporter, NaturesSpirit.NS_CHESTS, "natures_spirit");
         //registerChestRecipe(exporter, Promenade.PROM_CHESTS, "promenade");
         registerChestRecipe(exporter, RegionsUnexplored.RU_CHESTS, "regions_unexplored");
         //registerChestRecipe(exporter, SnifferPlus.SP_CHESTS, "snifferplus");

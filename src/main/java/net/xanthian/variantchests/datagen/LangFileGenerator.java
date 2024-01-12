@@ -83,6 +83,7 @@ public class LangFileGenerator extends FabricLanguageProvider {
         translationBuilder.add(DeeperAndDarker.DAD_ECHO_CHEST, "Echo Chest");
         translationBuilder.add(Desolation.DS_CHARRED_CHEST, "Charred Chest");
         translationBuilder.add(MineCells.MC_PUTRID_CHEST, "Putrid Chest");
+        registerTranslations(translationBuilder, NaturesSpirit.NS_CHESTS);
         translationBuilder.add(SnifferPlus.SP_STONE_PINE_CHEST, "Stone Pine Chest");
         translationBuilder.add(TechReborn.TR_RUBBER_CHEST, "Rubber Chest");
         translationBuilder.add(Vinery.LDV_CHERRY_CHEST, "Cherry Chest");
@@ -95,6 +96,7 @@ public class LangFileGenerator extends FabricLanguageProvider {
         translationBuilder.add("container.variantchests.dad_echo_chest", "Echo Chest");
         translationBuilder.add("container.variantchests.ds_charred_chest", "Charred Chest");
         translationBuilder.add("container.variantchests.mc_putrid_chest", "Putrid Chest");
+        registerContainerTranslations(translationBuilder, NaturesSpirit.NS_CHESTS);
         translationBuilder.add("container.variantchests.sp_stone_pine_chest", "Stone Pine Chest");
         translationBuilder.add("container.variantchests.tr_rubber_chest", "Rubber Chest");
         translationBuilder.add("container.variantchests.ldv_cherry_chest", "Cherry Chest");
