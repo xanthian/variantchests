@@ -10,9 +10,7 @@ import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.xanthian.variantchests.block.Vanilla;
-import net.xanthian.variantchests.block.compatability.Cinderscapes;
-import net.xanthian.variantchests.block.compatability.NaturesSpirit;
-import net.xanthian.variantchests.block.compatability.RegionsUnexplored;
+import net.xanthian.variantchests.block.compatability.*;
 import net.xanthian.variantchests.util.ModItemTags;
 
 import java.util.Map;
@@ -31,8 +29,11 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
 
         registerTags(Vanilla.VANILLA_CHESTS);
 
+        registerTags(BiomeMakeover.BM_CHESTS);
         registerTags(Cinderscapes.CS_CHESTS);
+        registerTags(Ecologics.ECO_CHESTS);
         registerTags(NaturesSpirit.NS_CHESTS);
+        registerTags(Promenade.PROM_CHESTS);
         registerTags(RegionsUnexplored.RU_CHESTS);
 
         getOrCreateTagBuilder(ModItemTags.CHESTS)
@@ -47,6 +48,7 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
                 .addOptional(new Identifier("variantchests:ldv_cherry_chest"));
 
         getOrCreateTagBuilder(ItemTags.NON_FLAMMABLE_WOOD)
+                .addOptional(new Identifier("variantchests:prom_dark_amaranth_chest"))
                 .addOptional(new Identifier("variantchests:ru_brimwood_chest"))
                 .addOptional(new Identifier("variantchests:ru_cobalt_chest"))
                 .addOptional(new Identifier("variantchests:ru_dead_chest"))

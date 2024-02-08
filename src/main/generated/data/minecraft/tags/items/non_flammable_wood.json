@@ -2,6 +2,10 @@
   "replace": false,
   "values": [
     {
+      "id": "variantchests:prom_dark_amaranth_chest",
+      "required": false
+    },
+    {
       "id": "variantchests:ru_brimwood_chest",
       "required": false
     },

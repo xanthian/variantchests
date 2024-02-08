@@ -1,0 +1,6 @@
+{
+  "parent": "variantchests:block/variantchest",
+  "textures": {
+    "chest": "variantchests:chest/bm_blighted_balsa_chest"
+  }
+}

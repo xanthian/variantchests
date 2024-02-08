@@ -22,15 +22,23 @@ public class EntityInitialise {
     public static BlockEntityType<VariantChestBlockEntity> MANGROVE_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> WARPED_CHEST;
 
+
     public static BlockEntityType<VariantChestBlockEntity> AA_GLACIAN_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> LDBP_PALM_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> BA_ROTTEN_CHEST;
+    public static BlockEntityType<VariantChestBlockEntity> BM_ANCIENT_OAK_CHEST;
+    public static BlockEntityType<VariantChestBlockEntity> BM_BLIGHTED_BALSA_CHEST;
+    public static BlockEntityType<VariantChestBlockEntity> BM_SWAMP_CYPRESS_CHEST;
+    public static BlockEntityType<VariantChestBlockEntity> BM_WILLOW_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> CS_SCORCHED_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> CS_UMBRAL_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> DAD_ECHO_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> DS_CHARRED_CHEST;
+    public static BlockEntityType<VariantChestBlockEntity> ECO_AZALEA_CHEST;
+    public static BlockEntityType<VariantChestBlockEntity> ECO_COCONUT_CHEST;
+    public static BlockEntityType<VariantChestBlockEntity> ECO_FLOWERING_AZALEA_CHEST;
+    public static BlockEntityType<VariantChestBlockEntity> ECO_WALNUT_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> MC_PUTRID_CHEST;
-
     public static BlockEntityType<VariantChestBlockEntity> NS_ASPEN_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> NS_CEDAR_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> NS_COCONUT_CHEST;
@@ -46,7 +54,10 @@ public class EntityInitialise {
     public static BlockEntityType<VariantChestBlockEntity> NS_SUGI_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> NS_WILLOW_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> NS_WISTERIA_CHEST;
-
+    public static BlockEntityType<VariantChestBlockEntity> PROM_DARK_AMARANTH_CHEST;
+    public static BlockEntityType<VariantChestBlockEntity> PROM_MAPLE_CHEST;
+    public static BlockEntityType<VariantChestBlockEntity> PROM_PALM_CHEST;
+    public static BlockEntityType<VariantChestBlockEntity> PROM_SAKURA_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> RU_ALPHA_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> RU_BAOBAB_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> RU_BLACK_PAINTED_CHEST;
@@ -77,10 +88,8 @@ public class EntityInitialise {
     public static BlockEntityType<VariantChestBlockEntity> RU_WHITE_PAINTED_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> RU_WILLOW_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> RU_YELLOW_PAINTED_CHEST;
-
     public static BlockEntityType<VariantChestBlockEntity> RU_CHERRY_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> RU_SCULKWOOD_CHEST;
-
     public static BlockEntityType<VariantChestBlockEntity> RU_BLUE_BIOSHROOM_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> RU_BRIMWOOD_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> RU_COBALT_CHEST;
@@ -90,7 +99,6 @@ public class EntityInitialise {
     public static BlockEntityType<VariantChestBlockEntity> RU_PINK_BIOSHROOM_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> RU_SOCOTRA_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> RU_YELLOW_BIOSHROOM_CHEST;
-
     public static BlockEntityType<VariantChestBlockEntity> SP_STONE_PINE_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> TR_RUBBER_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> LDV_CHERRY_CHEST;
@@ -120,6 +128,13 @@ public class EntityInitialise {
         BA_ROTTEN_CHEST = register(VariantChests.BA_ROTTEN, BetterArcheology.BA_ROTTEN_CHEST);
     }
 
+    public static void registerBMBlockEntities() {
+        BM_ANCIENT_OAK_CHEST = register(VariantChests.BM_ANCIENT_OAK, BiomeMakeover.BM_ANCIENT_OAK_CHEST);
+        BM_BLIGHTED_BALSA_CHEST = register(VariantChests.BM_BLIGHTED_BALSA, BiomeMakeover.BM_BLIGHTED_BALSA_CHEST);
+        BM_SWAMP_CYPRESS_CHEST = register(VariantChests.BM_SWAMP_CYPRESS, BiomeMakeover.BM_SWAMP_CYPRESS_CHEST);
+        BM_WILLOW_CHEST = register(VariantChests.BM_WILLOW, BiomeMakeover.BM_WILLOW_CHEST);
+    }
+
     public static void registerCSBlockEntities() {
         CS_SCORCHED_CHEST = register(VariantChests.CS_SCORCHED, Cinderscapes.CS_SCORCHED_CHEST);
         CS_UMBRAL_CHEST = register(VariantChests.CS_UMBRAL, Cinderscapes.CS_UMBRAL_CHEST);
@@ -131,6 +146,13 @@ public class EntityInitialise {
 
     public static void registerDSBlockEntities() {
         DS_CHARRED_CHEST = register(VariantChests.DS_CHARRED, Desolation.DS_CHARRED_CHEST);
+    }
+
+    public static void registerECOBlockEntities() {
+        ECO_AZALEA_CHEST = register(VariantChests.ECO_AZALEA, Ecologics.ECO_AZALEA_CHEST);
+        ECO_COCONUT_CHEST = register(VariantChests.ECO_COCONUT, Ecologics.ECO_COCONUT_CHEST);
+        ECO_FLOWERING_AZALEA_CHEST = register(VariantChests.ECO_FLOWERING_AZALEA, Ecologics.ECO_FLOWERING_AZALEA_CHEST);
+        ECO_WALNUT_CHEST = register(VariantChests.ECO_WALNUT, Ecologics.ECO_WALNUT_CHEST);
     }
 
     public static void registerMCBlockEntities() {
@@ -153,6 +175,13 @@ public class EntityInitialise {
         NS_SUGI_CHEST = register(VariantChests.NS_SUGI, NaturesSpirit.NS_SUGI_CHEST);
         NS_WILLOW_CHEST = register(VariantChests.NS_WILLOW, NaturesSpirit.NS_WILLOW_CHEST);
         NS_WISTERIA_CHEST = register(VariantChests.NS_WISTERIA, NaturesSpirit.NS_WISTERIA_CHEST);
+    }
+
+    public static void registerPROMBlockEntities() {
+        PROM_DARK_AMARANTH_CHEST = register(VariantChests.PROM_DARK_AMARANTH, Promenade.PROM_DARK_AMARANTH_CHEST);
+        PROM_MAPLE_CHEST = register(VariantChests.PROM_MAPLE, Promenade.PROM_MAPLE_CHEST);
+        PROM_PALM_CHEST = register(VariantChests.PROM_PALM, Promenade.PROM_PALM_CHEST);
+        PROM_SAKURA_CHEST = register(VariantChests.PROM_SAKURA, Promenade.PROM_SAKURA_CHEST);
     }
 
     public static void registerRUBlockEntities() {

@@ -31,11 +31,14 @@ public class Initialise implements ModInitializer {
         ifModLoaded("ad_astra", AdAstra::registerChests, EntityInitialise::registerAABlockEntities);
         ifModLoaded("beachparty", BeachParty::registerChests, EntityInitialise::registerLDBPBlockEntities);
         ifModLoaded("betterarcheology", BetterArcheology::registerChests, EntityInitialise::registerBABlockEntities);
+        ifModLoaded("biomemakeover", BiomeMakeover::registerChests, EntityInitialise::registerBMBlockEntities);
         ifModLoaded("cinderscapes", Cinderscapes::registerChests, EntityInitialise::registerCSBlockEntities);
         ifModLoaded("deeperdarker", DeeperAndDarker::registerChests, EntityInitialise::registerDADBlockEntities);
         ifModLoaded("desolation", Desolation::registerChests, EntityInitialise::registerDSBlockEntities);
+        ifModLoaded("ecologics", Ecologics::registerChests, EntityInitialise::registerECOBlockEntities);
         ifModLoaded("minecells", MineCells::registerChests, EntityInitialise::registerMCBlockEntities);
         ifModLoaded("natures_spirit", NaturesSpirit::registerChests, EntityInitialise::registerNSBlockEntities);
+        ifModLoaded("promenade", Promenade::registerChests, EntityInitialise::registerPROMBlockEntities);
         ifModLoaded("regions_unexplored", RegionsUnexplored::registerChests, EntityInitialise::registerRUBlockEntities);
         ifModLoaded("snifferplus", SnifferPlus::registerChests, EntityInitialise::registerSPBlockEntities);
         ifModLoaded("techreborn", TechReborn::registerChests, EntityInitialise::registerTRBlockEntities);

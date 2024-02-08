@@ -42,11 +42,43 @@
       "required": false
     },
     {
+      "id": "variantchests:bm_swamp_cypress_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:bm_ancient_oak_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:bm_blighted_balsa_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:bm_willow_chest",
+      "required": false
+    },
+    {
       "id": "variantchests:cs_umbral_chest",
       "required": false
     },
     {
       "id": "variantchests:cs_scorched_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:eco_flowering_azalea_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:eco_coconut_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:eco_walnut_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:eco_azalea_chest",
       "required": false
     },
     {
@@ -107,6 +139,22 @@
     },
     {
       "id": "variantchests:ns_willow_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:prom_palm_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:prom_maple_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:prom_dark_amaranth_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:prom_sakura_chest",
       "required": false
     },
     {

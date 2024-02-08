@@ -45,6 +45,11 @@ public class ModCreativeTab {
                         if (FabricLoader.getInstance().isModLoaded("betterarcheology")) {
                             entries.add(BetterArcheology.BA_ROTTEN_CHEST);
                         }
+                        if (FabricLoader.getInstance().isModLoaded("biomemakeover")) {
+                            for (Block block : BiomeMakeover.BM_CHESTS.values()) {
+                                entries.add(block);
+                            }
+                        }
                         if (FabricLoader.getInstance().isModLoaded("cinderscapes")) {
                             for (Block block : Cinderscapes.CS_CHESTS.values()) {
                                 entries.add(block);
@@ -56,11 +61,21 @@ public class ModCreativeTab {
                         if (FabricLoader.getInstance().isModLoaded("desolation")) {
                             entries.add(Desolation.DS_CHARRED_CHEST);
                         }
+                        if (FabricLoader.getInstance().isModLoaded("ecologics")) {
+                            for (Block block : Ecologics.ECO_CHESTS.values()) {
+                                entries.add(block);
+                            }
+                        }
                         if (FabricLoader.getInstance().isModLoaded("minecells")) {
                             entries.add(MineCells.MC_PUTRID_CHEST);
                         }
                         if (FabricLoader.getInstance().isModLoaded("natures_spirit")) {
                             for (Block block : NaturesSpirit.NS_CHESTS.values()) {
+                                entries.add(block);
+                            }
+                        }
+                        if (FabricLoader.getInstance().isModLoaded("promenade")) {
+                            for (Block block : Promenade.PROM_CHESTS.values()) {
                                 entries.add(block);
                             }
                         }

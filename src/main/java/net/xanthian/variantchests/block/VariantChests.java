@@ -26,10 +26,22 @@ public enum VariantChests {
     AA_GLACIAN,
     LDBP_PALM,
     BA_ROTTEN,
+
+    BM_ANCIENT_OAK,
+    BM_BLIGHTED_BALSA,
+    BM_SWAMP_CYPRESS,
+    BM_WILLOW,
+
     CS_SCORCHED,
     CS_UMBRAL,
     DS_CHARRED,
     DAD_ECHO,
+
+    ECO_AZALEA,
+    ECO_COCONUT,
+    ECO_FLOWERING_AZALEA,
+    ECO_WALNUT,
+
     MC_PUTRID,
 
     NS_ASPEN,
@@ -47,6 +59,11 @@ public enum VariantChests {
     NS_SUGI,
     NS_WILLOW,
     NS_WISTERIA,
+
+    PROM_DARK_AMARANTH,
+    PROM_MAPLE,
+    PROM_PALM,
+    PROM_SAKURA,
 
     RU_ALPHA,
     RU_BAOBAB,
@@ -113,10 +130,22 @@ public enum VariantChests {
             case AA_GLACIAN -> EntityInitialise.AA_GLACIAN_CHEST;
             case LDBP_PALM -> EntityInitialise.LDBP_PALM_CHEST;
             case BA_ROTTEN -> EntityInitialise.BA_ROTTEN_CHEST;
+
+            case BM_ANCIENT_OAK -> EntityInitialise.BM_ANCIENT_OAK_CHEST;
+            case BM_BLIGHTED_BALSA -> EntityInitialise.BM_BLIGHTED_BALSA_CHEST;
+            case BM_SWAMP_CYPRESS -> EntityInitialise.BM_SWAMP_CYPRESS_CHEST;
+            case BM_WILLOW -> EntityInitialise.BM_WILLOW_CHEST;
+
             case CS_SCORCHED -> EntityInitialise.CS_SCORCHED_CHEST;
             case CS_UMBRAL -> EntityInitialise.CS_UMBRAL_CHEST;
             case DAD_ECHO -> EntityInitialise.DAD_ECHO_CHEST;
             case DS_CHARRED -> EntityInitialise.DS_CHARRED_CHEST;
+
+            case ECO_AZALEA -> EntityInitialise.ECO_AZALEA_CHEST;
+            case ECO_COCONUT -> EntityInitialise.ECO_COCONUT_CHEST;
+            case ECO_FLOWERING_AZALEA -> EntityInitialise.ECO_FLOWERING_AZALEA_CHEST;
+            case ECO_WALNUT -> EntityInitialise.ECO_WALNUT_CHEST;
+
             case MC_PUTRID -> EntityInitialise.MC_PUTRID_CHEST;
 
             case NS_ASPEN -> EntityInitialise.NS_ASPEN_CHEST;
@@ -134,6 +163,11 @@ public enum VariantChests {
             case NS_SUGI -> EntityInitialise.NS_SUGI_CHEST;
             case NS_WILLOW -> EntityInitialise.NS_WILLOW_CHEST;
             case NS_WISTERIA -> EntityInitialise.NS_WISTERIA_CHEST;
+
+            case PROM_DARK_AMARANTH -> EntityInitialise.PROM_DARK_AMARANTH_CHEST;
+            case PROM_MAPLE -> EntityInitialise.PROM_MAPLE_CHEST;
+            case PROM_PALM -> EntityInitialise.PROM_PALM_CHEST;
+            case PROM_SAKURA -> EntityInitialise.PROM_SAKURA_CHEST;
 
             case RU_ALPHA -> EntityInitialise.RU_ALPHA_CHEST;
             case RU_BAOBAB -> EntityInitialise.RU_BAOBAB_CHEST;

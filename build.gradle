@@ -10,9 +10,9 @@ archivesBaseName = project.archives_base_name
 version = project.mod_version
 group = project.maven_group
 
-//def apikeyPropertiesFile = rootProject.file("secrets/secrets.properties");
+def apikeyPropertiesFile = rootProject.file("secrets/secrets.properties");
 def apikeyProperties = new Properties()
-//apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
+apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
 repositories {
 	mavenCentral()
 	maven { url "https://maven.terraformersmc.com/" } // Required for Mod Menu and Terraform APIs
@@ -33,13 +33,13 @@ repositories {
 	maven { url "https://maven.jamieswhiteshirt.com/libs-release" }
 	maven { url "https://maven.parchmentmc.org" }
 	maven { url "https://jitpack.io" }
-	//maven {
-	//url = uri("https://maven.pkg.github.com/Lemonszz/taniwha")
-	//credentials {
-	//username = apikeyProperties['gpr.user'] ?: System.getenv("USERNAME")
-	//password = apikeyProperties['gpr.key'] ?: System.getenv("TOKEN")
-	//}
-	//}
+	maven {
+	url = uri("https://maven.pkg.github.com/Lemonszz/taniwha")
+	credentials {
+	username = apikeyProperties['gpr.user'] ?: System.getenv("USERNAME")
+	password = apikeyProperties['gpr.key'] ?: System.getenv("TOKEN")
+	}
+	}
 }
 
 loom {
@@ -91,31 +91,9 @@ dependencies {
 	// BetterArcheology
 	modRuntimeOnly("maven.modrinth:better-archeology:EJHNTdmP") // 1.1.0
 
-	// Bewitchment
-	//modRuntimeOnly("maven.modrinth:bewitchment:riuujyHL") // 1.20-7
-	//modApi("me.lucko:fabric-permissions-api:0.1-SNAPSHOT")
-	//modApi("maven.modrinth:impersonate:6ZK2ddbg") // Impersonate 2.10.2
-	//modApi("maven.modrinth:midnightlib:YXz8kIQl") // Midnight Lib 1.4.1
-	//modApi("io.github.ladysnake:PlayerAbilityLib:1.8.0")
-	//modApi("com.jamieswhiteshirt:reach-entity-attributes:2.4.0")
-	//modApi("com.github.emilyploszaj:step-height-entity-attribute:v1.2.0")
-	//modApi("maven.modrinth:patchouli:Y6tuH1cn") //Patchouli 1.20.1-84
-	//modApi("me.zeroeightsix:fiber:0.23.0-2")
-	//modRuntimeOnly("maven.modrinth:pehkui:NXT21hP9") // Pehkui 3.7.12
-	//modApi("com.github.Virtuoel:KanosConfig:0.4.1")
-	modRuntimeOnly("maven.modrinth:trinkets:e563ycts") // Trinkets 3.7.1
-	modApi("dev.onyxstudios.cardinal-components-api:cardinal-components-base:5.2.2")
-	modApi("dev.onyxstudios.cardinal-components-api:cardinal-components-entity:5.2.2")
-
 	// BiomeMakeover
 	modRuntimeOnly("maven.modrinth:jG8Q2YwT:rsoZ2Iqo") // 1.11.4
-	//modApi("party.lemons:taniwha-fabric:1.20.0-5.4.9")
-
-	// Blockus
-	modRuntimeOnly("maven.modrinth:blockus:TsvrmUbJ") { transitive false }
-
-	// Botania
-	modRuntimeOnly "vazkii.botania:Botania-xplat:1.20.1-443"
+	modApi("party.lemons:taniwha-fabric:1.20.0-5.4.9")
 
 	// Cinderscapes
 	modRuntimeOnly "com.terraformersmc:cinderscapes:4.0.9"
@@ -131,17 +109,12 @@ dependencies {
 	// Desolation
 	modRuntimeOnly("maven.modrinth:desolation:HqakjlKA") // 1.3.2
 	modApi("maven.modrinth:geckolib:oPgOSBzN") // Geckolib
+	modRuntimeOnly("maven.modrinth:trinkets:e563ycts") // Trinkets 3.7.1
+	modApi("dev.onyxstudios.cardinal-components-api:cardinal-components-base:5.2.2")
+	modApi("dev.onyxstudios.cardinal-components-api:cardinal-components-entity:5.2.2")
 
 	// Ecologics
 	modRuntimeOnly("curse.maven:ecologics-570463:4857271")
-
-	// Eldritch End
-	modRuntimeOnly("maven.modrinth:eldritch-end:hjijvYrR") { transitive false } // 0.2.30
-	modApi("maven.modrinth:azurelib:qmNj5M34") // 2.0.18
-	modApi("maven.modrinth:necronomicon:edD42FPx") // 1.3.0
-
-	// Meadow (Let's Do)
-	modRuntimeOnly("maven.modrinth:lets-do-meadow:QHqnFZCQ") // 1.3.4
 
 	// MineCells
 	modRuntimeOnly("maven.modrinth:minecells:MPeoUkHE")
