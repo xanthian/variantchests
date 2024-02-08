@@ -33,6 +33,13 @@ public class EntityRenderInitialise {
         BlockEntityRendererFactories.register(EntityInitialise.BA_ROTTEN_CHEST, VariantChestRenderer::new);
     }
 
+    public static void registerBMChests() {
+        BlockEntityRendererFactories.register(EntityInitialise.BM_ANCIENT_OAK_CHEST, VariantChestRenderer::new);
+        BlockEntityRendererFactories.register(EntityInitialise.BM_BLIGHTED_BALSA_CHEST, VariantChestRenderer::new);
+        BlockEntityRendererFactories.register(EntityInitialise.BM_SWAMP_CYPRESS_CHEST, VariantChestRenderer::new);
+        BlockEntityRendererFactories.register(EntityInitialise.BM_WILLOW_CHEST, VariantChestRenderer::new);
+    }
+
     public static void registerCSChests() {
         BlockEntityRendererFactories.register(EntityInitialise.CS_SCORCHED_CHEST, VariantChestRenderer::new);
         BlockEntityRendererFactories.register(EntityInitialise.CS_UMBRAL_CHEST, VariantChestRenderer::new);
@@ -44,6 +51,13 @@ public class EntityRenderInitialise {
 
     public static void registerDSChests() {
         BlockEntityRendererFactories.register(EntityInitialise.DS_CHARRED_CHEST, VariantChestRenderer::new);
+    }
+
+    public static void registerECOChests() {
+        BlockEntityRendererFactories.register(EntityInitialise.ECO_AZALEA_CHEST, VariantChestRenderer::new);
+        BlockEntityRendererFactories.register(EntityInitialise.ECO_COCONUT_CHEST, VariantChestRenderer::new);
+        BlockEntityRendererFactories.register(EntityInitialise.ECO_FLOWERING_AZALEA_CHEST, VariantChestRenderer::new);
+        BlockEntityRendererFactories.register(EntityInitialise.ECO_WALNUT_CHEST, VariantChestRenderer::new);
     }
 
     public static void registerMCChests() {
@@ -66,6 +80,13 @@ public class EntityRenderInitialise {
         BlockEntityRendererFactories.register(EntityInitialise.NS_SUGI_CHEST, VariantChestRenderer::new);
         BlockEntityRendererFactories.register(EntityInitialise.NS_WILLOW_CHEST, VariantChestRenderer::new);
         BlockEntityRendererFactories.register(EntityInitialise.NS_WISTERIA_CHEST, VariantChestRenderer::new);
+    }
+
+    public static void registerPROMChests() {
+        BlockEntityRendererFactories.register(EntityInitialise.PROM_DARK_AMARANTH_CHEST, VariantChestRenderer::new);
+        BlockEntityRendererFactories.register(EntityInitialise.PROM_MAPLE_CHEST, VariantChestRenderer::new);
+        BlockEntityRendererFactories.register(EntityInitialise.PROM_PALM_CHEST, VariantChestRenderer::new);
+        BlockEntityRendererFactories.register(EntityInitialise.PROM_SAKURA_CHEST, VariantChestRenderer::new);
     }
 
     public static void registerRUChests() {

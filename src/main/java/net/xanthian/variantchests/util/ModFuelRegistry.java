@@ -34,6 +34,11 @@ public class ModFuelRegistry {
         if (FabricLoader.getInstance().isModLoaded("betterarcheology")) {
             registry.add(BetterArcheology.BA_ROTTEN_CHEST, 300);
         }
+        if (FabricLoader.getInstance().isModLoaded("biomemakeover")) {
+            for (Block block : BiomeMakeover.BM_CHESTS.values()) {
+                registry.add(block, 300);
+            }
+        }
         if (FabricLoader.getInstance().isModLoaded("cinderscapes")) {
             registry.add(Cinderscapes.CS_SCORCHED_CHEST, 300);
             registry.add(Cinderscapes.CS_UMBRAL_CHEST, 300);
@@ -44,6 +49,11 @@ public class ModFuelRegistry {
         if (FabricLoader.getInstance().isModLoaded("desolation")) {
             registry.add(Desolation.DS_CHARRED_CHEST, 300);
         }
+        if (FabricLoader.getInstance().isModLoaded("ecologics")) {
+            for (Block block : Ecologics.ECO_CHESTS.values()) {
+                registry.add(block, 300);
+            }
+        }
         if (FabricLoader.getInstance().isModLoaded("minecells")) {
             registry.add(MineCells.MC_PUTRID_CHEST, 300);
         }
@@ -51,6 +61,11 @@ public class ModFuelRegistry {
             for (Block block : NaturesSpirit.NS_CHESTS.values()) {
                 registry.add(block, 300);
             }
+        }
+        if (FabricLoader.getInstance().isModLoaded("promenade")) {
+            registry.add(Promenade.PROM_MAPLE_CHEST, 300);
+            registry.add(Promenade.PROM_PALM_CHEST, 300);
+            registry.add(Promenade.PROM_SAKURA_CHEST, 300);
         }
         if (FabricLoader.getInstance().isModLoaded("regions_unexplored")) {
             registry.add(RegionsUnexplored.RU_ALPHA_CHEST, 300);
