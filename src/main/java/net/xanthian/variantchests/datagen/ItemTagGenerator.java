@@ -10,15 +10,14 @@ import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.xanthian.variantchests.block.Vanilla;
-import net.xanthian.variantchests.block.compatability.*;
 import net.xanthian.variantchests.util.ModItemTags;
 
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
 public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
-    public static final TagKey<Item> C_CHESTS = TagKey.of(Registries.ITEM.getKey(), new Identifier("c:chests"));
-    public static final TagKey<Item> C_WOODEN_CHESTS = TagKey.of(Registries.ITEM.getKey(), new Identifier("c:wooden_chests"));
+    public static final TagKey<Item> C_CHESTS = TagKey.of(Registries.ITEM.getKey(), Identifier.of("c:chests"));
+    public static final TagKey<Item> C_WOODEN_CHESTS = TagKey.of(Registries.ITEM.getKey(), Identifier.of("c:wooden_chests"));
 
     public ItemTagGenerator(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
@@ -29,30 +28,30 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
 
         registerTags(Vanilla.VANILLA_CHESTS);
 
-        registerTags(BiomeMakeover.BM_CHESTS);
-        registerTags(Cinderscapes.CS_CHESTS);
-        registerTags(Ecologics.ECO_CHESTS);
-        registerTags(NaturesSpirit.NS_CHESTS);
-        registerTags(Promenade.PROM_CHESTS);
-        registerTags(RegionsUnexplored.RU_CHESTS);
+        //registerTags(BiomeMakeover.BM_CHESTS);
+        //registerTags(Cinderscapes.CS_CHESTS);
+        //registerTags(Ecologics.ECO_CHESTS);
+        //registerTags(NaturesSpirit.NS_CHESTS);
+        //registerTags(Promenade.PROM_CHESTS);
+        //registerTags(RegionsUnexplored.RU_CHESTS);
 
         getOrCreateTagBuilder(ModItemTags.CHESTS)
-                .addOptional(new Identifier("variantchests:aa_glacian_chest"))
-                .addOptional(new Identifier("variantchests:ldbp_palm_chest"))
-                .addOptional(new Identifier("variantchests:ba_rotten_chest"))
-                .addOptional(new Identifier("variantchests:dad_echo_chest"))
-                .addOptional(new Identifier("variantchests:ds_charred_chest"))
-                .addOptional(new Identifier("variantchests:mc_putrid_chest"))
-                .addOptional(new Identifier("variantchests:sp_stone_pine_chest"))
-                .addOptional(new Identifier("variantchests:tr_rubber_chest"))
-                .addOptional(new Identifier("variantchests:ldv_cherry_chest"));
+                .addOptional(Identifier.of("variantchests:aa_glacian_chest"))
+                .addOptional(Identifier.of("variantchests:ldbp_palm_chest"))
+                .addOptional(Identifier.of("variantchests:ba_rotten_chest"))
+                .addOptional(Identifier.of("variantchests:dad_echo_chest"))
+                .addOptional(Identifier.of("variantchests:ds_charred_chest"))
+                .addOptional(Identifier.of("variantchests:mc_putrid_chest"))
+                .addOptional(Identifier.of("variantchests:sp_stone_pine_chest"))
+                .addOptional(Identifier.of("variantchests:tr_rubber_chest"))
+                .addOptional(Identifier.of("variantchests:ldv_cherry_chest"));
 
         getOrCreateTagBuilder(ItemTags.NON_FLAMMABLE_WOOD)
-                .addOptional(new Identifier("variantchests:prom_dark_amaranth_chest"))
-                .addOptional(new Identifier("variantchests:ru_brimwood_chest"))
-                .addOptional(new Identifier("variantchests:ru_cobalt_chest"))
-                .addOptional(new Identifier("variantchests:ru_dead_chest"))
-                .addOptional(new Identifier("variantchests:ru_yellow_bioshroom_chest"))
+                .addOptional(Identifier.of("variantchests:prom_dark_amaranth_chest"))
+                .addOptional(Identifier.of("variantchests:ru_brimwood_chest"))
+                .addOptional(Identifier.of("variantchests:ru_cobalt_chest"))
+                .addOptional(Identifier.of("variantchests:ru_dead_chest"))
+                .addOptional(Identifier.of("variantchests:ru_yellow_bioshroom_chest"))
                 .add(Vanilla.CRIMSON_CHEST.asItem())
                 .add(Vanilla.WARPED_CHEST.asItem());
 
@@ -65,9 +64,9 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
 
     private void registerTags(Map<Identifier, Block> blockMap) {
         for (Block block : blockMap.values()) {
-            Identifier lootTableId = block.getLootTableId();
+            Identifier lootTableId = block.getLootTableKey().getValue();
             String newPath = lootTableId.getPath().replaceFirst("blocks/", "");
-            Identifier modifiedId = new Identifier(lootTableId.getNamespace(), newPath);
+            Identifier modifiedId = Identifier.of(lootTableId.getNamespace(), newPath);
 
             getOrCreateTagBuilder(ModItemTags.CHESTS)
                     .addOptional(modifiedId);

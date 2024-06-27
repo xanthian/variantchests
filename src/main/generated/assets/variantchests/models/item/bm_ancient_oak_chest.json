@@ -1,6 +1,0 @@
-{
-  "parent": "variantchests:block/variantchest",
-  "textures": {
-    "chest": "variantchests:chest/bm_ancient_oak_chest"
-  }
-}

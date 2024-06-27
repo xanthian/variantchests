@@ -1,8 +1,9 @@
 package net.xanthian.variantchests.block.compatability;
 
 import com.google.common.collect.Maps;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.item.Item;
+import net.minecraft.block.AbstractBlock;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
@@ -19,10 +20,10 @@ public class Ecologics {
 
     public static Map<Identifier, Block> ECO_CHESTS = Maps.newHashMap();
 
-    public static Block ECO_AZALEA_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.ECO_AZALEA);
-    public static Block ECO_COCONUT_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.ECO_COCONUT);
-    public static Block ECO_FLOWERING_AZALEA_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.ECO_FLOWERING_AZALEA);
-    public static Block ECO_WALNUT_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.ECO_WALNUT);
+    public static Block ECO_AZALEA_CHEST = new VariantChestBlock(AbstractBlock.Settings.copy(Blocks.CHEST), VariantChests.ECO_AZALEA);
+    public static Block ECO_COCONUT_CHEST = new VariantChestBlock(AbstractBlock.Settings.copy(Blocks.CHEST), VariantChests.ECO_COCONUT);
+    public static Block ECO_FLOWERING_AZALEA_CHEST = new VariantChestBlock(AbstractBlock.Settings.copy(Blocks.CHEST), VariantChests.ECO_FLOWERING_AZALEA);
+    public static Block ECO_WALNUT_CHEST = new VariantChestBlock(AbstractBlock.Settings.copy(Blocks.CHEST), VariantChests.ECO_WALNUT);
 
     public static void registerChests() {
         registerChests("eco_azalea_chest", ECO_AZALEA_CHEST);
@@ -32,9 +33,9 @@ public class Ecologics {
     }
 
     private static void registerChests(String name, Block block) {
-        Identifier identifier = new Identifier(Initialise.MOD_ID, name);
+        Identifier identifier = Identifier.of(Initialise.MOD_ID, name);
         Registry.register(Registries.BLOCK, identifier, block);
         ECO_CHESTS.put(identifier, block);
-        Registry.register(Registries.ITEM, identifier, new BlockItem(block, new FabricItemSettings()));
+        Registry.register(Registries.ITEM, identifier, new BlockItem(block, new Item.Settings()));
     }
 }

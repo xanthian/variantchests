@@ -1,8 +1,8 @@
 package net.xanthian.variantchests.block.compatability;
 
 import com.google.common.collect.Maps;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.item.Item;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
@@ -19,16 +19,16 @@ public class BetterArcheology {
 
     public static Map<Identifier, Block> BA_CHESTS = Maps.newHashMap();
 
-    public static Block BA_ROTTEN_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.BA_ROTTEN);
+    public static Block BA_ROTTEN_CHEST = new VariantChestBlock(AbstractBlock.Settings.copy(Blocks.CHEST), VariantChests.BA_ROTTEN);
 
     public static void registerChests() {
         registerChests("ba_rotten_chest", BA_ROTTEN_CHEST);
     }
 
     private static void registerChests(String name, Block block) {
-        Identifier identifier = new Identifier(Initialise.MOD_ID, name);
+        Identifier identifier = Identifier.of(Initialise.MOD_ID, name);
         Registry.register(Registries.BLOCK, identifier, block);
         BA_CHESTS.put(identifier, block);
-        Registry.register(Registries.ITEM, identifier, new BlockItem(block, new FabricItemSettings()));
+        Registry.register(Registries.ITEM, identifier, new BlockItem(block, new Item.Settings()));
     }
 }

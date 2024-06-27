@@ -1,6 +1,0 @@
-{
-  "parent": "variantchests:block/variantchest",
-  "textures": {
-    "chest": "variantchests:chest/mc_putrid_chest"
-  }
-}

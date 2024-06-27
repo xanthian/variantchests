@@ -23,6 +23,7 @@ public class ModFuelRegistry {
         registry.add(Vanilla.DARK_OAK_CHEST, 300);
         registry.add(Vanilla.JUNGLE_CHEST, 300);
         registry.add(Vanilla.MANGROVE_CHEST, 300);
+        registry.add(Vanilla.OAK_CHEST, 300);
         registry.add(Vanilla.SPRUCE_CHEST, 300);
 
         if (FabricLoader.getInstance().isModLoaded("ad_astra")) {

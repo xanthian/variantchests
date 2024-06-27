@@ -1,8 +1,9 @@
 package net.xanthian.variantchests.block.compatability;
 
 import com.google.common.collect.Maps;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.item.Item;
+import net.minecraft.block.AbstractBlock;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
@@ -19,10 +20,10 @@ public class Promenade {
 
     public static Map<Identifier, Block> PROM_CHESTS = Maps.newHashMap();
 
-    public static Block PROM_DARK_AMARANTH_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.PROM_DARK_AMARANTH);
-    public static Block PROM_MAPLE_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.PROM_MAPLE);
-    public static Block PROM_PALM_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.PROM_PALM);
-    public static Block PROM_SAKURA_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.PROM_SAKURA);
+    public static Block PROM_DARK_AMARANTH_CHEST = new VariantChestBlock(AbstractBlock.Settings.copy(Blocks.CHEST), VariantChests.PROM_DARK_AMARANTH);
+    public static Block PROM_MAPLE_CHEST = new VariantChestBlock(AbstractBlock.Settings.copy(Blocks.CHEST), VariantChests.PROM_MAPLE);
+    public static Block PROM_PALM_CHEST = new VariantChestBlock(AbstractBlock.Settings.copy(Blocks.CHEST), VariantChests.PROM_PALM);
+    public static Block PROM_SAKURA_CHEST = new VariantChestBlock(AbstractBlock.Settings.copy(Blocks.CHEST), VariantChests.PROM_SAKURA);
 
     public static void registerChests() {
         registerChest("prom_dark_amaranth_chest", PROM_DARK_AMARANTH_CHEST);
@@ -32,9 +33,9 @@ public class Promenade {
     }
 
     private static void registerChest(String name, Block block) {
-        Identifier identifier = new Identifier(Initialise.MOD_ID, name);
+        Identifier identifier = Identifier.of(Initialise.MOD_ID, name);
         Registry.register(Registries.BLOCK, identifier, block);
         PROM_CHESTS.put(identifier, block);
-        Registry.register(Registries.ITEM, identifier, new BlockItem(block, new FabricItemSettings()));
+        Registry.register(Registries.ITEM, identifier, new BlockItem(block, new Item.Settings()));
     }
 }

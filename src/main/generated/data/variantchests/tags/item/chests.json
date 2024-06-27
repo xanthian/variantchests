@@ -1,0 +1,84 @@
+{
+  "values": [
+    {
+      "id": "variantchests:acacia_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:crimson_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:dark_oak_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:bamboo_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:mangrove_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:oak_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:warped_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:spruce_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:jungle_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:birch_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:cherry_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:aa_glacian_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:ldbp_palm_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:ba_rotten_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:dad_echo_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:ds_charred_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:mc_putrid_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:sp_stone_pine_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:tr_rubber_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:ldv_cherry_chest",
+      "required": false
+    }
+  ]
+}

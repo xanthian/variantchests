@@ -1,8 +1,9 @@
 package net.xanthian.variantchests.block.compatability;
 
 import com.google.common.collect.Maps;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.item.Item;
+import net.minecraft.block.AbstractBlock;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
@@ -19,21 +20,21 @@ public class NaturesSpirit {
 
     public static Map<Identifier, Block> NS_CHESTS = Maps.newHashMap();
 
-    public static Block NS_ASPEN_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.NS_ASPEN);
-    public static Block NS_CEDAR_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.NS_CEDAR);
-    public static Block NS_COCONUT_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.NS_COCONUT);
-    public static Block NS_CYPRESS_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.NS_CYPRESS);
-    public static Block NS_FIR_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.NS_FIR);
-    public static Block NS_GHAF_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.NS_GHAF);
-    public static Block NS_JOSHUA_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.NS_JOSHUA);
-    public static Block NS_LARCH_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.NS_LARCH);
-    public static Block NS_MAPLE_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.NS_MAPLE);
-    public static Block NS_OLIVE_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.NS_OLIVE);
-    public static Block NS_PALO_VERDE_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.NS_PALO_VERDE);
-    public static Block NS_REDWOOD_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.NS_REDWOOD);
-    public static Block NS_SUGI_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.NS_SUGI);
-    public static Block NS_WILLOW_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.NS_WILLOW);
-    public static Block NS_WISTERIA_CHEST = new VariantChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST), VariantChests.NS_WISTERIA);
+    public static Block NS_ASPEN_CHEST = new VariantChestBlock(AbstractBlock.Settings.copy(Blocks.CHEST), VariantChests.NS_ASPEN);
+    public static Block NS_CEDAR_CHEST = new VariantChestBlock(AbstractBlock.Settings.copy(Blocks.CHEST), VariantChests.NS_CEDAR);
+    public static Block NS_COCONUT_CHEST = new VariantChestBlock(AbstractBlock.Settings.copy(Blocks.CHEST), VariantChests.NS_COCONUT);
+    public static Block NS_CYPRESS_CHEST = new VariantChestBlock(AbstractBlock.Settings.copy(Blocks.CHEST), VariantChests.NS_CYPRESS);
+    public static Block NS_FIR_CHEST = new VariantChestBlock(AbstractBlock.Settings.copy(Blocks.CHEST), VariantChests.NS_FIR);
+    public static Block NS_GHAF_CHEST = new VariantChestBlock(AbstractBlock.Settings.copy(Blocks.CHEST), VariantChests.NS_GHAF);
+    public static Block NS_JOSHUA_CHEST = new VariantChestBlock(AbstractBlock.Settings.copy(Blocks.CHEST), VariantChests.NS_JOSHUA);
+    public static Block NS_LARCH_CHEST = new VariantChestBlock(AbstractBlock.Settings.copy(Blocks.CHEST), VariantChests.NS_LARCH);
+    public static Block NS_MAPLE_CHEST = new VariantChestBlock(AbstractBlock.Settings.copy(Blocks.CHEST), VariantChests.NS_MAPLE);
+    public static Block NS_OLIVE_CHEST = new VariantChestBlock(AbstractBlock.Settings.copy(Blocks.CHEST), VariantChests.NS_OLIVE);
+    public static Block NS_PALO_VERDE_CHEST = new VariantChestBlock(AbstractBlock.Settings.copy(Blocks.CHEST), VariantChests.NS_PALO_VERDE);
+    public static Block NS_REDWOOD_CHEST = new VariantChestBlock(AbstractBlock.Settings.copy(Blocks.CHEST), VariantChests.NS_REDWOOD);
+    public static Block NS_SUGI_CHEST = new VariantChestBlock(AbstractBlock.Settings.copy(Blocks.CHEST), VariantChests.NS_SUGI);
+    public static Block NS_WILLOW_CHEST = new VariantChestBlock(AbstractBlock.Settings.copy(Blocks.CHEST), VariantChests.NS_WILLOW);
+    public static Block NS_WISTERIA_CHEST = new VariantChestBlock(AbstractBlock.Settings.copy(Blocks.CHEST), VariantChests.NS_WISTERIA);
 
     public static void registerChests() {
         registerChest("ns_aspen_chest", NS_ASPEN_CHEST);
@@ -54,9 +55,9 @@ public class NaturesSpirit {
     }
 
     private static void registerChest(String name, Block block) {
-        Identifier identifier = new Identifier(Initialise.MOD_ID, name);
+        Identifier identifier = Identifier.of(Initialise.MOD_ID, name);
         Registry.register(Registries.BLOCK, identifier, block);
         NS_CHESTS.put(identifier, block);
-        Registry.register(Registries.ITEM, identifier, new BlockItem(block, new FabricItemSettings()));
+        Registry.register(Registries.ITEM, identifier, new BlockItem(block, new Item.Settings()));
     }
 }

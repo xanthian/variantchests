@@ -17,7 +17,7 @@ import net.xanthian.variantchests.block.compatability.*;
 public class ModCreativeTab {
 
     public static final ItemGroup ITEM_GROUP = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(Initialise.MOD_ID, "variantchests"),
+            Identifier.of(Initialise.MOD_ID, "variantchests"),
 
             FabricItemGroup.builder()
                     .displayName(Text.literal("Variant Chests"))
@@ -32,9 +32,10 @@ public class ModCreativeTab {
                         entries.add(Vanilla.DARK_OAK_CHEST);
                         entries.add(Vanilla.JUNGLE_CHEST);
                         entries.add(Vanilla.MANGROVE_CHEST);
-                        entries.add(Blocks.CHEST);
+                        entries.add(Vanilla.OAK_CHEST);
                         entries.add(Vanilla.SPRUCE_CHEST);
                         entries.add(Vanilla.WARPED_CHEST);
+                        entries.add(Blocks.CHEST);
 
                         if (FabricLoader.getInstance().isModLoaded("ad_astra")) {
                             entries.add(AdAstra.AA_GLACIAN_CHEST);
@@ -94,7 +95,7 @@ public class ModCreativeTab {
                             entries.add(Vinery.LDV_CHERRY_CHEST);
                         }
                     })
-                    .texture("variantchests.png").noRenderedName().build());
+                    .texture(Identifier.ofVanilla("textures/gui/container/creative_inventory/tab_variantchests.png")).noRenderedName().build());
 
     public static void registerItemGroup() {
     }

@@ -1,0 +1,26 @@
+{
+  "values": [
+    {
+      "id": "variantchests:prom_dark_amaranth_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:ru_brimwood_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:ru_cobalt_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:ru_dead_chest",
+      "required": false
+    },
+    {
+      "id": "variantchests:ru_yellow_bioshroom_chest",
+      "required": false
+    },
+    "variantchests:crimson_chest",
+    "variantchests:warped_chest"
+  ]
+}

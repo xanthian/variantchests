@@ -17,6 +17,7 @@ public class EntityRenderInitialise {
         BlockEntityRendererFactories.register(EntityInitialise.DARK_OAK_CHEST, VariantChestRenderer::new);
         BlockEntityRendererFactories.register(EntityInitialise.JUNGLE_CHEST, VariantChestRenderer::new);
         BlockEntityRendererFactories.register(EntityInitialise.MANGROVE_CHEST, VariantChestRenderer::new);
+        BlockEntityRendererFactories.register(EntityInitialise.OAK_CHEST, VariantChestRenderer::new);
         BlockEntityRendererFactories.register(EntityInitialise.SPRUCE_CHEST, VariantChestRenderer::new);
         BlockEntityRendererFactories.register(EntityInitialise.WARPED_CHEST, VariantChestRenderer::new);
     }

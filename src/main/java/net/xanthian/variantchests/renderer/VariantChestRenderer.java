@@ -72,7 +72,7 @@ public class VariantChestRenderer extends ChestBlockEntityRenderer<VariantChestB
     }
 
     public static SpriteIdentifier getChestID(String path) {
-        return new SpriteIdentifier(TexturedRenderLayers.CHEST_ATLAS_TEXTURE, new Identifier(Initialise.MOD_ID, "entity/chest/" + path));
+        return new SpriteIdentifier(TexturedRenderLayers.CHEST_ATLAS_TEXTURE, Identifier.of(Initialise.MOD_ID, "entity/chest/" + path));
     }
 
     public static SpriteIdentifier chooseMaterial(ChestType type, SpriteIdentifier left, SpriteIdentifier right, SpriteIdentifier single) {
@@ -91,7 +91,7 @@ public class VariantChestRenderer extends ChestBlockEntityRenderer<VariantChestB
         World world = entity.getWorld();
 
         BlockState blockState = world != null ? entity.getCachedState() : Blocks.CHEST.getDefaultState().with(ChestBlock.FACING, Direction.SOUTH);
-        ChestType chestType = blockState.contains(ChestBlock.CHEST_TYPE) ? (ChestType) blockState.get(ChestBlock.CHEST_TYPE) : ChestType.SINGLE;
+        ChestType chestType = blockState.contains(ChestBlock.CHEST_TYPE) ? blockState.get(ChestBlock.CHEST_TYPE) : ChestType.SINGLE;
         Block block = blockState.getBlock();
 
         if (block instanceof VariantChestBlock) {

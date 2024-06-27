@@ -1,6 +1,5 @@
 package net.xanthian.variantchests.entity;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.Block;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.registry.Registries;
@@ -20,6 +19,7 @@ public class EntityInitialise {
     public static BlockEntityType<VariantChestBlockEntity> DARK_OAK_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> JUNGLE_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> MANGROVE_CHEST;
+    public static BlockEntityType<VariantChestBlockEntity> OAK_CHEST;
     public static BlockEntityType<VariantChestBlockEntity> WARPED_CHEST;
 
 
@@ -112,6 +112,7 @@ public class EntityInitialise {
         DARK_OAK_CHEST = register(VariantChests.DARK_OAK, Vanilla.DARK_OAK_CHEST);
         JUNGLE_CHEST = register(VariantChests.JUNGLE, Vanilla.JUNGLE_CHEST);
         MANGROVE_CHEST = register(VariantChests.MANGROVE, Vanilla.MANGROVE_CHEST);
+        OAK_CHEST = register(VariantChests.OAK, Vanilla.OAK_CHEST);
         SPRUCE_CHEST = register(VariantChests.SPRUCE, Vanilla.SPRUCE_CHEST);
         WARPED_CHEST = register(VariantChests.WARPED, Vanilla.WARPED_CHEST);
     }
@@ -244,7 +245,7 @@ public class EntityInitialise {
 
     private static BlockEntityType<VariantChestBlockEntity> register(VariantChests type, Block... block) {
         return Registry.register(Registries.BLOCK_ENTITY_TYPE, type.getId(),
-                FabricBlockEntityTypeBuilder.create((pos, state) -> new VariantChestBlockEntity(type, pos, state),
+                BlockEntityType.Builder.create((pos, state) -> new VariantChestBlockEntity(type, pos, state),
                         block).build(null));
     }
 }
