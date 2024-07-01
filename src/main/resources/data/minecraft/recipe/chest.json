@@ -1,18 +1,13 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "key": {
-    "P": {
+  "ingredients": [
+    {
       "tag": "c:chests"
     }
-  },
-  "pattern": [
-    "PPP",
-    "P P",
-    "PPP"
   ],
   "result": {
+    "count": 1,
     "id": "minecraft:chest"
-  },
-  "show_notification": true
+  }
 }

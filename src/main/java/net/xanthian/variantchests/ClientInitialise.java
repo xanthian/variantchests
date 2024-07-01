@@ -24,16 +24,16 @@ public class ClientInitialise implements ClientModInitializer {
         //ifModLoaded("beachparty", EntityRenderInitialise::registerLDBPChests);
         //ifModLoaded("betterarcheology", EntityRenderInitialise::registerBAChests);
         //ifModLoaded("biomemakeover", EntityRenderInitialise::registerBMChests);
-        //ifModLoaded("cinderscapes", EntityRenderInitialise::registerCSChests);
+        ifModLoaded("cinderscapes", EntityRenderInitialise::registerCSChests);
         //ifModLoaded("deeperdarker", EntityRenderInitialise::registerDADChests);
         //ifModLoaded("desolation", EntityRenderInitialise::registerDSChests);
         //ifModLoaded("ecologics", EntityRenderInitialise::registerECOChests);
         //ifModLoaded("minecells", EntityRenderInitialise::registerMCChests);
-        //ifModLoaded("natures_spirit", EntityRenderInitialise::registerNSChests);
+        ifModLoaded("natures_spirit", EntityRenderInitialise::registerNSChests);
         //ifModLoaded("promenade", EntityRenderInitialise::registerPROMChests);
         //ifModLoaded("regions_unexplored", EntityRenderInitialise::registerRUChests);
         //ifModLoaded("snifferplus", EntityRenderInitialise::registerSPChests);
-        //ifModLoaded("techreborn", EntityRenderInitialise::registerTRChests);
+        ifModLoaded("techreborn", EntityRenderInitialise::registerTRChests);
         //ifModLoaded("vinery", EntityRenderInitialise::registerLDVChests);
 
         //EntityRenderInitialise.registerSPChests();

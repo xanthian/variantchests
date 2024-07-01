@@ -12,6 +12,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import net.xanthian.variantchests.block.Vanilla;
 import net.xanthian.variantchests.block.VariantChests;
+import net.xanthian.variantchests.block.compatability.*;
 import net.xanthian.variantchests.util.ModModel;
 import net.xanthian.variantchests.util.ModTextureKey;
 
@@ -63,17 +64,17 @@ public class ModelGenerator extends FabricModelProvider {
         //registerModel(blockStateModelGenerator, BiomeMakeover.BM_CHESTS, "biomemakeover", plankName -> plankName + "_planks");
         //registerModel(blockStateModelGenerator, Blockus.BLS_CHESTS, "blockus", plankName -> plankName + "_planks");
         //registerModel(blockStateModelGenerator, Botania.BOT_CHESTS, "botania", plankName -> plankName + "_planks");
-        //registerModel(blockStateModelGenerator, Cinderscapes.CS_CHESTS, "cinderscapes", plankName -> plankName + "_planks");
+        registerModel(blockStateModelGenerator, Cinderscapes.CS_CHESTS, "cinderscapes", plankName -> plankName + "_planks");
         //registerModel(blockStateModelGenerator, DeeperAndDarker.DAD_CHESTS, "deeperdarker", plankName -> plankName + "_planks");
         //registerModel(blockStateModelGenerator, Desolation.DS_CHESTS, "desolation", plankName -> plankName + "_planks");
         //registerModel(blockStateModelGenerator, EldritchEnd.EE_CHESTS, "eldritch_end", plankName -> plankName + "_planks");
         //registerModel(blockStateModelGenerator, Ecologics.ECO_CHESTS, "ecologics", plankName -> plankName + "_planks");
         //registerModel(blockStateModelGenerator, MineCells.MC_CHESTS, "minecells", plankName -> plankName + "_planks");
-        //registerModel(blockStateModelGenerator, NaturesSpirit.NS_CHESTS, "natures_spirit", plankName -> plankName + "_planks");
+        registerModel(blockStateModelGenerator, NaturesSpirit.NS_CHESTS, "natures_spirit", plankName -> plankName + "_planks");
         //registerModel(blockStateModelGenerator, Promenade.PROM_CHESTS, "promenade", plankName -> plankName + "/planks");
         //registerModel(blockStateModelGenerator, RegionsUnexplored.RU_CHESTS, "regions_unexplored", plankName -> plankName + "_planks");
         //registerModel(blockStateModelGenerator, SnifferPlus.SP_CHESTS, "snifferplus", plankName -> plankName + "_planks");
-        //registerModel(blockStateModelGenerator, TechReborn.TR_CHESTS, "techreborn", plankName -> plankName + "_planks");
+        registerModel(blockStateModelGenerator, TechReborn.TR_CHESTS, "techreborn", plankName -> plankName + "_planks");
         //registerModel(blockStateModelGenerator, Vinery.LDV_CHESTS, "vinery", plankName -> plankName + "_planks");
     }
 
@@ -95,16 +96,16 @@ public class ModelGenerator extends FabricModelProvider {
         //chestItem(itemModelGenerator, BeachParty.LDBP_PALM_CHEST);
         //chestItem(itemModelGenerator, BetterArcheology.BA_ROTTEN_CHEST);
         //for (Block block : BiomeMakeover.BM_CHESTS.values()) {chestItem(itemModelGenerator, block);        }
-        //for (Block block : Cinderscapes.CS_CHESTS.values()) {chestItem(itemModelGenerator, block);}
+        for (Block block : Cinderscapes.CS_CHESTS.values()) {           chestItem(itemModelGenerator, block);}
         //chestItem(itemModelGenerator, DeeperAndDarker.DAD_ECHO_CHEST);
         //chestItem(itemModelGenerator, Desolation.DS_CHARRED_CHEST);
         //for (Block block : Ecologics.ECO_CHESTS.values()) {chestItem(itemModelGenerator, block);}
         //chestItem(itemModelGenerator, MineCells.MC_PUTRID_CHEST);
-        //for (Block block : NaturesSpirit.NS_CHESTS.values()) {            chestItem(itemModelGenerator, block);        }
+        for (Block block : NaturesSpirit.NS_CHESTS.values()) {          chestItem(itemModelGenerator, block);        }
         //for (Block block : Promenade.PROM_CHESTS.values()) {            chestItem(itemModelGenerator, block);        }
         //for (Block block : RegionsUnexplored.RU_CHESTS.values()) {chestItem(itemModelGenerator, block);        }
         //chestItem(itemModelGenerator, SnifferPlus.SP_STONE_PINE_CHEST);
-        //chestItem(itemModelGenerator, TechReborn.TR_RUBBER_CHEST);
+        chestItem(itemModelGenerator, TechReborn.TR_RUBBER_CHEST);
         //chestItem(itemModelGenerator, Vinery.LDV_CHERRY_CHEST);
 
     }

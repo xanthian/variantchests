@@ -9,6 +9,7 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
 import net.xanthian.variantchests.block.Vanilla;
+import net.xanthian.variantchests.block.compatability.*;
 
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
@@ -30,16 +31,16 @@ public class LootTableGenerator extends FabricBlockLootTableProvider {
         //withConditions(ResourceConditions.allModsLoaded("beachparty")).addDrop(BeachParty.LDBP_PALM_CHEST, this::nameableContainerDrops);
         //withConditions(ResourceConditions.allModsLoaded("betterarcheology")).addDrop(BetterArcheology.BA_ROTTEN_CHEST, this::nameableContainerDrops);
         //registerSpecialLootTable(BiomeMakeover.BM_CHESTS, "biomemakeover");
-        //registerSpecialLootTable(Cinderscapes.CS_CHESTS, "cinderscapes");
+        registerSpecialLootTable(Cinderscapes.CS_CHESTS, "cinderscapes");
         //withConditions(ResourceConditions.allModsLoaded("deeperdarker")).addDrop(DeeperAndDarker.DAD_ECHO_CHEST, this::nameableContainerDrops);
         //withConditions(ResourceConditions.allModsLoaded("desolation")).addDrop(Desolation.DS_CHARRED_CHEST, this::nameableContainerDrops);
         //registerSpecialLootTable(Ecologics.ECO_CHESTS, "ecologics");
         //withConditions(ResourceConditions.allModsLoaded("minecells")).addDrop(MineCells.MC_PUTRID_CHEST, this::nameableContainerDrops);
-        //registerSpecialLootTable(NaturesSpirit.NS_CHESTS, "natures_spirit");
+        registerSpecialLootTable(NaturesSpirit.NS_CHESTS, "natures_spirit");
         //registerSpecialLootTable(Promenade.PROM_CHESTS, "promenade");
         //registerSpecialLootTable(RegionsUnexplored.RU_CHESTS, "regions_unexplored");
         //withConditions(ResourceConditions.allModsLoaded("snifferplus")).addDrop(SnifferPlus.SP_STONE_PINE_CHEST, this::nameableContainerDrops);
-        //withConditions(ResourceConditions.allModsLoaded("techreborn")).addDrop(TechReborn.TR_RUBBER_CHEST, this::nameableContainerDrops);
+        withConditions(ResourceConditions.allModsLoaded("techreborn")).addDrop(TechReborn.TR_RUBBER_CHEST, this::nameableContainerDrops);
         //withConditions(ResourceConditions.allModsLoaded("vinery")).addDrop(Vinery.LDV_CHERRY_CHEST, this::nameableContainerDrops);
     }
 

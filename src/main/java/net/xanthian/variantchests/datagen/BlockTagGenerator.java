@@ -10,6 +10,7 @@ import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.xanthian.variantchests.Initialise;
 import net.xanthian.variantchests.block.Vanilla;
+import net.xanthian.variantchests.block.compatability.*;
 
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
@@ -29,9 +30,9 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
         registerTags(Vanilla.VANILLA_CHESTS);
 
         //registerTags(BiomeMakeover.BM_CHESTS);
-        //registerTags(Cinderscapes.CS_CHESTS);
+        registerTags(Cinderscapes.CS_CHESTS);
         //registerTags(Ecologics.ECO_CHESTS);
-        //registerTags(NaturesSpirit.NS_CHESTS);
+        registerTags(NaturesSpirit.NS_CHESTS);
         //registerTags(Promenade.PROM_CHESTS);
         //registerTags(RegionsUnexplored.RU_CHESTS);
 

@@ -11,8 +11,13 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
-	mavenCentral()
 	maven { url "https://jitpack.io" }
+	maven { url "https://cursemaven.com/" }
+	maven { url "https://api.modrinth.com/maven" }
+	maven { url "https://maven.terraformersmc.com/" }
+	maven { url "https://maven.minecraftforge.net/" }
+	maven { url "https://maven.shedaniel.me" }
+
 }
 
 loom {
@@ -39,16 +44,39 @@ sourceSets {
 	}
 }
 dependencies {
-	implementation 'org.jetbrains:annotations:24.0.0'
-
+	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings loom.layered {
-		mappings file("mappings/mappings-fix.tiny")
-		mappings("net.fabricmc:yarn:${project.yarn_mappings}:v2")
-	}
+	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
+	// Blockus 2.9.1+1.21
+	modRuntimeOnly("maven.modrinth:blockus:LSQaGN5A") { transitive false }
+
+	// Cinderscapes v5.0.0 for 1.21
+	modRuntimeOnly "com.terraformersmc:cinderscapes:5.0.0"
+	modRuntimeOnly "com.terraformersmc:cinderscapes-client:5.0.0"
+	modRuntimeOnly "com.terraformersmc:cinderscapes-common:5.0.0"
+	modRuntimeOnly "com.terraformersmc:cinderscapes-worldgen:5.0.0"
+	modApi ("com.terraformersmc:biolith-fabric:3.0.0-alpha.1")
+	modApi ("com.terraformersmc:modmenu:11.0.1")
+	modApi ("com.terraformersmc.terraform-api:terraform-biome-remapper-api-v1:11.0.0-alpha.1")
+	modApi ("com.terraformersmc.terraform-api:terraform-shapes-api-v1:11.0.0-alpha.1")
+	modApi ("com.terraformersmc.terraform-api:terraform-wood-api-v1:11.0.0-alpha.1")
+	modApi ("me.shedaniel.cloth:cloth-config-fabric:15.0.127")
+
+	// Natures Spirit 1.5.3-1.21
+	modRuntimeOnly("maven.modrinth:natures-spirit:k2mup3Kl") { transitive false }
+
+	// Tech Reborn
+	modRuntimeOnly("TechReborn:TechReborn-1.21:5.11.6")
+
+}
+
+base {
+	archivesName = project.archives_base_name
 }
 
 processResources {
@@ -64,12 +92,18 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 java {
+	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
+	// if it is present.
+	// If you remove this line, sources will not be generated.
 	withSourcesJar()
+
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
 }
 
 jar {
 	from("LICENSE") {
-		rename { "${it}_${project.archivesBaseName}"}
+		rename { "${it}_${base.archivesName.get()}" }
 	}
 }
 
@@ -81,6 +115,5 @@ publishing {
 	}
 
 	repositories {
-
 	}
 }

@@ -3,7 +3,6 @@ package net.xanthian.variantchests.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceConditions;
-import net.minecraft.advancement.criterion.InventoryChangedCriterion;
 import net.minecraft.block.Block;
 import net.minecraft.data.server.recipe.*;
 import net.minecraft.item.Item;
@@ -18,6 +17,7 @@ import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.xanthian.variantchests.block.Vanilla;
+import net.xanthian.variantchests.block.compatability.*;
 import net.xanthian.variantchests.util.ModItemTags;
 
 import java.util.Map;
@@ -63,17 +63,17 @@ public class RecipeGenerator extends FabricRecipeProvider {
         //registerChestRecipe(exporter, BeachParty.LDBP_CHESTS, "beachparty");
         //registerChestRecipe(exporter, BetterArcheology.BA_CHESTS, "betterarcheology");
         //registerChestRecipe(exporter, BiomeMakeover.BM_CHESTS, "biomemakeover");
-        //registerChestRecipe(exporter, Cinderscapes.CS_CHESTS, "cinderscapes");
+        registerChestRecipe(exporter, Cinderscapes.CS_CHESTS, "cinderscapes");
         //registerChestRecipe(exporter, DeeperAndDarker.DAD_CHESTS, "deeperdarker");
         //registerChestRecipe(exporter, Desolation.DS_CHESTS, "desolation");
         //registerChestRecipe(exporter, EldritchEnd.EE_CHESTS, "eldritch_end");
         //registerChestRecipe(exporter, Ecologics.ECO_CHESTS, "ecologics");
         //registerChestRecipe(exporter, MineCells.MC_CHESTS, "minecells");
-        //registerChestRecipe(exporter, NaturesSpirit.NS_CHESTS, "natures_spirit");
+        registerChestRecipe(exporter, NaturesSpirit.NS_CHESTS, "natures_spirit");
         //registerChestRecipe(exporter, Promenade.PROM_CHESTS, "promenade");
         //registerChestRecipe(exporter, RegionsUnexplored.RU_CHESTS, "regions_unexplored");
         //registerChestRecipe(exporter, SnifferPlus.SP_CHESTS, "snifferplus");
-        //registerChestRecipe(exporter, TechReborn.TR_CHESTS, "techreborn");
+        registerChestRecipe(exporter, TechReborn.TR_CHESTS, "techreborn");
         //registerChestRecipe(exporter, Vinery.LDV_CHESTS, "vinery");
 
         offerCustomChestBoatRecipe(exporter, Items.ACACIA_CHEST_BOAT, Items.ACACIA_BOAT, ModItemTags.CHESTS);
@@ -105,11 +105,6 @@ public class RecipeGenerator extends FabricRecipeProvider {
                 .criterion("has_shulker_shell", VanillaRecipeProvider.conditionsFromItem(Items.SHULKER_SHELL))
                 .offerTo(exporter, Identifier.of("variantchests", "shulker_box"));
 
-        // Uncrafting recipe
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.CHEST, 1)
-                .input(ModItemTags.CHESTS)
-                .criterion("has_chest", InventoryChangedCriterion.Conditions.items(Items.CHEST))
-                .offerTo(exporter, Identifier.of("variantchests", "chest"));
     }
 
     public void registerChestRecipe(RecipeExporter exporter, Map<Identifier, Block> chests, String modId) {
